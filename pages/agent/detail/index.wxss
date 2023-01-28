@@ -1,0 +1,156 @@
+/* pages/agent/detail/index.wxss */
+page {
+  background: #f7f8fa;
+}
+
+.page>view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+}
+
+.agent-top {
+  width: calc(100% - 80rpx) !important;
+  height: 160rpx;
+  background: linear-gradient(#fff, #f7f9ff);
+  border-radius: 5rpx;
+  border-top: 4rpx #335fb5 solid;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-vi {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 112rpx);
+}
+
+.info-vi>view {
+  min-height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx #eee solid;
+}
+
+.info-vi>view.title {
+  margin-top: 30rpx;
+  border-top: 0;
+}
+
+.info-vi textarea {
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  height: 3em;
+  line-height: 1.5em;
+  font-size: 28rpx;
+}
+
+.footer-vi {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 132rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.footer-vi .bt {
+  height: 90rpx;
+  width: calc(100% - 140rpx) !important;
+}
+
+.ta-vi {
+  background: #f7f8fa;
+  border-radius: 5rpx;
+}
+
+.textarea-vi {
+  background: #f7f8fa;
+  text-align: left;
+  width: 100%;
+  height: 290rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+
+.textarea-vi>textarea {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ta{
+  color: #212429;
+  font-size: 28rpx;
+}
+.taph{
+  line-height: 1.5;
+  color: #c8c8cc !important;
+  font-size: 28rpx;
+}
+.picker{
+  height: 100rpx;
+  min-width: 200rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.follow-item{
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx #eee solid;
+}
+.follow-item:first-child{
+  border: 0;
+}
+.alter-vi{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.weui-dialog{
+  z-index: 1000;
+}
+.appeal{
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+.appeal_text{
+  flex:0 0 140rpx;
+}
+.appeal_list{
+  flex:1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.appeal_list image{
+  width:120rpx;
+  height:120rpx;
+  margin-left:20rpx;
+  margin-bottom: 20rpx;
+}
+.audio_list{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.audio_list .audio{
+  margin-bottom: 20rpx;
+}

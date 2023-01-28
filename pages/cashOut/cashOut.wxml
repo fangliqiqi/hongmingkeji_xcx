@@ -1,0 +1,181 @@
+<!--pages/cashOut/cashOut.wxml-->
+<c-contact></c-contact>
+
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+	<view class="bgtop"></view>
+	<view class="userInfo">
+		<view class="header">
+			<image  wx:if="{{userInfo.avatar}}" src="{{(utils.startWith(userInfo.avatar,'http')?'':url)+userInfo.avatar}}"></image>
+			<open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+		</view>
+		<view class="info">
+			<view>
+				<text class="fs-42 colfff fwb">{{userInfo.nickName||''}}</text>
+				<image wx:if="{{userInfo.vip&&userInfo.vip>0}}" class="ml-20" src="/resource/image/vip-{{userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+			</view>
+			<view>
+				<block wx:if="{{userInfo.wxBind=='1'}}">
+          <image class="mr-10" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx"></image>
+          <text class="colfff fs-24">已绑定微信</text>
+        </block>
+        <text class="colfff fs-24" wx:else>未绑定微信</text>
+			</view>
+		</view>
+	</view>
+	<view class="sv-vi mw0-30 bgfff">
+		<view class="flex flex-col flex-aic boxsh mw100">
+			<view class="flex flex-col mw0-35">
+				<view class="flex  flex-row mt-60 flex-jcb">
+					<text class="fs-32 col5e5f66">提现金额 (元)</text>
+					<view bindtap="showText">
+						<icon class="icon-small" type="info_circle" size="18" color="#9595a5"></icon>
+						<text class="fs-24 col9595a5 ml-6">提示</text>
+					</view>
+					
+				</view>
+				
+				<view class="flex flex-row flex-aie pb-20 " style="border-bottom:1rpx #eee solid;height:100rpx;">
+					<text class="fs-42 col212429 mr-8 lh100">￥</text>
+					<input class="flex1  col212429 am-input" value="{{amount}}" bindinput="inputFun" type="digit" ></input>
+					<view bindtap="amountFun" data-vl="">
+						<image src="/resource/image/icon-38.png" mode="widthFix" style="width:24rpx" class="mr-12 ml-12"></image>
+					</view>
+					<view bindtap="amountFun" data-vl="{{data.canWithdrawCommission||0}}">
+						<text class="fs-28 col0155fe ml-16">全部</text>
+					</view>
+				</view>
+				<text class="fs-24 cold15d57 mt-20 mb-40" wx:if="{{amount>(data.canWithdrawCommission||0)}}">输入金额超过零钱余额</text>
+				<text class="fs-24 col5e5f66 mt-20 mb-40" wx:else>当前可提现佣金余额<text
+						class="cold15d57">{{data.canWithdrawCommission||0}}</text>元</text>
+			</view>
+		</view>
+		<view class="mt-80 mw0-30">
+			<radio-group bindchange="radioChange1">
+				<label class="item-ra" style="height:96rpx;border-bottom:1rpx #eee solid;">
+					<view class="col212429 fs-32 fwb">到账钱包余额</view>
+					<radio class="radio"  value="1" checked/>
+				</label>
+				<label class="item-ra"  style="height:96rpx;border-bottom:1rpx #eee solid;">
+					<view class="flex flex-row flex-aic flex-jcb flex1" 
+							bindtap="showCardFun">
+						<text class="col212429 fs-32 fwb">到账银行卡</text>
+						<view class="flex flex-row flex-aic " >
+							<view class="picker flex flex-row flex-aic" wx:if="{{bankCard}}">
+								<image src="/resource/image/bank-{{bankCard.bankCode}}.png" mode="widthFix" style="width:32rpx"></image>
+								<text
+									class="fs-32 col5e5f66 ml-8 mr-30">{{bankCard.bankName}}({{utils.toSubstr(bankCard.bankNumber,bankCard.bankNumber.length-4)}})
+								</text>
+							</view>
+							<view class="picker flex flex-row flex-aic" wx:else>
+								<text	class="fs-32 col5e5f66 ml-8 mr-30">请选择银行卡</text>
+							</view>
+							<!-- <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx"></image> -->
+						</view>
+					</view>
+					<radio class="radio  ml-20" value="2"></radio>
+				</label>			
+			</radio-group>
+			
+
+			<view bindtap="toPage" data-url="/pages/cashOut/cashList/cashList" class="flex flex-row flex-aic flex-jcb "
+				style="height:96rpx;border-bottom:1rpx #eee solid;">
+				<text class="col212429 fs-32 fwb">提现记录</text>
+				<image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx"></image>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="footer-vi boxsh" wx:if="{{accountWay == 1}}">
+	<button class="bt bgact" bindtap="cashOutFun1">
+		<text class="fs-32 colfff">确认提现</text>
+	</button>
+</view>
+<view class="footer-vi boxsh" wx:elif="{{accountWay == 2}}">
+	<button class="bt bgact" bindtap="cashOutFun">
+		<text class="fs-32 colfff">确认提现</text>
+	</button>
+</view>
+
+
+<c-hs-dialog show="{{isShow}}" class="noft nohd" bindclose="closeFun">
+	<view slot="desc" class="hsd-bd">
+		<view class="hd-vi">
+			<text class="fs-36 col212429 fwb">选择到账银行卡</text>
+			<view class="close" bindtap="closeFun">
+				<c-icon icon="close2" color="#a7a8ac" size="{{24}}"></c-icon>
+			</view>
+		</view>
+		<view class="bank-vi">
+			<radio-group bindchange="radioChange">
+				<label class="item-vi" wx:for="{{banklist}}" wx:key="bankCode">
+					<view class="flex flex-row flex-aic">
+						<image src="/resource/image/bank-{{item.bankCode}}.png" mode="widthFix"></image>
+						<view class="flex flex-col flex-jcc">
+							<text class="fs-32">{{item.bankName}}({{utils.toSubstr(item.bankNumber,item.bankNumber.length-4)}})</text>
+							<text class="col9d9da6 fs-28">储蓄卡</text>
+						</view>
+					</view>
+					<radio class="radio" value="{{item.id}}" checked="{{cashOut.bankNumber==item.bankNumber}}" />
+				</label>
+			</radio-group>
+		</view>
+	</view>
+</c-hs-dialog>
+
+<c-dialog show="{{isOut}}" class="noft nohd" bindclose="closeFun">
+	<view class="flex flex-col flex-aic">
+		<text class="col212429 fs-36 fwb mt-60">请输入手机验证码</text>
+		<view class="mt-60">
+			<text class="col212429 fs-32">余额提现</text>
+			<view>
+				<text class="fs-42 col212429 mr-8 lh100">￥</text>
+				<text class="flex1 fs-82 col212429 " style="min-height:72rpx">{{amount||0}}</text>
+			</view>
+		</view>
+		<view class="flex flex-col mw0-10 flex-ais">
+			<view class="flex flex-col mw100 blt blb flex-jcc" style="height:140rpx;">
+				<view class="flex flex-row flex-aic flex-jcb">
+					<text class="fs-24 col9d9da6">可提现余额</text>
+					<text class="fs-24 col212429">￥{{data.canWithdrawCommission||0}}</text>
+				</view>
+				<view class="flex flex-row flex-aic flex-jcb mt-20">
+					<text class="fs-24 col9d9da6">待发余额</text>
+					<text class="fs-24 col212429">￥{{data.freezeCommission||0}}</text>
+				</view>
+			</view>
+			<view class="mt-50">
+				<text class="fs-28 col212429 ">验证码</text>
+				<!-- <text class="fs-22 col212429" wx:if="{{accountWay == 1}}">(发送至尾号{{utils.toSubstr(userInfo.phonenumber,userInfo.phonenumber.length-4)}})</text> -->
+				<text class="fs-22 col212429">(发送至尾号{{utils.toSubstr(bankCard.phoneNumber,bankCard.phoneNumber.length-4)}})</text>
+			</view>
+			<view class="flex flex-row flex-aic mw100 input-vi">
+				<input class="fs-24 col212429 flex1 tas" bindinput="inputFun" data-idx="2" placeholder="请输入验证码" placeholder-class="colc8c8cc fs-24"></input>
+				<view class="code-vi">
+					<text bindtap="codeTap" class="col0155fe fs-22" wx:if="{{codeCount>60}}">获取验证码</text>
+					<text class="colc8c8cc fs-22 wsn" wx:else>重新发送({{codeCount}}s）</text>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgact bt" style="width:180rpx !important;" bindtap="submintFun">
+				<text class="fs-24 colfff">确认</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+<c-dialog show="{{isShowtext}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">提现规则</text>
+		<view class="mt-40 mb-2  fs-28 col212429">
+			订单成交后，7个工作日方可提现。
+		</view>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindCodeFun">
+				<text class="fs-24 colfff">我知道了</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>

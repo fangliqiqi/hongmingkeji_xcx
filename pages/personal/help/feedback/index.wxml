@@ -1,0 +1,18 @@
+<!--pages/personal/help/feedback/index.wxml-->
+<view class="page">
+  <view class="feedback-vi flex flex-col flex-aic">
+    <view class="mw0-30 mt-60">
+      <view class="flex flex-row ml-10">
+        <text class="col212429 fs-32">意见描述</text>
+        <text class="ml-8 cole15352">*</text>
+      </view>
+      <view class="flex flex-col ">
+        <textarea class="" placeholder="请填写10字以上的问题描述，以便我们更好地帮助您解决问题(10-500)" maxlength="500" bindinput="inputfun"> 
+
+        </textarea>
+        <text>{{count||0}}/500</text>
+      </view>
+    </view>
+  </view>
+
+</view>

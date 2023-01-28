@@ -1,0 +1,40 @@
+/* pages/wxCode/index.wxss */
+page{
+  background: #f7f8fa;
+}
+.code-vi{
+  width: calc(100% - 104rpx);
+  position: relative;
+  margin-top: 96rpx;
+  min-height: 748rpx;
+}
+.lined{
+  border-top: 1rpx #eee dashed;
+  width: 100%;
+  height: 1rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 570rpx;
+}
+.dl{
+ background:#f7f8fa;
+ height: 60rpx;
+ width: 60rpx;
+ position: absolute;
+ left: -30rpx;
+ top: 540rpx;
+ border-radius: 50%;
+}
+.dr{
+  background:#f7f8fa;
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  right:  -30rpx;
+  top: 540rpx;
+  border-radius: 50%;
+}
+.code{
+  width: 430rpx;
+  height: 430rpx;
+}

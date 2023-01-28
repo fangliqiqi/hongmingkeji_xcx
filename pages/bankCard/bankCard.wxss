@@ -1,0 +1,56 @@
+/* pages/bankCard/bankCard.wxss */
+@import "../commission/commission.wxss";
+.sv-vi{
+  left: 0;
+  background: transparent;
+}
+.sv-vi .sv{
+  height: calc(100% - 132rpx);
+  margin-top: 0rpx;
+}
+.sv-item{
+  border: 0;
+  width: 100%;
+  margin:42rpx 0 0 0;
+  height: 228rpx;
+  position: relative;
+}
+.sv-item:first-child{
+  margin-top: 0;
+}
+.sv-item>view{
+  height: auto !important;
+  min-height: auto !important;
+}
+.sv-item>image{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 143rpx;
+  height: 143rpx;
+}
+.sv-item>view image {
+  width: 72rpx;
+  height: 72rpx;
+}
+.sv-item>view:nth-child(2){
+  border: 0;
+  justify-content: flex-start;
+
+}
+.sv-item>view:nth-child(2)>view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 21rpx;
+  margin-right: 21rpx;
+}
+.sv-item>view label{
+  display: inline-block;
+  width: 14rpx;
+  background: #212429;
+  height: 14rpx;
+  margin-left: 4rpx;
+  margin-right: 4rpx;
+  border-radius: 50%;
+}

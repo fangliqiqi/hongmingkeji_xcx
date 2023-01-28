@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText":"分销代理人订单详情"
+}

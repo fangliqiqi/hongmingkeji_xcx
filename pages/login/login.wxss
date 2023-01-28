@@ -1,0 +1,33 @@
+/* pages/login/login.wxss */
+page{
+  background: #f7f8fa;
+}
+.login-vi{
+  position: fixed;
+  top: 50rpx;
+  background: white;
+  height: calc(86% - 50rpx);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bt{
+  width: 100% !important;
+  height: 90rpx;
+}
+.code{
+  height: 72rpx;
+  line-height: 72rpx;
+  border-bottom: 2rpx #eeeeee solid;
+  box-sizing: border-box;
+  width: 150rpx;
+  text-align: right;
+}
+input{
+  height: 72rpx;
+  border-bottom: 2rpx #eeeeee solid;
+  box-sizing: border-box;
+  color: #5e5f66;
+}

@@ -1,0 +1,77 @@
+<!--pages/cashOut/cashSuccess/cashSuccess.wxml-->
+<view class="page">
+  <view class="list_vi mw0-30">
+    <view class="list-item af">
+      <view>
+        <view class="li"></view>
+        <view class="pot ">
+        </view>
+        <view class="li"></view>
+      </view>
+      <view>
+        <text >发起提现申请</text>
+        <text >2020-08-31</text>
+      </view>
+    </view>
+    <view class="list-item {{data.status==0?'cur':'af'}}">
+      <view>
+        <view class="li"></view>
+        <view class="pot">
+          <image class="icon" src="/resource/image/icon-39.png" mode="widthFix"></image>
+        </view>
+        <view class="li"></view>
+      </view>
+      <view>
+        <text >银行处理中</text>
+        <text >预计到账时间72小时</text>
+      </view>
+    </view>
+    <view wx:if="{{data.status==20}}" class="list-item {{data.status==20?'cur':''}}">
+      <view>
+        <view class="li"></view>
+        <view class="pot">
+          <image class="icon" src="/resource/image/error.png" mode="widthFix"></image>
+        </view>
+        <view class="li"></view>
+      </view>
+      <view>
+        <text >到账失败</text>
+      </view>
+    </view>
+    <view  wx:else class="list-item {{data.status==10?'cur':''}}">
+      <view>
+        <view class="li"></view>
+        <view class="pot">
+          <image class="icon" src="/resource/image/ok.png" mode="widthFix"></image>
+        </view>
+        <view class="li"></view>
+      </view>
+      <view>
+        <text >到账成功</text>
+      </view>
+    </view>
+  </view>
+  <view class="blt mw0-40 flex flex-col flex-jca mt-20">
+    <view class="flex-row flex flex-jcb flex-aic mt-30">
+      <text class="col9d9da6 fs-28">提现金额</text>
+      <text class="col212429 fs-28">￥{{data.draw_reality_total}}</text>
+    </view>
+    <view class="flex-row flex flex-jcb flex-aic mt-20 ">
+      <text class="col9d9da6 fs-28">到账银行卡</text>
+      <view class="flex-row flex flex-jce flex-aic">
+        <image src="/resource/image/bank-{{data.bank_code}}.png" mode="widthFix" style="width:28rpx;"></image>
+        <text class="fs-28 col212429 ml-12">{{data.bank_name}}</text>
+        <text class="fs-28 col212429 ml-12">尾号{{utils.toSubstr(data.bank_number,data.bank_number.length-4)}}</text>
+      </view>
+    </view>
+    <view class="flex-row flex flex-jcb flex-aic mt-20">
+      <text class="col9d9da6 fs-28">订单号</text>
+      <text class="col212429 fs-28">{{data.draw_order}}</text>
+    </view>
+  </view>
+</view>
+<view class="footer-vi boxsh">
+	<button class="bt bgact" bindtap="cashOutFun">
+		<text class="fs-32 colfff">完成</text>
+	</button>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/coupon/discountDetail/discountDetail.wxml-->
+<view class="page">
+  <view class="mw0-20">
+    <view class="card">  
+      <view class="fs-30">莫的问题</view>
+      <view class="flex flex-jcc flex-aic fs-30 mb-20">
+        <image src="/resource/image/wallet01.png" class="icon"></image>
+        <text>{{discountInfo.oldPrice}}元</text>
+        <text class="ml-10">{{discountInfo.businessName}}</text>
+      </view>
+      <view class="card_bot">
+        <view class="code">
+          <image src="{{scanCode}}" mode="aspectFit" class="code" ></image>
+        </view>
+        <view class="flex flex-aic mt-20 fs-28">
+          <text class="flex_left">券码</text>
+          <text>{{code}}</text>
+        </view>
+        <view class="flex flex-aic mt-20 fs-28">
+          <text class="flex_left">下单时间</text>
+          <text>{{discountInfo.startTime}}</text>
+        </view>
+        <view class="flex flex-aic mt-20 fs-28">
+          <text class="flex_left">有限期至</text>
+          <text>{{discountInfo.endTime}}</text>
+        </view>
+        <view class="flex flex-aic flex-jcb mt-20 fs-28">
+          <view class="flex1 flex">
+            <text class="flex_left">数量</text>
+            <text>{{discountInfo.timesNumber-discountInfo.usedNumber}}</text>
+          </view>
+          <view class="cole15352">待使用</view>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="fs-30">使用规则</view>
+      <!-- 非代金券详情 -->
+      <view class="fs-26 mt-10 rules" wx:if="{{discountInfo.businessType==2}}">
+        <view class="flex ">
+          <text class="rules_num">1、</text>
+          <text>此券可提供代记账服务三个月，服务到期需另外付费才可继续代理记账</text>
+        </view>
+        <view class="flex mt-6">
+          <text  class="rules_num">2、</text>
+          <text>需电话联系客服或到公司核销此券才可开始服务</text>
+        </view>
+      </view>
+      <view class="fs-26 mt-10 rules" wx:if="{{discountInfo.businessType==1}}">
+        <view class="flex ">
+          <text class="rules_num">1、</text>
+          <text>{{discountInfo.businessCouponEquities}}</text>
+        </view>
+        <view class="flex mt-6">
+          <text  class="rules_num">2、</text>
+          <text>需电话联系客服或到公司预购套餐才可使用</text>
+        </view>
+      </view>
+      <view class=" flex  flex-jce flex-aic mt-20">
+        <image src="../../../resource/image/phone.png" style="width:40rpx;height:40rpx"></image>
+        <text class="btn ml-20 bgact bl fs-28" bindtap="toPhone">联系客服</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer-vi" >
+    <view class="footer" >
+      <button class="bt bgact btno" bindtap="cancel"  wx:if="{{roleKey&&discountInfo.usedNumber<discountInfo.timesNumber}}">
+        <text class="fs-32 colfff" >核销</text>
+      </button>
+      <button class="bt bgbabac1 btno" wx:if="{{discountInfo.usedNumber==discountInfo.timesNumber}}">
+        <text class="fs-32 colfff">次数已用完</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>
+

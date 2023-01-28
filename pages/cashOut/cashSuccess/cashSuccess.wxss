@@ -1,0 +1,101 @@
+/* pages/cashOut/cashSuccess/cashSuccess.wxss */
+.footer-vi{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 132rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.footer-vi .bt{
+  height: 90rpx;
+  width: calc(100% - 140rpx) !important;
+}
+.list_vi{
+  display: flex;
+  flex-direction: column;
+}
+.list_vi .list-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 174rpx;
+  margin-top: 4rpx;
+}
+.list-item>view:first-child{
+  width: 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-right: 30rpx;
+}
+.list-item .pot{
+  width: 22rpx;
+  height: 22rpx;
+  max-width: 22rpx;
+  max-height: 22rpx;
+  min-height: 22rpx;
+  border-radius: 50%;
+  background: #e0e0e0 ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list-item.af .pot{
+  background: linear-gradient(90deg,#005dc9,#002c99);
+}
+.list-item .li{
+  flex: 1;
+  width: 0;
+  border: 2rpx #eee dashed;
+}
+.list-item.af .li,.list-item.cur .li:first-child{
+  border: 2rpx #0155fe dashed;
+}
+.list-item.cur .pot{
+  width: 70rpx;
+  height: 70rpx;
+  max-width: 70rpx;
+  max-height: 70rpx;
+}
+.list_vi .list-item:first-child .li:first-child,
+.list_vi .list-item:last-child .li:last-child
+{
+  border-color: transparent !important;
+}
+.list-item>view:nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+.list-item>view:nth-child(2)>text:first-child{
+  font-size: 32rpx;
+  color: #9d9da6;
+}
+.list-item>view:nth-child(2)>text:nth-child(2){
+  font-size: 28rpx;
+  color: #9d9da6;
+}
+.list-item.cur>view:nth-child(2)>text:nth-child(2),
+.list-item.af>view:nth-child(2)>text:nth-child(2)
+{
+  color: #5e5f66;
+}
+.list-item.cur>view:nth-child(2)>text:first-child{
+  color: #212429;
+}
+.list-item.af>view:nth-child(2)>text:first-child{
+  color: #5e5f66;
+}
+.list-item .icon{
+  display: none;
+}
+.list-item.cur .icon{
+  display: inline-block;
+}

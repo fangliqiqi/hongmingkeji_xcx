@@ -1,0 +1,107 @@
+<!--pages/personal/setting/setting.wxml-->
+<c-contact></c-contact>
+<wxs src="../../../utils/utils.wxs" module="utils" />
+<view class="page">
+	<view class="bg-vi">
+		<view class="bgtop"></view>
+		<view class="bgfff mw0-40 setting-vi">
+			<view class="header-vi boxsh">
+				<view class="header" catchtap="takephoto">
+					<image wx:if="{{userInfo.avatar}}" class="head" src="{{(utils.startWith(userInfo.avatar,'http')?'':url)+userInfo.avatar}}" mode="aspectFit"></image>
+					<open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+				</view>
+				<image src="/resource/image/icon-42.png" class="edit" catchtap="takephoto" wx:if="{{userInfo&&userInfo.userId}}"></image>
+				<text class="fs-36 col212429 fwb name">{{userInfo.nickName||''}}</text>
+				<view class="info flex flex-row flex-jca mw100 mt-50">
+					<view class="flex flex-col ml-16">
+						<text class="fs-28 col9d9da6">邀请码</text>
+						<text class="fs-28 col212429">{{userInfo.userId}}</text>
+					</view>
+					<label></label>
+					<view class="flex flex-col">
+						<text class="fs-28 col9d9da6">性别</text>
+						<text class="fs-28 col212429">{{userInfo.sex==1?'女':userInfo.sex==0?'男':'未知'}}</text>
+					</view>
+					<label></label>
+					<view class="flex flex-col mr-16">
+						<text class="fs-28 col9d9da6">等级</text>
+						<view class="fs-28 col212429 flex flex-row flex-aic">
+							<image wx:if="{{userInfo.vip&&userInfo.vip>0}}" class="ml-20" src="/resource/image/vip-{{userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+							<text wx:else class="fs-28 col212429">普通</text>
+							<text class="fs-28 col212429">用户</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="menu-vi mt-50">
+				<view class="menu-item">
+					<text class="col5e5f66 fs-28">常驻区域</text>
+					<picker mode="region" bindchange="bindRegionChange" value="{{region}}" disabled="{{!userInfo.userId}}">
+						<view class="picker col212429 fs-28">
+							<text wx:if="{{region[0]}}">{{region[0]}}-{{region[1]}}-{{region[2]}}</text>
+							<text wx:else class="colc8c8cc">请选择常驻地址</text>
+							<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+						</view>
+					</picker>
+				</view>
+				
+				<view class="menu-item blt" bindtap="toPage" data-url="/pages/personal/help/help">
+					<text class="col5e5f66 fs-28">帮助中心</text>
+					<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+				</view>
+				<view class="menu-item blt" bindtap="toPage" data-url="/pages/personal/about/about">
+					<text class="col5e5f66 fs-28">关于莫的问题</text>
+					<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+				</view>
+				<!-- <view class="menu-item blt" bindtap="ptotap" data-pid="{{userInfo.pid||''}}">
+					<text class="col5e5f66 fs-28">邀请人</text>
+					<view>
+						<text class="col212429 fs-28">{{userInfo.pName||''}}</text>
+						<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+					</view>
+				</view> -->
+			</view>
+		</view>
+		<view class="line-20"></view>
+		<view wx:if="{{userInfo&&userInfo.userId}}" class="mw100 bgfff flex flex-row flex-aic flex-jcc " style="height:90rpx" bindtap="logoutTap">
+			<text class="fs-32 col212429">解除微信绑定</text>
+		</view>
+		<!-- <view wx:if="{{userInfo&&!userInfo.userId}}" class="mw100 bgfff flex flex-row flex-aic flex-jcc " style="height:90rpx" bindtap="toPage">
+			<text class="fs-32 col212429">登录</text>
+		</view> -->
+			
+		<!-- <button wx:if="{{userInfo&&!userInfo.userId}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="mw100 bgfff flex flex-row flex-aic flex-jcc " style="height:90rpx">
+			<text class="fs-32 col212429 fwn">登录</text>
+		</button> -->
+	</view>
+
+</view>
+
+<c-dialog show="{{isSuccess&&userInfo&&userInfo.userId}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">确认接触当前微信绑定？</text>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="logoutFun">
+				<text class="fs-24 colfff">确认</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+<c-dialog show="{{showFlag&&userInfo&&userInfo.userId}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">邀请码绑定</text>
+		<input class="fs-28 col212429 mt-32 in-cl" model:value="{{pid}}" placeholder="请输入邀请码"/>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindCodeFun">
+				<text class="fs-24 colfff">绑定</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>

@@ -1,0 +1,41 @@
+	<!-- 提交成功 -->
+<view class="z1000 bgfff page_vi flex flex-aic flex-col" wx:if="{{isError}}">
+	<view class="mw0-30 flex flex-col flex-aic flex-jcc mt033">
+		<view class="mw0-10 flex flex-col flex-aic mb-60">
+			<view class="bgd15d57 br050 flex flex-col flex-aic flex-jcc" style="width:108rpx;height:108rpx;">
+				<c-icon icon="close" color="#fff" size="{{36}}" type="field"></c-icon>
+			</view>
+			<text class="fs-36 mt-45 col1c1f23">添加失败</text>
+			<view class="col5e5f66 flex flex-col flex-aic">
+				<text class="fs-26 mt-24">请核对银行卡信息或者该卡您已添加过</text>
+			</view>
+			<button class="bt bgact mt-80 " open-type="contact">
+				<text class="colfff fs-32">联络客服</text>
+			</button>
+		</view>
+	</view>
+</view>
+
+	<!-- 提交成功 -->
+	<view class="z1000 bgfff page_vi flex flex-aic flex-col" wx:if="{{isRError}}">
+	<view class="mw0-30 flex flex-col flex-aic flex-jcc mt033">
+		<view class="mw0-10 flex flex-col flex-aic mb-60">
+			<view class="bgd15d57 br050 flex flex-col flex-aic flex-jcc" style="width:108rpx;height:108rpx;">
+				<c-icon icon="close" color="#fff" size="{{36}}" type="field"></c-icon>
+			</view>
+			<text class="fs-36 mt-45 col1c1f23">推荐失败</text>
+			<view class="col5e5f66 flex flex-col flex-aic">
+				<text class="fs-26 mt-24">被推荐人信息已经存在</text>
+			</view>
+			
+			<button class="bt bgact mt-80 " bindtap="closeFun">
+				<text class="colfff fs-32">返回分享</text>
+			</button>
+			<button class="text-bt mt-10 bgtr flex flex-aic flex-jcc flex-col" open-type="contact" bindcontact="closeFun" >
+				<view style="border-bottom:1rpx #0155fe solid;">
+					<text class="col0155fe fs-24">联络客服</text>
+				</view>
+			</button>
+		</view>
+	</view>
+</view>

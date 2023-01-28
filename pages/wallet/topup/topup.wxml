@@ -1,0 +1,37 @@
+<!--pages/wallet/recharge/recharge.wxml-->
+<view class="page">
+  <view class="item-vi flex flex-col ">
+    <text class="fwb fs-32 col20242a mt-60">充值金额 (元)</text>
+    <view class="flex flex-row flex-aib" style="height:100rpx;" >
+      <text class="fs-42 fwb col212429">￥</text>
+      <input class="fs-82 col212429 flex1 ml-16"  
+        style="height:100rpx;" value="{{totalAmount}}" bindinput="inputfun" maxlength="10" type="digit" >
+      </input>
+    </view>
+    <view class="blt flex flex-row flex-aic flex-jcb mb-50" style="padding-top:24rpx;">
+      <text class="fs-24 col5e5f67">余额<text class="fs-24 cole15352"> {{accountBalance || 0}} </text>元</text>
+    </view>
+  </view>
+  <!-- <view class="line-20"></view>
+  <view class="item-vi">
+    <view class="flex flex-col">
+			<view class="flex flex-row flex-aic">
+				<icon type="info" size="18"></icon>
+				<text class="fs-24 col212429 ml-10">充值小建议</text>
+			</view>
+			<view class="flex flex-row">
+				<text class="fs-22 col5e5f66">1.</text>
+				<text class="fs-22 col5e5f66 ml-8">请核对分销订单填写无误~</text>
+			</view>
+		</view>
+  </view> -->
+
+  <view class="footer-vi">
+    <view class="footer">
+      <button class="bgact bt" bindtap="payFun">
+        <text class="colfff fs-32">确认</text>
+      </button>
+    </view>
+  </view>
+</view>
+

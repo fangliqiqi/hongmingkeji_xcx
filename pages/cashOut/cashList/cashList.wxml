@@ -1,0 +1,40 @@
+<!--pages/cashOut/cashList/cashList.wxml-->
+<wxs src="../../../utils/utils.wxs" module="utils" />
+<view class="page">
+  <view class="flex flex-row flex-jcb flex-aic top-vi">
+    <view class="flex flex-row flex-aic ml-40">
+      <view></view>
+      <view class="flex flex-jcc flex-col">
+        <text class="fs-28 col9d9da6">2020年</text>
+        <text class="fs-28 col9d9da6">共收入31000元</text>
+      </view>
+    </view>
+    <picker mode="date" fields="month" class="mr-40">
+      <view class="picker flex-row flex flex-aic bgfff">
+        <text class="fs-24 col59">2020年8月</text>
+        <image src="/resource/image/icon-44.png" mode="widthFix" style="width:15rpx;"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="cash-vi">
+    <view  wx:for="{{conlist}}" wx:key="*this" class="cash-item {{item.status==10?'on':''}}" bindtap="toPage" data-url="/pages/cashOut/cashSuccess/cashSuccess?drawOrder=" data-item="{{item}}">
+      <view>
+        <text>申请提现</text>
+        <text>{{item.createTime}}</text>
+      </view>
+      <view>
+        <text>￥{{utils.toFloat(item.drawApplyTotal)}}</text>
+        <text>{{item.status==10?'已到账':item.status==20?'提现失败':'未到账'}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="flex flex-aic flex-row last-vi flex-jcc">
+    <view wx:if="{{loading}}" class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+    </view>
+    <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+  </view>
+</view>

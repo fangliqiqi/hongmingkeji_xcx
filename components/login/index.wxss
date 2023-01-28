@@ -1,0 +1,74 @@
+/* components/login/index.wxss */
+.login-vi{
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1999;
+}
+.bg000-8{
+  background: rgba(0, 0, 0, 0.8);
+}
+.login-vi .tip{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: #fff;
+  right: 20rpx;
+  top: 20rpx;
+  height: 140rpx;
+  width: 450rpx;
+  border-radius: 12rpx;
+  justify-content:center;
+
+}
+.tip text{
+  font-size: 24rpx;
+}
+.tip>text{
+  margin-left: 36rpx;
+}
+.col0155fe{
+  color: #0155fe;
+}
+.ari {
+  position:absolute;
+  top: 0rpx;
+  width:40rpx;
+  height:40rpx;
+  right:110rpx;
+  background:#fff;
+  /* -webkit-transform:rotate(45deg) skew(60deg,60deg); */
+  transform:rotateZ(60deg) skewX(30deg);
+  border-radius:10rpx;
+  z-index: -1;
+  }
+
+  .login-vi.bt{
+    background: transparent !important;
+  }
+  .top-vi{
+    position: absolute;
+    right: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .top-vi>view:first-child{
+    margin-right: 120rpx;
+  }
+  .top-vi>view:nth-child(2){
+    margin-top: 200rpx;
+    margin-right: 20rpx;
+  }
+  .top-vi .update-bt{
+    position: absolute;
+    right: 10rpx;
+    height: 100rpx;
+    width: 240rpx;
+    /* border:1px #0155fe solid; */
+    bottom: 10rpx;
+    background-color: transparent !important;
+  }

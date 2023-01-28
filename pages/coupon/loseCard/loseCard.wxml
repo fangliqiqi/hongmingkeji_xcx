@@ -1,0 +1,28 @@
+<!--pages/coupon/loseCard/loseCard.wxml-->
+<view class="page">
+  <view class="mw0-30 mr-a ml-a loseCard" wx:if="{{loseCard.length>0}}">
+    <view class="card_bg  mb-24 colfff" wx:for="{{loseCard}}" wx:key='id'>
+      <image src="{{imgUrl+item.url}}" class="card_img"></image>
+      <view class="card_left">
+        <view class="fs-48 fwb">{{item.title}}</view>
+        <view class="fs-24" wx:if="{{item.canActivation==1}}">注：同类卡尽可激活一次</view>
+        <view class="fs-24" wx:if="{{item.canActivation!=1}}">到期时间：{{item.actEndTime}}</view>
+      </view>
+      <view class="card_right fwb">
+        <view class=" fs-26 btn" wx:if="{{item.canActivation==1}}">激活</view>
+        <view class="fs-26 btn opa6 " wx:if="{{item.canActivation==2}}">已激活</view>
+        <view class="fs-26 btn opa6" wx:if="{{item.canActivation==3}}">不可使用</view> 
+      </view>
+    </view>
+  </view>
+  <view class="no mt-60 col5e5f66 fs-26"  wx:if="{{loseCard.length==0}}">
+    暂时没有已失效的卡~
+  </view>
+  <view class="footer-vi" wx:if="{{loseCard.length>0}}">
+    <view class="footer">
+      <button class="clear_btn" bindtap="clear">
+        <text class="fs-32 col5e5f66" bindtap="cancelOrder">清空</text>
+      </button> 
+    </view>
+  </view>
+</view>

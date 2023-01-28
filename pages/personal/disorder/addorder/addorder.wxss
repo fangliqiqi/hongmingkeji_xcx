@@ -1,0 +1,8 @@
+/* pages/personal/disorder/addorder/addorder.wxss */
+@import "/pages/share/share.wxss";
+textarea{
+  height:60px;
+}
+.tip-vi{
+  margin-bottom: 36rpx;
+}

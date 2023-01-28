@@ -1,0 +1,70 @@
+/* pages/agent/agent.wxss */
+@import "../../recommend/recommend.wxss";
+/* @import "/pages/partner/cost/index.wxss"; */
+page{
+  background: #f7f8fa;
+}
+.sv-vi{
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: calc(100% - env(safe-area-inset-bottom));
+}
+.sv-vi .tabs-vi{
+  border:0;
+  background: #fff;
+  width: 100%;
+}
+.sv-vi .sv{
+  margin-top: 20rpx;
+  height: calc(100% - 152rpx);
+}
+.sv-vi .svt{
+  margin-top: 92rpx;
+  height: calc(100% - 224rpx);
+}
+.sv-item{
+  background: #fff;
+  width: calc(100% - 80rpx);
+  margin: 20rpx 0;
+}
+.weui-loadmore__tips {
+  background-color: #f7f8fa !important;
+}
+.sv-item>view:nth-child(2) text{
+  margin:0;
+}
+.sv-item>view:first-child>view {
+  margin: 8rpx 36rpx;
+}
+
+.tab-vi{
+  top: 112rpx;
+}
+.tab-vi .tabs{
+  border: 0;
+}
+.ta-vi {
+  background: #f7f8fa;
+  border-radius: 5rpx;
+}
+.appeal-item{
+  background: #fff;
+  width: calc(100% - 80rpx);
+  margin: 20rpx 0 0 0;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.appeal-item image{
+  width:50rpx;
+  height:50rpx;
+}
+.appeal-ft{
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top:1rpx solid #e5e5e5;
+}
+
+
+
+

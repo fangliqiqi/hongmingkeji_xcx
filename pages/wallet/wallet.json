@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon",
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText":"我的钱包",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#242c45"
+}

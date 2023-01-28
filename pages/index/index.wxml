@@ -1,0 +1,700 @@
+<!--index.wxml-->
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+	<view class="sw-vi flex flex-col flex-aic flex-jcc">
+		<view class="bgtop">
+		</view>
+		<swiper class="sw" indicator-dots indicator-color="#fff" indicator-active-color="rgba(255, 255, 255, .3)" autoplay
+			interval="4000" circular>
+			<swiper-item class="flex flex-col flex-aic flex-jcc" wx:for="{{bannerList}}" wx:key="*this"
+				wx:if="{{item.state==1}}">
+				<view class="sw-item br-16 mw0-30" bindtap="toPage" data-url="{{item.path}}" data-idx="99"
+					data-web="{{item.isOut}}">
+					<image src="{{imgUrl+item.imgSrc}}" mode="widthFix"></image>
+				</view>
+			</swiper-item>
+		</swiper>
+		<view class="tabs-vi flex flex-row flex-aic flex-jca" wx:if="{{false}}">
+			<view class="flex flex-col flex-aic flex-jca" bindtap="toPage" data-idx="1">
+				<image src="/resource/image/icon-01.png" mode="aspectFit"></image>
+				<text class="fs-24 col212429">接单教程</text>
+			</view>
+			<view class="flex flex-col flex-aic flex-jca">
+				<image src="/resource/image/icon-02.png" mode="aspectFit"></image>
+				<text class="fs-24 col212429">发布教程</text>
+			</view>
+			<view class="flex flex-col flex-aic flex-jca">
+				<image src="/resource/image/icon-03.png" mode="aspectFit"></image>
+				<text class="fs-24 col212429">佣金教程</text>
+			</view>
+			<view class="flex flex-col flex-aic flex-jca" bindtap="toPage" data-idx="4">
+				<image src="/resource/image/icon-04.png" mode="aspectFit"></image>
+				<text class="fs-24 col212429">榜单</text>
+			</view>
+		</view>
+	</view>
+	<view class="star-vi mt-20" wx:if="{{false}}">
+		<view class="flex flex-row flex-aic flex-jcb title-vi">
+			<view class="flex flex-row flex-aic ml-30">
+				<image src="/resource/image/icon-05.png" mode="aspectFit"></image>
+				<text class="fs-36 col212429 ml-20 fwb">会计之星</text>
+			</view>
+			<view class="flex flex-row flex-aic mr-30">
+				<text class="fs-24 col9595a5 mr-17">查看更多</text>
+				<image src="/resource/image/icon-09.png" mode="aspectFit"></image>
+			</view>
+		</view>
+		<view class="sv-vi">
+			<scroll-view class="sv" scroll-x="true">
+				<view class="sv-item flex-inline flex-col">
+					<view class="state act">
+						<text>已认证</text>
+					</view>
+					<view class="ml-20 star-info">
+						<view class="flex flex-row mt-36 flex-aic">
+							<image src="{{userInfo.avatarUrl}}" class="header ml-8" mode="aspectFill"></image>
+							<view class="flex flex-col ml-12">
+								<text class="fwb fs-30 col212429">龚家贤</text>
+								<text class="fs-24 mt-8 col5e5f66">初级会计师</text>
+							</view>
+						</view>
+						<view class="flex flex-row">
+							<view class="flex1 flex flex-col ml-8">
+								<text class="fs-24 col2253f4">42</text>
+								<text class="fs-22 col9595a5 mt-8">服务客户</text>
+							</view>
+							<view class="flex1 flex flex-col">
+								<text class="fs-24 col2253f4">111</text>
+								<text class="fs-22 col9595a5 mt-8">服务好评</text>
+							</view>
+						</view>
+						<view class="flex flex-row flex-aic mt-20">
+							<text class="fs-22 col9595a5 ml-8">技能评价</text>
+							<view class="flex flex-row flex-aic ml-20">
+								<image src="/resource/image/icon-1{{item}}.png" wx:for="{{[1,1,1,1,0]}}" wx:key="*this"
+									class="star mr-6" mode="aspectFit"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="sv-item flex-inline flex-col">
+					<view class="state">
+						<text>未认证</text>
+					</view>
+					<view class="ml-20 star-info">
+						<view class="flex flex-row mt-36 flex-aic">
+							<image src="{{userInfo.avatarUrl}}" class="header ml-8" mode="aspectFill"></image>
+							<view class="flex flex-col ml-12">
+								<text class="fwb fs-30 col212429">曹彩</text>
+								<text class="fs-24 mt-8 col5e5f66">初级会计师</text>
+							</view>
+						</view>
+						<view class="flex flex-row">
+							<view class="flex1 flex flex-col ml-8">
+								<text class="fs-24 col2253f4">42</text>
+								<text class="fs-22 col9595a5 mt-8">服务客户</text>
+							</view>
+							<view class="flex1 flex flex-col">
+								<text class="fs-24 col2253f4">111</text>
+								<text class="fs-22 col9595a5 mt-8">服务好评</text>
+							</view>
+						</view>
+						<view class="flex flex-row flex-aic mt-20">
+							<text class="fs-22 col9595a5 ml-8">技能评价</text>
+							<view class="flex flex-row flex-aic ml-20">
+								<image src="/resource/image/icon-1{{item}}.png" wx:for="{{[1,1,1,1,0]}}" wx:key="*this"
+									class="star mr-6" mode="aspectFit"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="sv-item flex-inline flex-col">
+					<view class="state">
+						<text>未认证</text>
+					</view>
+					<view class="ml-20 star-info">
+						<view class="flex flex-row mt-36 flex-aic">
+							<image src="{{userInfo.avatarUrl}}" class="header ml-8" mode="aspectFill"></image>
+							<view class="flex flex-col ml-12">
+								<text class="fwb fs-30 col212429">廖纯悦</text>
+								<text class="fs-24 mt-8 col5e5f66">初级会计师</text>
+							</view>
+						</view>
+						<view class="flex flex-row">
+							<view class="flex1 flex flex-col ml-8">
+								<text class="fs-24 col2253f4">42</text>
+								<text class="fs-22 col9595a5 mt-8">服务客户</text>
+							</view>
+							<view class="flex1 flex flex-col">
+								<text class="fs-24 col2253f4">111</text>
+								<text class="fs-22 col9595a5 mt-8">服务好评</text>
+							</view>
+						</view>
+						<view class="flex flex-row flex-aic mt-20">
+							<text class="fs-22 col9595a5 ml-8">技能评价</text>
+							<view class="flex flex-row flex-aic ml-20">
+								<image src="/resource/image/icon-1{{item}}.png" wx:for="{{[1,1,1,1,0]}}" wx:key="*this"
+									class="star mr-6" mode="aspectFit"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+	<view class="comm-vi mt-20 bgfff" wx:if="{{false}}">
+		<view class="flex flex-row flex-aic flex-jcb title-vi">
+			<view class="flex flex-row flex-aic ml-30">
+				<image src="/resource/image/icon-06.png" mode="aspectFit"></image>
+				<text class="fs-36 col212429 ml-20 mr-12 fwb">赚取佣金</text>
+				<image src="/resource/image/icon-15.png" mode="aspectFit" style="width:26rpx"></image>
+			</view>
+			<view class="flex flex-row flex-aic mr-30">
+				<text class="fs-24 col9595a5 mr-17">查看更多</text>
+				<image src="/resource/image/icon-09.png" mode="aspectFit"></image>
+			</view>
+		</view>
+		<view class="flex flex-col flex-aic">
+			<view class="comm-item mw0-30 boxsh">
+				<view class="ml-28 flex flex-col flex-ais w032">
+					<text class="fs-32 col212429 fwb">代账服务</text>
+					<view class="cold15d57 flex flex-row flex-aic mt-12">
+						<text class="fs-26">2400</text>
+						<text class="fs24">元</text>
+					</view>
+				</view>
+				<view class="flex1">
+					<view class="flex flex-row flex-aic">
+						<image src="/resource/image/icon-13.png" mode="heightFix"></image>
+						<text class="col9595a5 fs-22 ml-8">小规模纳税人企业</text>
+					</view>
+					<view class="flex flex-row flex-aic mt-12">
+						<image src="/resource/image/icon-08.png" mode="heightFix"></image>
+						<text class="col9595a5 fs-22 ml-8">服务周期<text class="cold15d57">1</text>年</text>
+					</view>
+				</view>
+				<view class="mr-28 flex flex-col flex-aic">
+					<view>
+						<text class="col5e5f56 fs-22">佣金</text>
+						<text class="fs-36 cold15d57 ml-8">20%</text>
+					</view>
+					<button class="bgact bt mt-12">
+						<text class="colfff fs-24">我要推荐</text>
+					</button>
+				</view>
+
+			</view>
+		</view>
+	</view>
+	<view class="order-vi mt-20 bgfff" wx:if="{{false}}">
+		<view class="flex flex-row flex-aic flex-jcb title-vi">
+			<view class="flex flex-row flex-aic ml-30">
+				<image src="/resource/image/icon-06.png" mode="aspectFit"></image>
+				<text class="fs-36 col212429 ml-20 ">我要接单</text>
+			</view>
+			<view class="flex flex-row flex-aic mr-30" bindtap="toPage" data-idx="7">
+				<text class="fs-24 col9595a5 mr-17">查看更多</text>
+				<image src="/resource/image/icon-09.png" mode="aspectFit"></image>
+			</view>
+		</view>
+		<view class="flex flex-col flex-aic">
+			<view class="order-item mw0-30 boxsh">
+				<view class="flex flex-row flex-aic flex-jcb">
+					<view class="ml-28 flex flex-row flex-aic">
+						<view class="hl"></view>
+						<text class="fwb fs-32 ml-20 col212429">代账服务</text>
+					</view>
+					<view class="mr-28 flex flex-row flex-aic">
+						<image src="/resource/image/icon-13.png" mode="heightFix"></image>
+						<text class="fs-22 col9595a5 ml-8">小规模纳税人企业</text>
+					</view>
+				</view>
+				<view class="order-info">
+					<view class="flex flex-row flex-aic">
+						<view class="w032 flex flex-col">
+							<view class="cold15d57">
+								<text class="fs-56 fwb">14</text>
+								<text class="fs-24 ml-6">周</text>
+							</view>
+							<text class="fs-24 col5e5f66">服务周期</text>
+						</view>
+						<view class="flex1 flex flex-col">
+							<text class="fs-30 fwb col212429 mt-32">安徽-合肥-包河</text>
+							<text class="fs-24 col5e5f66 mt-8">服务地点</text>
+						</view>
+						<view class="flex flex-row flex-jce">
+							<button class="bgact bt">
+								<text class="colfff fs-24">接单</text>
+							</button>
+							<!-- <button class="bgd15d57 bt">
+                <text class="colfff fs-24">服务中</text>
+              </button>
+							<button class="bgedeff5 bt">
+                <text class="col9595a5 fs-24">已对接</text>
+              </button>
+							<button class="bgf5f7fc bl bt">
+                <text class="col0155fe fs-24">已对接</text>
+              </button> -->
+						</view>
+					</view>
+					<view>
+						<view class="bgf7f8fa flex flex-row flex-aic" style="width:410rpx;height:56rpx;">
+							<image src="/resource/image/icon-07.png" mode="heightFix" class="ml-28"></image>
+							<text class="fs-22 col9595a5 ml-18">订单发布时间</text>
+							<text class="fs-22 col9595a5 ml-36">2020-08-20</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="flex flex-aic flex-row last-vi flex-jcc">
+
+				<view wx:if="{{loading}}" class="weui-loadmore">
+					<view class="weui-loading"></view>
+					<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+				</view>
+				<view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="bgfff serv-vi">
+		<view class="flex flex-row flex-aic flex-jcb title-vi psr">
+			<view class="flex flex-row flex-aic ml-30">
+				<image src="/resource/image/icon-22.png" mode="aspectFit"></image>
+				<text class="fs-36 col212429 ml-20 mr-12 fwb">我们的服务</text>
+			</view>
+			<view class="notice-vi" animation="{{animation}}">
+				<text hidden="{{!msgobj}}">{{msgobj.name}} 已提现佣金{{msgobj.money}}元！</text>
+			</view>
+		</view>
+		<view class="flex flex-col flex-aic">
+			<view wx:for="{{activeList}}" wx:key="*this" class="ad-item mw0-30 boxsh" wx:if="{{item.standUp==10}}"
+				bindtap="toPage" data-item="{{item}}" data-url="/pages/form/index?idx={{item.type}}" data-idx="{{item.type}}">
+				<view class="flex flex-row flex-jcb flex-aie">
+					<view class="colfff flex flex-aic flex-row pbg">
+						<text class="fs-22 fwb ml-24">原价</text><text class="fs-22 fwb"
+							wx:if="{{item.marketPriceUnit=='元'}}">￥</text><text
+							class="fs-36 fwb tdt {{item.marketPriceUnit=='元'?'mr-24':''}}">{{item.marketPrice}}</text><text
+							class="fs-22 fwb mr-24" wx:if="{{item.marketPriceUnit!='元'}}">{{item.marketPriceUnit}}</text>
+					</view>
+					<view class="flex flex-row flex-aic" wx:if="{{item.nextTitle}}" catchtap="showtoastfun"
+						data-msg="{{item}}">
+						<image src="/resource/image/icon-83.png" mode="widthFix" style="width:22rpx;"></image>
+						<text class="col9595a5 fs-22 ml-8 mr-16">什么是{{item.nextTitle}}</text>
+					</view>
+				</view>
+				<view class="flex flex-row flex-aic mr-30 mb-20">
+					<view class="flex1 ml-26 flex flex-col">
+						<view class="flex flex-row flex-aib">
+							<view class="col212429">
+								<text class="fs-32">现</text>
+								<text class="cold15d57 fs-64">{{item.activityPrice}}</text>
+								<text class="fs-32">{{item.activityPriceUnit}}</text>
+							</view>
+							<view class="flex flex-row flex-aic">
+								<text class="fwb fs-36 col212429 ml-26">{{item.nextTitle}}</text>
+								<text class="colc49259 fs-22 ml-12" wx:if="{{item.freeContent}}">({{item.freeContent}})</text>
+							</view>
+						</view>
+						<view class="flex flex-row">
+							<text class="fs-22 col9595a5">活动时间：{{item.actStartTime}} 至 {{item.actEndTime}}</text>
+						</view>
+					</view>
+					<button class="bgact bl bt mt-40">
+						<text class="colfff fs-20">立即购买</text>
+					</button>
+				</view>
+			</view>
+			<view class="ad-item mw0-30 boxsh" bindtap="toPage" data-item="2" data-url="/pages/form/index?idx=2"
+				wx:if="{{false}}">
+				<view class="flex flex-row flex-jcb flex-aie">
+					<view class="colfff flex flex-aib flex-row pbg">
+						<text class="fs-22 fwb ml-24">原价</text><text class="fs-36 fwb tdt">2000</text><text
+							class="fs-22 fwb mr-24">元/年</text>
+					</view>
+					<view class="flex flex-row flex-aic">
+						<image src="/resource/image/icon-83.png" mode="widthFix" style="width:22rpx;"></image>
+						<text class="col9595a5 fs-22 ml-8 mr-16">什么是零申报代账</text>
+					</view>
+				</view>
+				<view class="flex flex-row flex-aic mr-30 mb-20">
+					<view class="flex1 ml-26 flex flex-col">
+						<view class="flex flex-row flex-aib">
+							<view class="col212429">
+								<text class="fs-32">现</text>
+								<text class="cold15d57 fs-64">999</text>
+								<text class="fs-32">元/年</text>
+							</view>
+							<view class="flex flex-row flex-aic">
+								<text class="fwb fs-36 col212429 ml-26">零申报代账</text>
+							</view>
+						</view>
+						<view class="flex flex-row">
+							<text class="fs-22 col9595a5">活动时间：2020-10-16 至 2020-10-20</text>
+						</view>
+					</view>
+					<button class="bgact bl bt mt-40">
+						<text class="colfff fs-20">立即购买</text>
+					</button>
+				</view>
+			</view>
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="5" data-url="/pages/detail/detail?idx=5">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi">
+					<view class="colfff flex flex-row flex-aic">
+						<text class="fs-22 fwb ml-8">热销</text><text class="fs-25 fwb mr-8">TOP1</text>
+					</view>
+					<view class="colfff fs-38 fwb">
+						记账报税
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi">1</label>
+						<text class="fs-26 col212429">要专业更要正规</text>
+						<label class="fs-24 colfff fsi">2</label>
+						<text class="fs-26 col212429">要高效更要有保障</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>日常财务</text>
+							</view>
+							<view>
+								<label></label>
+								<text>税务申报</text>
+							</view>
+							<view>
+								<label></label>
+								<text>风险提醒</text>
+							</view>
+							<view>
+								<label></label>
+								<text>编制报表</text>
+							</view>
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="1" data-url="/pages/detail/detail?idx=1">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi">
+					<view class="colfff bgy flex flex-row flex-aic">
+						<text class="fs-22 fwb ml-8">热销</text><text class="fs-25 fwb mr-8">TOP2</text>
+					</view>
+					<view class="colfff fs-38 fwb">
+						会计上门
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi">1 </label>
+						<text class="fs-26 col212429">性价比优质选择</text>
+						<label class="fs-24 colfff fsi">2 </label>
+						<text class="fs-26 col212429">更隐私、更安全</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>一般纳税人</text>
+							</view>
+							<view>
+								<label></label>
+								<text>高新企业</text>
+							</view>
+							<view>
+								<label></label>
+								<text>记账、报税</text>
+							</view>
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="2" data-url="/pages/detail/detail?idx=2">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi">
+
+					<view class="colfff bgb flex flex-row flex-aic">
+						<text class="fs-22 fwb ml-8">热销</text><text class="fs-25 fwb mr-8">TOP3</text>
+					</view>
+					<view class="colfff fs-38 fwb">
+						财务外包
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi">1</label>
+						<text class="fs-26 col212429">企业无后顾之忧</text>
+						<label class="fs-24 colfff fsi">2</label>
+						<text class="fs-26 col212429">更专业、更全面</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>招投标</text>
+							</view>
+							<view>
+								<label></label>
+								<text>资质申报</text>
+							</view>
+							<view>
+								<label></label>
+								<text>税收清算</text>
+							</view>
+							<view>
+								<label></label>
+								<text>经营数据分析</text>
+							</view>
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="3" data-url="/pages/detail/detail?idx=3">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi">
+					<view class="colfff flex flex-row flex-aic">
+						<text class="fs-22 fwb ml-8">热销</text><text class="fs-25 fwb mr-8">TOP4</text>
+					</view>
+					<view class="colfff fs-38 fwb">
+						税务筹划
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi" space="ensp">1 </label>
+						<text class="fs-26 col212429">依法纳税零风险</text>
+						<label class="fs-24 colfff fsi">2</label>
+						<text class="fs-26 col212429">合法节税减负担</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>财务流程梳理</text>
+							</view>
+							<view>
+								<label></label>
+								<text>财务风险控制</text>
+							</view>
+							<view>
+								<label></label>
+								<text>财务危机预警</text>
+							</view>
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="4" data-url="/pages/detail/detail?idx=4">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi ">
+					<view class="colfff flex flex-row flex-aic bgy flex-jcc">
+						<text class="fs-25 fwb mr-8 ml-8">TOP5</text>
+					</view>
+					<view class="colfff fs-34 fwb"
+						style="max-width:4em;margin-left:12rpx;margin-top:72rpx;letter-spacing: 0em;line-height: 1.5em;">
+						其他财税服务
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi">1 </label>
+						<text class="fs-26 col212429">懂专业更懂行业</text>
+						<label class="fs-24 colfff fsi">2 </label>
+						<text class="fs-26 col212429">流程高效 办理轻松</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>公司注册</text>
+							</view>
+							<view>
+								<label></label>
+								<text>公司注销</text>
+							</view>
+							<view>
+								<label></label>
+								<text>工商变更</text>
+							</view>
+							<view>
+								<label></label>
+								<text>资质代办</text>
+							</view>
+
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+
+			<view class="serv-item mw0-30 " bindtap="toPage" data-idx="6" wx:if="{{false}}"
+				data-url="/pages/detail/detail?idx=6">
+				<image class="left" src="/resource/image/bg-02.png"></image>
+				<image class="right" src="/resource/image/bg-01.png"></image>
+				<view class="img_vi">
+					<view class="colfff bgb">
+						<text class="fs-22 fwb">￥</text><text class="fs-36 fwb">630</text><text class="fs-20 fwb"> 起</text>
+					</view>
+					<view class="colfff fs-38 fwb">
+						工商变更
+					</view>
+				</view>
+				<view class="info">
+					<view class="flex1">
+						<label class="fs-24 colfff fsi" space="ensp">1 </label>
+						<text class="fs-26 col212429">依法纳税零风险</text>
+						<label class="fs-24 colfff fsi">2</label>
+						<text class="fs-26 col212429">合法节税减负担</text>
+					</view>
+					<view class="flex flex-row flex-aic mr-30">
+						<view class="flex1">
+							<view>
+								<label></label>
+								<text>财务流程梳理</text>
+							</view>
+							<view>
+								<label></label>
+								<text>财务风险控制</text>
+							</view>
+							<view>
+								<label></label>
+								<text>财务危机预警</text>
+							</view>
+						</view>
+						<button class="bgf5f7fc bl bt">
+							<text class="col0155fe fs-20">了解更多</text>
+						</button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="line-20"></view>
+	<view class="acco-vi bgfff">
+		<view class="flex flex-row flex-aic flex-jcb title-vi">
+			<view class="flex flex-row flex-aic ml-30">
+				<image src="/resource/image/icon-05.png" mode="aspectFit"></image>
+				<text class="fs-36 col212429 ml-20 mr-12 fwb">会计风采</text>
+			</view>
+		</view>
+		<view class="flex flex-col flex-aic">
+			<view class="mw0-30 acco-item">
+				<image src="/resource/image/bg-03.png" mode="widthFix"></image>
+				<view>
+					<view class="info">
+						<text class="fs-42 col212429 fwb">段经理</text>
+						<view class="mt-8">
+							<text class="colf4bb55 fs-42">25</text>
+							<text class="col212429 fs-28">年财税工作经验</text>
+						</view>
+						<view class="line mt-20 mb-20"></view>
+						<view class="flex flex-col">
+							<text class="fs-24 col5e5f66">就职于国内著名会计师事务所</text>
+							<text class="fs-24 col5e5f66">为多家上市公司提供财务指导和服务</text>
+						</view>
+					</view>
+					<image src="/resource/image/p-01.png" mode="widthFix"></image>
+				</view>
+			</view>
+			<view class="mw0-30 acco-item">
+				<image src="/resource/image/bg-04.png" mode="widthFix"></image>
+				<view>
+					<view class="info">
+						<text class="fs-42 col212429 fwb">龚会计</text>
+						<view class="mt-8">
+							<text class="col0155fe fs-42">12</text>
+							<text class="col212429 fs-28">年财税工作经验</text>
+						</view>
+						<view class="line mt-20 mb-20"></view>
+						<view class="flex flex-col">
+							<text class="fs-24 col5e5f66">就职于国内知名税务师事务所</text>
+							<text class="fs-24 col5e5f66">为国内多家大型企业提供财税服务</text>
+						</view>
+					</view>
+					<image src="/resource/image/p-02.png" mode="widthFix"></image>
+				</view>
+			</view>
+			<view class="mw0-30 acco-item">
+				<image src="/resource/image/bg-05.png" mode="widthFix"></image>
+				<view>
+					<view class="info">
+						<text class="fs-42 col212429 fwb">鲁经理</text>
+						<view class="mt-8">
+							<text class="cold15d57 fs-42">9</text>
+							<text class="col212429 fs-28">年主办会计工作经验</text>
+						</view>
+						<view class="line mt-20 mb-20"></view>
+						<view class="flex flex-col">
+							<text class="fs-24 col5e5f66">曾就职著名事务所，</text>
+							<text class="fs-24 col5e5f66">担任上市企业财务总监，</text>
+							<text class="fs-24 col5e5f66">为多家上市企业提供财税服务</text>
+						</view>
+					</view>
+					<image src="/resource/image/p-03.png" mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex flex-aic flex-row last-vi flex-jcc bgfff">
+		<view wx:if="{{loading&&false}}" class="weui-loadmore">
+			<view class="weui-loading"></view>
+			<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+		</view>
+		<view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+			<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+		</view>
+	</view>
+</view>
+<view class="register-vi" wx:if="{{!isLogin&&userInfo}}">
+	<view class="fixed register flex flex-row flex-aic flex-jcc bgfff boxsh" wx:if="{{userInfo&&userInfo.wxFlag==0}}">
+		<button class="bt bgf5f7fc bl mr-30" bindtap="toPage" data-idx="8">
+			<text class="col0155fe fs-32">注册</text>
+		</button>
+		<button class="bt bgact ml-30" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+			<text class="colfff fs-32">微信登录</text>
+		</button>
+	</view>
+	<view class="fixed register flex flex-row flex-aic flex-jcc bgfff boxsh" wx:if="{{userInfo&&userInfo.wxFlag==2}}">
+		<button class="bt bgf5f7fc bl mr-30" bindtap="toPage" data-idx="9">
+			<text class="col0155fe fs-32">账号密码登录</text>
+		</button>
+		<button class="bt bgact ml-30" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+			<text class="colfff fs-32">微信登录</text>
+		</button>
+	</view>
+</view>
+
+<c-dialog show="{{isMsg}}" class="noft nohd" bindclose="closeFun">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">{{msgItem.nextTitle}}</text>
+		<text class="fs-28 col212429 mt-20 tas lh160">{{msgItem.remark}}</text>
+		<button class="bgact bt mt-36" style="width:180rpx !important;" bindtap="closeFun" data-back="1">
+			<text class="fs-24 colfff">知道了</text>
+		</button>
+	</view>
+</c-dialog>
+<c-contact></c-contact>
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

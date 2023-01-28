@@ -1,0 +1,234 @@
+checkbox .wx-checkbox-input{
+  border-radius: 50% !important;
+  width: 24rpx;
+  height: 24rpx;
+  min-width: 24rpx;
+  margin-bottom: 9rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #0057ff;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  font-size: 18rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(0.8);
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+ 
+radio .wx-radio-input.wx-radio-input-checked {
+  border-color: #0155fe !important;
+  background: #fff !important;
+}
+ 
+/* 自定义样式.... */
+ 
+radio .wx-radio-input {
+  height: 36rpx !important;
+  width: 36rpx !important;
+  margin-top: -4rpx;
+  border-radius: 50%;
+  border: 2rpx solid #a7a8ac !important;
+  background: transparent;
+  box-sizing: border-box;
+}
+ 
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+ 
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 20rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 20rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 20rpx;
+  text-align: center;
+  color: #0155fe; /* 对勾颜色 白色 */
+  background: #0155fe;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.weui-dialog{
+  max-width: 564rpx;
+}
+
+.weui-loadmore{
+  margin:1em auto;
+}
+.weui-loadmore_line{
+  margin-top: 1.6em;
+  margin-bottom: 0em;
+}
+
+.weui-loadmore__tips_in-line{
+  top: -1em;
+}
+.noft .weui-dialog__ft,.nohd .weui-dialog__hd,.nohd .weui-uploader__hd,.noft .weui-half-screen-dialog__ft,.nohd .weui-half-screen-dialog__hd,.noft .screen-dialog--weui-half-screen-dialog__ft,.nohd .screen-dialog--weui-half-screen-dialog__hd{
+  display: none !important;
+}
+.noft .dialog--weui-half-screen-dialog__ft{
+  padding: 0 !important;
+}
+.tabbar--weui-tabbar__label{
+  color: #9d9da6 !important;
+}
+.tabbar--weui-tabbar__item.tabbar--weui-bar__item_on .tabbar--weui-tabbar__label{
+  color: #0155fe !important;
+}
+
+.footer-vi{
+  width: 100%;
+  height: 132rpx;
+  min-height: 132rpx;
+}
+.footer{
+  width: 100%;
+  height: 132rpx;
+  bottom: 0;
+  left: 0;  
+  position: fixed;
+  background: #fff;
+  z-index: 1000;
+  box-shadow:0 0 15rpx 3rpx rgba(24, 60, 150, 0.1) !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer .bt{
+  height: 90rpx;
+}
+.msg-vi{
+  width: 100%;
+  height: 80rpx;
+  min-height: 80rpx;
+}
+.msg-vi .msg{
+  width: 100%;
+  height: 80rpx;
+  top: 0;
+  left: 0;  
+  position: fixed;
+  background: #f0f5ff ;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pbes{
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.last-vi{
+  margin-bottom: 48px;
+}
+
+
+
+button[disabled]:not([type]){
+  background: #edeff5 !important;
+}
+button[disabled]:not([type]) text{
+  color: #9595a5 !important;
+}
+
+.page .bgtop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 360rpx;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.bgtop::after{
+  content: '';
+  width: 140%;
+  height: 120px;
+  position: absolute;
+  left: -20%;
+  top: 0;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  background:linear-gradient( #242c45,#465170) !important;
+}
+.line-20{
+  height: 20rpx;
+  min-height: 20rpx;
+  width: 100%;
+  background: #f7f8fa;
+}
+
+.userInfo{
+  height: 185rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  z-index: 3;
+}
+.userInfo .header{
+  width: 112rpx !important;
+  height: 112rpx;
+  min-width: 112rpx;
+  min-height: 112rpx;
+  border: 4rpx #737c92 solid !important;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left:40rpx !important;
+  margin-right: 0 !important;
+  padding:0 !important;
+  box-sizing: border-box;
+}
+.userInfo .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 38rpx;
+}
+.userInfo .info>view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header .head{
+  width: 100%;
+  height: 100%; 
+ }
+.page_vi .bt{
+  width: 100% !important;
+  height: 90rpx;
+}
+.share-vi{
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  background-color: #ededed;
+}
+.weui-navigation-bar__inner .weui-navigation-bar__center{
+  font-size: 28rpx !important;
+}
+.weui-half-screen-dialog__bd{
+  padding-bottom:0px !important;
+}
+.vi-bt{
+  display: flex;
+  background-color: transparent !important;
+  padding: 0;
+  border-radius: 0;
+}

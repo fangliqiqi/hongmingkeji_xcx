@@ -1,0 +1,27 @@
+<!--components/login/index.wxml-->
+<!--登录 -->
+<button wx:if="{{!(userInfo&&userInfo.userId)}}" class="login-vi bt"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+
+</button>
+<!-- 蒙版 -->
+<view wx:elif="{{userInfo&&userInfo.userId&&userInfo.loginFlag==10}}" class="login-vi bg000-8" catchtouchmove="stopfun" >
+  <!-- <view class="tip">
+      <text>点击可以<text class="col0155fe">发送/分享/收藏</text>莫的问题</text>
+      <text>也可以将莫的问题添加至您手机</text>
+      <view class="ari"></view>
+  </view> -->
+  <view class="flex flex-col top-vi">
+    <view >
+      <image src="/resource/image/tip-02.png" mode="widthFix" style="width:46rpx" ></image>
+    </view>
+    <view>
+      <image src="/resource/image/tip-01.png" mode="widthFix" style="width:550rpx"></image>
+      
+      <!-- <button class="update-bt" wx:if="{{!userFlag}}"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button> -->
+      <view class="update-bt"  catchtap="updateFlagFun"></view>
+    </view>
+  </view>
+<view class="login">
+
+  </view>
+</view>

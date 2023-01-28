@@ -1,0 +1,118 @@
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">所需材料</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-aic flex-col mw0-64 mt-50">
+	<image src="/resource/image/detail/icon-65.png" mode="widthFix"></image>
+</view>
+<view class="mw0-30 blt mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70 ">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">变更流程</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-aic flex-col mw0-30 mt-50 psr">
+	<image class="psa" src="/resource/image/detail/bg-7.png" mode="widthFix" style="top:10rpx;left:0;"></image>
+	<view class="flex flex-row mw100 mt-60">
+		<view class="flex flex-col">
+			<text class="fs-48 col212429 fwb">01</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">与客户沟通</view>
+					<view class="fs-24 col5e5f66 lh120">确定<text class="col212429">变更方案</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col ml-30">
+			<text class="fs-48 col212429 fwb">02</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">整理资料</view>
+					<view class="fs-24 col5e5f66 lh120">递交主<text class="col212429">管税务机关</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col ml-20">
+			<text class="fs-48 col212429 fwb">03</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">完成税务变更</view>
+					<view class="fs-24 col5e5f66 lh120">取得<text class="col212429">完税证明</text></view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex flex-row mw100" style="margin-top:110rpx;">
+		<view class="flex flex-col">
+			<text class="fs-48 col212429 fwb">End</text>
+			<view class="flex-col flex flex-aic flex-jcc" style="width:184rpx;">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col ml-30">
+			<text class="fs-48 col212429 fwb">05</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">完成<text class="col212429">变更备案</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:68rpx">
+			<text class="fs-48 col212429 fwb">04</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">进行<text class="col212429">工商变更</text></view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="mw0-30 blt mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">注意事项</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-col mw0-40 bgl flex-aic mt-50">
+	<view class="flex flex-row mw0-30 mt-60">
+		<image src="/resource/image/detail/icon-61.png" mode="widthFix"
+			style="width:72rpx;min-width:72rpx;margin-top:-16rpx;" class="mr-10"></image>
+		<text class="col8c3c83 fs-28 fwb">股权转让协议</text>
+		<text class="col212429 fs-28 fwb">很重要</text>
+	</view>
+	<text class="col5e5f66 fs-24 mw0-30 mt-20 mb-50 lh200">股权变更本质是股东之前的<text
+			class="col212429">股权交易</text>，人与人之间的财产交易找<text class="col212429">有经验</text>的律师起草一份《股权转让协议》，能够确保交易的<text
+			class="col212429">顺利进行</text>，避免因为交易过程中的各种纠纷。</text>
+</view>
+<view class="flex flex-col mw0-40 bgl flex-aic mt-40">
+	<view class="flex flex-row mw0-30 mt-60">
+		<image src="/resource/image/detail/icon-62.png" mode="widthFix"
+			style="width:72rpx;min-width:72rpx;margin-top:-16rpx;" class="mr-10"></image>
+		<text class="col212429 fs-28 fwb">注意转让过程中的</text>
+		<text class="col8c3c83 fs-28 fwb">第三方优先股权益</text>
+	</view>
+	<text
+		class="col5e5f66 fs-24 mw0-30 mt-20 mb-50 lh200">部分公司中存在天使、A轮等优先股股东,投资人有权以同样条件优先购买所转让的股权,这种情况下,必须由投资人书面确认放弃优先权后再进行股权转让。</text>
+</view>
+<view class="flex flex-col mw0-40 bgl flex-aic mt-40">
+	<view class="flex flex-row mw0-30 mt-60">
+		<image src="/resource/image/detail/icon-63.png" mode="widthFix"
+			style="width:72rpx;min-width:72rpx;margin-top:-16rpx;" class="mr-10"></image>
+		<text class="col8c3c83 fs-28 fwb"></text>
+		<text class="col212429 fs-28 fwb">股权转让的价格不一定与注册资本一致</text>
+	</view>
+	<text
+		class="col5e5f66 fs-24 mw0-30 mt-20 mb-50 lh200">不一定,股权转让价格确定的原则是在不损害国家和第三人及其他股东的合法权益的条件下由转让双方协商确定,与注册资金相一致是确定转让价格的参考方法。</text>
+</view>
+<view class="flex flex-col mw0-40 bgl flex-aic mt-40">
+	<view class="flex flex-row mw0-30 mt-60">
+		<image src="/resource/image/detail/icon-64.png" mode="widthFix"
+			style="width:72rpx;min-width:72rpx;margin-top:-16rpx;" class="mr-10"></image>
+		<text class="col8c3c83 fs-28 fwb"></text>
+		<text class="col212429 fs-28 fwb">转让涉及溢价的，需要缴纳个人所得税</text>
+	</view>
+	<text
+		class="col5e5f66 fs-24 mw0-30 mt-20 mb-50 lh200">转让过程中涉及溢价的，需要就溢价部分缴纳20%个人所得税，如果申报股权转让价格明显偏低且无正当理由的税务主管机关可以核定股价格。</text>
+</view>

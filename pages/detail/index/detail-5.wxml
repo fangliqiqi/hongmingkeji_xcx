@@ -1,0 +1,95 @@
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">产品</text>
+	<text class="fwb fs-36 col04c69b mr-12">详情</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-col mw0-30 mt-40 flex-aic">
+	<view style="width:692rpx;">
+		<view class="vi-5">
+			<view class="fsi">
+				<text>1</text>
+			</view>
+			<text>建账、记账</text>
+			<text>整账</text>
+		</view>
+		<view class="vi-5">
+			<view class="fsi">
+				<text>2</text>
+			</view>
+			<text>代领发票</text>
+			<text>代开发票</text>
+		</view>
+		<view class="vi-5">
+			<view class="fsi">
+				<text>3</text>
+			</view>
+			<text>营业执照</text>
+			<text>年报</text>
+		</view>
+		<view class="vi-5">
+			<view class="fsi">
+				<text>4</text>
+			</view>
+			<text>编制报表</text>
+			<text>凭证</text>
+		</view>
+		<view class="vi-5">
+			<view class="fsi">
+				<text>5</text>
+			</view>
+			<text>最新财税</text>
+			<text>咨询提醒</text>
+		</view>
+		<view class="vi-5">
+			<view class="fsi">
+				<text>6</text>
+			</view>
+			<text>财税风险</text>
+			<text>提醒</text>
+		</view>
+	</view>
+	<view>
+		<view class="vi-15">
+			<view class="fsi">
+				<text>7</text>
+			</view>
+			<text>协助风险提醒</text>
+		</view>
+		<view class="vi-15">
+			<view class="fsi">
+				<text>8</text>
+			</view>
+			<text>纳税申报</text>
+		</view>
+	</view>
+</view>
+<view class="blt mw0-30 mt-30"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">代理</text>
+	<text class="fwb fs-36 col04c69b mr-12">流程</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="mt-50">
+	<image src="/resource/image/detail/{{idx}}/bg-1.png" mode="widthFix" style="width:680rpx"></image>
+</view>
+<view class="blt mw0-30 mt-30"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">我们的</text>
+	<text class="fwb fs-36 col04c69b mr-12">优势</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="mt-50">
+	<image src="/resource/image/detail/{{idx}}/bg-2.png" mode="widthFix" style="width:680rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">获得</text>
+	<text class="fwb fs-36 col04c69b mr-12">材料</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="mt-50">
+	<image src="/resource/image/detail/{{idx}}/bg-3.png" mode="widthFix" style="width:680rpx"></image>
+</view>

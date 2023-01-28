@@ -1,0 +1,131 @@
+<!--pages/partner/index.wxml-->
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+  <view class="bgtop"></view>
+  <view class="info-vi mw0-30">
+    <view class="partnerInfo psr">
+      <view class="header" >
+        <image wx:if="{{userInfo.avatar||recommendInfo.avatar}}" src="{{url+(recommendInfo.avatar||userInfo.avatar)}}"></image>
+        <image wx:elif="{{recommendId}}" src="/resource/image/header.png"></image>
+        <open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+      </view>
+      <view class="info">
+        <view>
+          <text class="fs-32 col212429 fwb">{{conObj.company.companyName||userInfo.nickName}}</text>
+          <view class="flex flex-row flex-aic flex-jcb">
+            <text
+              class="col5e5f66 fs-28">{{conObj.company.contacts||userInfo.nickName}}-{{conObj.company.contactsPhone||userInfo.phonenumber}}</text>
+            <view class="flex flex-aic flex-row ml-12 wsn">
+              <block wx:if="{{userInfo.wxBind=='1'||recommendInfo.wxBind=='1'}}">
+                <image class="mr-10" src="/resource/image/icon-65.png" mode="widthFix" style="width:20rpx"></image>
+                <text class="col00d3a2 fs-24">已绑定微信</text>
+              </block>
+              <text class="col212429 fs-24 ml-12" wx:else>未绑定微信</text>
+            </view>
+          </view>
+          <view class="flex flex-row flex-aic">
+            <view class="flex flex-row flex-aic psr">
+              <image src="/resource/image/icon-64.png" style="width:121rpx;height:32rpx;"></image>
+              <text class="psa fs-20 colfff" style="left:30rpx;top:3rpx;">商务伙伴</text>
+            </view>
+            <view class="flex flex-row flex-aic psr ml-20" wx:if="{{conObj.company.cityLV}}">
+              <image src="/resource/image/icon-7{{conObj.company.cityLV>3?3:conObj.company.cityLV}}.png" style="width:120rpx;height:34rpx;margin-bottom:4rpx;"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="title">
+        <text class="col212429 fs-32">账户余额 (元)</text>
+        <view class="flex flex-row flex-aic" bindtap="toPage" data-url="/pages/partner/cost/index">
+          <text class="col9d9da6 fs-28 mr-18">费用记录</text>
+          <image src="/resource/image/icon-69.png" mode="widthFix" style="width:15rpx;height:29rpx;"></image>
+        </view>
+      </view>
+      <view class="flex flex-row flex-aib mb-40">
+        <text class="col0155fe fs-42 fwb">￥</text>
+        <text class="fs-82 col0155fe">{{utils.toFix(conObj.payWallet.amount||0)}}</text>
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="title">
+        <text class="col212429 fs-32">商机分类</text>
+        <view class="flex flex-row flex-aic" bindtap="toPage" data-url="/pages/agent/type/index"
+          data-obj="{{conObj.sourceTypeList}}" data-cid="{{conObj.company.id||''}}">
+          <text class="col9d9da6 fs-28 mr-18">更改</text>
+          <image src="/resource/image/icon-69.png" mode="widthFix" style="width:15rpx;height:29rpx;"></image>
+        </view>
+      </view>
+      <view class="mb-10 mt-36">
+        <label wx:for="{{conObj.sourceTypeList}}"   wx:key='index'  class="agent-item">{{item.categoryType}}</label>
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="mb-20 mt-20 flex flex-jcc">
+        <view class="flex flex-col flex-aic flex1">
+          <text class="col0155fe fs-56">{{bargainInfo.totalCount || 0}} </text>
+				  <text class="col5e5f66 fs-26">成交数(单)</text>   
+        </view>
+        <view class="flex flex-col flex-aic flex1">
+          <text class="col0155fe fs-56">{{bargainInfo.avgPrice || 0}} </text>
+				  <text class="col5e5f66 fs-26">成交均价(元)</text>   
+        </view>
+        <view class="flex flex-col flex-aic flex1">
+          <text class="col0155fe fs-56">{{bargainInfo.sumPrice || 0}}</text>
+				  <text class="col5e5f66 fs-26">成交金额(元)</text>   
+        </view>
+      </view>
+    </view>
+    <view class="info-item">
+      <view class="title">
+        <text class="col212429 fs-32">本月商机</text>
+        <view class="flex flex-row flex-aic" bindtap="toPage"
+          data-url="/pages/agent/agent?tabidx=&cid={{conObj.company.id||''}}" data-cid="{{conObj.company.id||''}}">
+          <text class="col9d9da6 fs-28 mr-18">查看商机</text>
+          <image src="/resource/image/icon-69.png" mode="widthFix" style="width:15rpx;height:29rpx;"></image>
+        </view>
+      </view>
+      <view class="flex flex-row flex-aie   mb-40">
+        <view class="flex1 flex-col flex">
+          <text class="col5e5f67 fs-52">{{conObj.agentTool||0}}</text>
+          <text class="fs-22 col9595a6">总计数量</text>
+        </view>
+        <view class="flex flex-row flex-aic" bindtap="toPage"
+          data-url="/pages/agent/appealist/index?tabidx=&cid={{conObj.company.id||''}}"  data-cid="{{conObj.company.id||''}}">
+          <text class="col9d9da6 fs-28 mr-18 tdu">查看申诉</text>
+          <image src="" mode="widthFix" style="width:15rpx;height:29rpx;"></image>
+        </view>
+        <!-- <view class="flex1 flex-col flex">
+          <view class="flex flex-row flex-aib">
+            <text class="col5e5f67 fs-52">{{utils.toFix(conObj.dealTool  / conObj.agentTool * 100)}}</text>
+            <text class="col5e5f67 fs-26 ml-4">%</text>
+          </view>
+          <text class="fs-22 col9595a6">成交率</text>
+        </view> -->
+      </view>
+    </view>
+    <view class="info-item mb-40">
+      <view class="title">
+        <text class="col212429 fs-32">商机跟进</text>
+        <view class="flex flex-row flex-aic" bindtap="toPage"
+          data-url="/pages/agent/agent?tabidx=20&cid={{conObj.company.id||''}}" data-cid="{{conObj.company.id||''}}">
+          <text class="col9d9da6 fs-28 mr-18">查看跟进</text>
+          <image src="/resource/image/icon-69.png" mode="widthFix" style="width:15rpx;height:29rpx;"></image>
+        </view>
+      </view>
+      <view class="flex flex-col">
+        <text class="col5e5f67 fs-52">{{conObj.dayTool||0}}</text>
+        <text class="fs-22 col9595a6">今日待跟进</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer-vi">
+    <view class="footer">
+      <button class="bgact bt" bindtap="toPage" data-url="/pages/partner/recharge/index">
+        <text class="colfff fs-32">充值</text>
+      </button>
+    </view>
+  </view>
+</view>
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

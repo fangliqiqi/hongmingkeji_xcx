@@ -1,0 +1,74 @@
+<!--pages/detail/detail.wxml-->
+<view class="mw0-20 flex flex-col flex-aic" style="margin-top:-240rpx;">
+	<image src="/resource/image/detail/{{idx}}/bg-4.png" mode="widthFix"></image>
+	<view class="flex flex-row flex-aic flex-jcc mt-70">
+		<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+		<text class="fwb fs-36 col212429 ml-12 mr-12">节税效果</text>
+		<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	</view>
+	<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+		<view class="flex1 linebg"></view>
+		<text class="fs-30 col212429 ml-20 mr-20">节税前 VS 节税后效果对比</text>
+		<view class="flex1 linebgr"></view>
+	</view>
+	<view class="mw0-30 mt-60 psr flex flex-row flex-aic flex-jcc">
+		<image src="/resource/image/detail/bg-6.png" mode="widthFix"></image>
+	</view>
+	<view class="flex flex-row flex-aic mw0-10 mt-60">
+		<view class="flex1 flex flex-col ">
+			<view class="flex flex-col ml-45">
+				<view class="flex flex-row flex-aic"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">利润总额：</text><text class="fs-24 col212429">500万</text></view>
+				<view class="flex flex-row mt-16"><label class="d mr-8 mt-16"></label>
+					<view class="flex flex-col">
+						<text	class="col5e5f66 fs-24">应纳企业所得税税额</text>
+						<text	class="col5e5f66 fs-24">(按正常纳税标准核算)：</text>
+						<text class="fs-24 col212429">500万*20%=125万</text>
+					</view>
+				</view>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">应纳个人所得税税额：</text></view>
+				<text class="fs-24 col212429 ml-12">(500-125)万*20%=75万</text>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">应纳税额合计：</text><text class="fs-24 col212429">200万</text></view>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">综合税负：</text><text class="fs-24 col212429">40%</text></view>
+			</view>
+		</view>
+		<view style="width:0rpx;height:325rpx;border:1rpx #eee dashed;"></view>
+		<view class="flex1 flex flex-col ">
+			<view class="flex flex-col ml-20">
+				<view class="flex flex-row flex-aic"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">利润总额：</text><text class="fs-24 col4545ad">500万</text></view>
+				<view class="flex flex-row mt-16"><label class="d mr-8 mt-16"></label>
+					<view class="flex flex-col">
+						<text	class="col5e5f66 fs-24">应纳企业所得税税额</text>
+						<text	class="col5e5f66 fs-24">(通过合法税筹政策和办法)：</text>
+						<text class="fs-24 col4545ad">0</text></view>
+					</view>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">应纳个人所得税税额：</text></view>
+				<text class="fs-24 col4545ad ml-12">500万*2.1%=10.5万</text>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">应纳税额合计：</text><text class="fs-24 col4545ad">10.5万</text></view>
+				<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+						class="col5e5f66 fs-24">综合税负：</text><text class="fs-24 col4545ad">2.1%</text></view>
+			</view>
+		</view>
+	</view>
+	<view class="blt mt-50 flex flex-col flex-aic mw0-40">
+		<view class="flex flex-row flex-aic flex-jcc mt-70">
+			<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+			<text class="fwb fs-36 col212429 ml-12 mr-12">服务优势</text>
+			<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+		</view>
+	</view>
+	<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+		<view class="flex1 linebg"></view>
+		<text class="fs-30 col212429 ml-20 mr-20">更实惠的价格，体验更实在的服务</text>
+		<view class="flex1 linebgr"></view>
+	</view>
+	<view class="flex flex-row flex-aic flex-jcc mw0-20 mt-40">
+		<image src="/resource/image/detail/bg-5.png" mode="widthFix"></image>
+	</view>
+</view>

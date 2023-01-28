@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarTitleText":"推荐有奖"
+}

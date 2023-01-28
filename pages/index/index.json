@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon",
+    "c-navigation-bar": "weui-miniprogram/navigation-bar/navigation-bar",
+    "c-dialog": "weui-miniprogram/dialog/dialog",
+    "c-hs-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"    
+  },
+  "navigationBarTitleText":"共享会计 · 莫的问题",
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#242c45",
+  "singlePage":{"navigationBarFit":"squeezed"}
+}

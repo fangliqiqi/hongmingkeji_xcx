@@ -1,0 +1,123 @@
+<view class="flex flex-row flex-aic flex-jcc mt-60">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">业务范围</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-col mw0-30 mt-40 flex-aic">
+	<view style="width:600rpx;">
+		<view class="vi-1">
+			<view class="fsi">
+				<text>1</text>
+			</view>
+			<text>资深会计</text>
+			<text>做账整账</text>
+		</view>
+		<view class="vi-1">
+			<view class="fsi">
+				<text>2</text>
+			</view>
+			<text>纳税申报</text>
+		</view>
+		<view class="vi-1">
+			<view class="fsi">
+				<text>3</text>
+			</view>
+			<text>编制报表</text>
+			<text>凭证</text>
+		</view>
+		<view class="vi-1">
+			<view class="fsi">
+				<text>4</text>
+			</view>
+			<text>最新财税</text>
+			<text>咨询提醒</text>
+		</view>
+	</view>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">五大优势</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="mw0-40 mt-70 psr flex flex-aic flex-jcc flex-col bgl">
+	<image src="/resource/image/detail/{{idx}}/icon-01.png" mode="widthFix" class="psa"
+		style="width:73rpx;bottom:0;right:0;"></image>
+	<view class="flex flex-col mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic mt-40">
+			<view class="flex flex-row flex-aic">
+				<image src="/resource/image/detail/{{idx}}/icon-1.png" mode="widthFix" style="width:72rpx;"></image>
+				<text class="fs-30 col212429 ml-40">正规</text>
+				<text class="fs-30 col7e86ce ml-20">REGULARIZE</text>
+			</view>
+			<image src="/resource/image/detail/{{idx}}/icon-11.png" mode="widthFix" style="width:41rpx;margin-right:79rpx;">
+			</image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16 mb-50">取得合肥市财政局核发资质的正规公司，正式签订合同后保障隐私和合法权益。</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col bgl">
+	<image src="/resource/image/detail/{{idx}}/icon-02.png" mode="widthFix" class="psa"
+		style="width:73rpx;bottom:0;right:0;"></image>
+	<view class="flex flex-col mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic mt-40">
+			<view class="flex flex-row flex-aic">
+				<image src="/resource/image/detail/{{idx}}/icon-2.png" mode="widthFix" style="width:72rpx;"></image>
+				<text class="fs-30 col212429 ml-40">经验</text>
+				<text class="fs-30 col7e86ce ml-20">EXPERIENCE</text>
+			</view>
+			<image src="/resource/image/detail/{{idx}}/icon-12.png" mode="widthFix" style="width:50rpx;margin-right:74rpx;">
+			</image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16 mb-50">拥有精通所有行业的资深会计团队</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col bgl">
+	<image src="/resource/image/detail/{{idx}}/icon-03.png" mode="widthFix" class="psa"
+		style="width:73rpx;bottom:0;right:0;"></image>
+	<view class="flex flex-col mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic mt-40">
+			<view class="flex flex-row flex-aic">
+				<image src="/resource/image/detail/{{idx}}/icon-3.png" mode="widthFix" style="width:72rpx;"></image>
+				<text class="fs-30 col212429 ml-40">高效</text>
+				<text class="fs-30 col7e86ce ml-20">HIGH EFFICIENCY</text>
+			</view>
+			<image src="/resource/image/detail/{{idx}}/icon-13.png" mode="widthFix" style="width:48rpx;margin-right:74rpx;">
+			</image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16 mb-50">团队作战，分工协作，效率成倍增加</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col bgl">
+	<image src="/resource/image/detail/{{idx}}/icon-04.png" mode="widthFix" class="psa"
+		style="width:73rpx;bottom:0;right:0;"></image>
+	<view class="flex flex-col mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic mt-40">
+			<view class="flex flex-row flex-aic">
+				<image src="/resource/image/detail/{{idx}}/icon-4.png" mode="widthFix" style="width:72rpx;"></image>
+				<text class="fs-30 col212429 ml-40">节约</text>
+				<text class="fs-30 col7e86ce ml-20">FRUGALITY</text>
+			</view>
+			<image src="/resource/image/detail/{{idx}}/icon-14.png" mode="widthFix" style="width:48rpx;margin-right:74rpx;">
+			</image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16 mb-50">团队工作统筹安排，以一抵十，成本优势明显</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col bgl">
+	<image src="/resource/image/detail/{{idx}}/icon-05.png" mode="widthFix" class="psa"
+		style="width:73rpx;bottom:0;right:0;"></image>
+	<view class="flex flex-col mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic mt-40">
+			<view class="flex flex-row flex-aic">
+				<image src="/resource/image/detail/{{idx}}/icon-5.png" mode="widthFix" style="width:72rpx;"></image>
+				<text class="fs-30 col212429 ml-40">发展</text>
+				<text class="fs-30 col7e86ce ml-20">DEVELOPMENT</text>
+			</view>
+			<image src="/resource/image/detail/{{idx}}/icon-15.png" mode="widthFix" style="width:48rpx;margin-right:74rpx;">
+			</image>
+		</view>
+		<text
+			class="fs-24 col5e5f66 mt-16 mb-50">“互联网+”的出现颠覆了财务管理模式，不再局限于传统的财务与会计领域，而是向产品销售、研发创新、人力资源等各个领域延伸，对于企业经营有关的一切数据的收集莫的问题·会计上门擅长处理。</text>
+	</view>
+</view>

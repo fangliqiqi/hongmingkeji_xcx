@@ -1,0 +1,16 @@
+/* pages/partner/detail/index.wxss */
+page{
+  background: #f7f8fa;
+}
+.page{
+  background: #fff;
+}
+.info{
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+.info>view{
+  min-height: 60rpx;
+  box-sizing: border-box;
+  align-items: center;
+}

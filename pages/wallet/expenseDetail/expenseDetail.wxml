@@ -1,0 +1,74 @@
+<!--pages/wallet/expenseDetail/expenseDetail.wxml-->
+<view class="page">
+  <view class="pad30">
+    <view class="order fs-32">
+      <view class="fwb">
+        <text class="mr-6">订单号</text>
+        <text>{{orderInfo.idStr}}</text>
+      </view>
+      <view class="card mt-10 mb-30">
+        <image src="{{imgUrl+orderInfo.cardInfo.url}}" class="card_img"></image>
+        <text class="card_name fs-48 fwb {{orderInfo.cardInfo.cardColor}}">{{orderInfo.cardName}}</text>
+      </view>
+      <view class="flex fs-30">
+        <text class="flex_left">购买数量:</text>
+        <text class="flex_con fs-32">{{orderInfo.cardNumber}}</text>
+        <text class="flex_right">张</text>
+      </view>
+      <view class="flex fs-30">
+        <text class="flex_left">单价:</text>
+        <text class="flex_con fs-32">{{orderInfo.cardPrice}}</text>
+        <text class="flex_right">元/张</text>
+      </view>
+      <view class="flex">
+        <text class="flex_left">订单总价:</text>
+        <text class="flex_con fs-32">{{orderInfo.payMoney}}</text>
+        <text class="flex_right">元</text>
+      </view>
+    </view>
+    <view class="order mt-20">
+      <view class="fs-32">莫的问题{{orderInfo.cardName}}权益</view>
+      <view class="flex mt-10">
+        <view class="eq_left fs-32">1</view>
+        <view class="right">
+          <view class="fs-32">优惠券{{cardNum}}选一</view>
+          <view class="flex flex-jcb fs-28 mt-6" wx:for="{{orderInfo.cardBusinessList}}" wx:key="id">
+            <text class="bus_left">{{item.businessName}}</text>
+            <view class="bus_right">
+              <text>￥</text>
+              <text>{{item.oldPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="fs-32 flex mt-10">
+        <view class="eq_left">2</view>
+        <view  class="right">
+          <view>账户充值{{orderInfo.cardInfo.activityPrice}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="order mt-20">
+      <view class="fs-32">购买须知</view>
+      <view class="flex mt-10">
+        <view class="eq_left fs-32">1</view>
+        <view class="fs-28">{{orderInfo.cardInfo.content}}</view>
+      </view>
+      <view class="fs-32 flex mt-10">
+        <view class="eq_left">2</view>
+        <view class="fs-28">卡券使用需联系客服或到公司进行核销</view>
+      </view>
+    </view>
+    <view class=" flex mt-20 mb-30 flex-jce flex-aic">
+      <image src="/resource/image/phone.png" style="width:40rpx;height:40rpx"></image>
+      <text class="btn ml-20 bgact bl fs-28" bindtap="toPhone">联系客服</text>
+    </view>
+  </view>
+  <view class="footer-vi" wx:if="{{orderInfo.payType==1&&orderInfo.orderStatus==1}}">
+    <view class="footer">
+      <button class="bgact bt" bindtap="payFun">
+        <text class="colfff fs-32">付款</text>
+      </button>
+    </view>
+  </view>
+</view>

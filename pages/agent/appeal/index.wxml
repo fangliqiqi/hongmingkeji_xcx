@@ -1,0 +1,180 @@
+<!--pages/agent/appeal/index.wxml-->
+<view class="page">
+  <view class="flex flex-col flex-aic">
+    <!-- 申诉原因 -->
+    <view class="item-vi flex flex-aic flex-row flex-jcb">
+      <text class="fwb fs-32 col20242a item-left">申诉原因：<text class="cold15d57">*</text></text>
+      <view class="flex flex-row flex-aic" bindtap="bindPicker">
+        <text class="fs-28 col5e5f66 mr-28">{{(reason!=''||reasonIndex=='0')?reasonOptions[reasonIndex]:'请选择申诉原因'}}</text>
+        <image src="/resource/image/icon-69.png" mode="widthFix" style="width:16rpx;"></image>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="remark item-vi">
+      <text class="fwb fs-32 col20242a">申述缘由：<text class="cold15d57">*</text></text>
+      <view class="mt-36">
+        <textarea placeholder="点击此处录入申述缘由，详尽的申述缘由可以提高您的审批率" placeholder-class="taph"  class="ta" 
+          bindinput="inputFun" >
+        </textarea>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="item-vi remark" >
+      <view>
+        <view class="flex">
+          <text class="fwb fs-32 col20242a">申诉文件：<text class="cold15d57" wx:if="{{reasonIndex == 0}}">*</text></text>
+            <button class="bgact bl bt btn">
+            <text class="colfff fs-22" bindtap="fileUp">+ 文件上传</text>
+          </button>    
+        </view>
+        <view class="fs-22 col5e5f66 ml-8" style="text-align:left;padding-left:160rpx">上传格式仅为jpge/png的图片(最多5个);如需上传音频请登录电脑端进行上传。</view>
+        
+      </view>
+      <view class="image" wx:if="{{imgListshow.length>0}}">
+        <text class=" fs-28 col20242a">申诉图片：</text>
+        <view class="img_list">
+          <view wx:for="{{imgListshow}}" wx:key="index">
+            <image src="{{item}}" ></image>
+             <icon type="clear" size="20" class="icon" bindtap='clearFiled' data-type='image' data-index='{{index}}'></icon>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="audio" wx:if="{{audioListshow.length>0}}">
+        <text class=" fs-28 col20242a">申诉音频：</text>
+        <view class="audiolist">
+          <view wx:for="{{audioListshow}}" wx:key="index">
+            <audio src="{{item}}"   id="{{index}}" 
+                controls='true' poster="../../../resource/image/share.jpg"
+                name='申诉音频' author='' >
+            </audio> 
+            <icon type="clear" size="20" class="icon" bindtap='clearFiled' data-type='audio' data-index='{{index}}'></icon>
+          </view>    
+        </view> 
+      </view> -->
+    </view>
+    <view class="line-20"></view>
+    <!-- 无效申述标准 -->
+    <view class="appeal_standard">
+      <view class="s_title">
+        <image src="/resource/image/s_title.png"></image>
+        <text>无  效  标  准 :</text>
+      </view>
+      <view class="s_box">
+        <view class="txt">
+          无效客户定义：根据平台规定具有真实办理意向的客户为有效客户，不以真实成交判断 。
+          <view>符合以下情况的为无效商机允许申诉，具体如下：</view> 
+        </view>
+        <view class="s_list">
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">1.空号、错号、号码是同行号码；</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">2.不在服务区域：超出代理商服务区域范围，以系统中标注的区域为准</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">3.超出服务能力：超出代理商所能办的业务范围，以系统中标注的服务范围为准</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">4.不能办的业务：当地政府明令禁止不能办的业务</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">5.无需求：客户没有办理需求。因服务商沟通不及时，沟通话术不佳或因为服务商主观原因造成的客户无办理需求的情况不包含在内。</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">6.违法违规：客户办理类似洗钱，倒票等违法违规行为，疑难业务办理等问题不在内</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">7.重复订单：同一商机重复推送</view>
+          </view>
+          <view class="li">
+            <view class="li_left">
+              <view class="dian"></view>
+            </view>
+            <view class="wen">8.无法联系客户：系统推送商机（电话、微信）连续2天，电话商机每天分不同时段拨打电话不低于3次，微信商机添加一直未通过，皆可在第3天提起申诉（申诉需提供通话记录截图）</view>
+          </view>
+        </view>
+      </view>
+      <view class="s_title">
+        <image src="/resource/image/s_title.png"></image>
+        <text>申  诉  标  准 :</text>
+      </view>
+      <view class="s_box">
+        <view class="no1">
+          <image src="/resource/image/no1.png"></image>
+        </view>
+        <view class="notext">客户申诉需提供录音（格式）以及聊天截图或者去电截图等证明材料</view>
+        <view class="no1">
+          <image src="/resource/image/no2.png"></image>
+        </view>
+        <view class="notext">客户申诉时效为72小时，72小时后不管任何理由不予处理</view>
+      </view>
+      <view class="s_bottom">
+        <view class="bot_txt">
+          互联网
+          <text>+</text>
+          企业一站式智慧服务平台
+        </view>
+      </view>
+    </view>
+
+
+
+    <view>
+    
+    
+    </view>
+  </view>
+  <view class="footer appela-foot">
+    <button class="bt mr-28"  bindtap="cacelAppeal">
+      <text class=" fs-32">取消</text>
+    </button>
+    <button class="bt bgact "  bindtap="submitAppwal">
+      <text class="colfff fs-32">提交申诉</text>
+    </button>
+  </view>
+</view>
+
+
+<c-hs-dialog show="{{isShow}}" class="noft nohd" bindclose="closeFun">
+	<view slot="desc" class="hsd-bd">
+		<view class="hd-vi">
+			<text class="fs-36 col212429 fwb">选择申诉原因</text>
+			<view class="close" bindtap="closeFun">
+				<c-icon icon="close2" color="#a7a8ac" size="{{24}}"></c-icon>
+			</view>
+		</view>
+		<view class="bank-vi" style="">
+			<picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{[reasonIndex]}}"
+        bindchange="bindChange" >
+        <picker-view-column>
+          <view wx:for="{{reasonOptions}}" wx:key="index" style="width: 100%;line-height: 45px; text-align: center;" class="fs-32">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <button class="bt bgact mb-36 mt-36" style="width390rpx;height:90rpx" bindtap="suretap">
+      <text class="colfff fs-32">确认</text>
+    </button>
+	</view>
+</c-hs-dialog>
+

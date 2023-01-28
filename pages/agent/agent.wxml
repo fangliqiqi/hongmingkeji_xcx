@@ -1,0 +1,251 @@
+<!--pages/agent/agent.wxml-->
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page-vi">
+  <view class="sv-vi mw100">
+    <view class="tabs-vi">
+      <view class="tab {{tabsidx==''?'on':''}}" bindtap="tabsfun" data-idx="">
+        <text>新增商机</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabsidx==10?'on':''}}" bindtap="tabsfun" data-idx="10">
+        <text>全部商机</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabsidx==20?'on':''}}" bindtap="tabsfun" data-idx="20">
+        <text>待跟进商机</text>
+        <view></view>
+      </view>
+    </view>
+    <view class="tab-vi" wx:if="{{tabsidx==10||tabsidx==20||userList.length>0}}">
+      <view class="tabs">
+        <view class="tab-item" bindtap="tabtap" data-idx="3" wx:if="{{userList.length>0}}">
+          <text class="{{tabidx==3?'col0057ff':'col5e5f66'}} fs-26">{{userList[userIndex].nickName}}</text>
+          <image src="/resource/image/icon-6{{tabidx==3?1:0}}.png"></image>
+        </view>
+        <view class="tab-item" bindtap="tabtap" data-idx="1" wx:if="{{tabsidx==10||tabsidx==20}}">
+          <text wx:if="{{tabsidx==20}}" class="{{tabidx==1?'col0057ff':'col5e5f66'}} fs-26">{{year}}年{{month}}月{{day}}日</text>
+          <text wx:else class="{{tabidx==1?'col0057ff':'col5e5f66'}} fs-26">{{year}}年{{month}}月</text>
+          <image src="/resource/image/icon-6{{tabidx==1?1:0}}.png"></image>
+        </view>
+        <view class="tab-item" bindtap="tabtap" data-idx="2" wx:if="{{tabsidx==10}}">
+          <text class="{{tabidx==2?'col0057ff':'col5e5f66'}} fs-26">{{tabindex == 10 ? '有效' : tabindex == 20 ? '无效' :tabindex == 30 ? '已成交' : '全部'}}</text>
+          <image src="/resource/image/icon-6{{tabidx==2?1:0}}.png"></image>
+        </view>
+      </view>
+      <view class="tab flex flex-col flex-aic" wx:if="{{tabidx==1}}">
+        <view class="picker-vi mt-30 mb-30">
+          <picker-view indicator-style="height: 50px;" style="width: {{tabsidx==20?610:390}}rpx; height: 260px;" value="{{tempDate}}"
+            bindchange="bindChange">
+            <picker-view-column>
+              <view wx:for="{{years}}" wx:key="{{years}}" style="width:170rpx;line-height: 50px; text-align: center;"
+                class="fs-32">{{item}}年</view>
+            </picker-view-column>
+            <view style="width:50rpx;min-width:50rpx;"></view>
+            <picker-view-column>
+              <view wx:for="{{months}}" wx:key="{{months}}" style="width:170rpx;line-height: 50px; text-align: center;"
+                class="fs-32">{{item}}月</view>
+            </picker-view-column>
+            <block wx:if="{{tabsidx==20}}">
+              <view style="width:50rpx;min-width:50rpx;"></view>
+              <picker-view-column>
+                <view wx:for="{{days}}" wx:key="{{days}}" style="width:170rpx;line-height: 50px; text-align: center;"
+                  class="fs-32">{{item}}日</view>
+              </picker-view-column>
+            </block>
+          </picker-view>
+        </view>
+        <button class="bt bgact" bindtap="sureFun" data-idx="{{tabidx}}">
+          <text class="fs-32 colfff">确定</text>
+        </button>
+      </view>
+      <view class="tab flex flex-col flex-aic" wx:if="{{tabidx==2}}">
+        <view class="sel-vi mt-30 mb-30">
+          <view class="{{tempindex==''?'bl bgf0f5ff':'bgedeff5'}} " bindtap="tabfun" data-idx="">
+            <text class="{{tempindex==''?'col0057ff':'col9595a5'}} fs-28">全部</text>
+          </view>
+          <view class="{{tempindex=='10'?'bl bgf0f5ff':'bgedeff5'}} " bindtap="tabfun" data-idx="10">
+            <text class="{{tempindex=='10'?'col0057ff':'col9595a5'}} fs-28">有效</text>
+          </view>
+          <view class="{{tempindex=='20'?'bl bgf0f5ff':'bgedeff5'}} " bindtap="tabfun" data-idx="20">
+            <text class="{{tempindex=='20'?'col0057ff':'col9595a5'}} fs-28">无效</text>
+          </view>
+          <view class="{{tempindex=='30'?'bl bgf0f5ff':'bgedeff5'}} " bindtap="tabfun" data-idx="30">
+            <text class="{{tempindex=='30'?'col0057ff':'col9595a5'}} fs-28">已成交</text>
+          </view>
+        </view>
+        <button class="bt bgact" bindtap="sureFun" data-idx="{{tabidx}}">
+          <text class="fs-32 colfff">确定</text>
+        </button>
+      </view>
+      <view class="tab flex flex-col flex-aic" wx:if="{{tabidx==3}}">
+        <view class="picker-vi mt-30 mb-30">
+          <picker-view indicator-style="height: 50px;" style="width: 610rpx; height: 260px;" value="{{userTemp}}"  bindchange="bindUserChange">
+            <picker-view-column>
+              <view wx:for="{{userList}}" wx:key="{{item.userId}}" style="width:610rpx;line-height: 50px; text-align: center;" class="fs-32">{{item.nickName}}</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+        <button class="bt bgact" bindtap="sureFun" data-idx="{{tabidx}}">
+          <text class="fs-32 colfff">确定</text>
+        </button>
+      </view>
+    </view>
+    <scroll-view scroll-y class="{{tabsidx==10||tabsidx==20||userList.length>0?'svt':'sv'}}" bindscrolltolower="bindscrolltolower">
+      <view class="flex flex-col flex-aic">
+        <block wx:for="{{conlist}}" wx:key="{{item.id}}">
+          <view class="sv-item " wx:if="{{distime > item.distime || item.returnState!=10}}">
+            <view>
+              <view class="mt-20">
+                <view class="flex flex-row flex-aic">
+                  <view class="hl"></view>
+                  <text class="fs-32 fwb col212429 ml-18">{{item.categoryType||''}}</text>
+                </view>
+                <view class="flex flex-row flex-jcc flex-aib" wx:if="{{item.distime<=distime&&item.agentState==10}}">
+                  <text class="cold15d57 fs-52">{{utils.toTimeFormat(distime - item.distime)}}</text>
+                  <view class="bgd15d57 flex flex-aic flex-jcc flex-row ml-26"
+                    style="height:31rpx;width:108rpx;border-radius:3rpx;">
+                    <text class="fs-22 colfff">反馈计时</text>
+                  </view>
+                </view>
+                <view class="flex flex-row flex-jcc flex-aib" wx:else>
+                  <text class="col9d9da6 fs-52">00:00</text>
+                  <view class="bgbabac1 flex flex-aic flex-jcc flex-row ml-26"
+                    style="height:31rpx;width:108rpx;border-radius:3rpx;">
+                    <text class="fs-22 colfff">反馈计时</text>
+                  </view>
+                </view>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcb">
+                <text class="fs-24 col5e5f66" wx:if="{{item.prov||item.city}}">{{item.prov}}-{{item.city}}</text>
+                <text wx:else class="fs-24 col5e5f66">保密</text>
+                <text class="col5e5f67 fs-24">{{item.receiveTime||''}}</text>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcb mb-30">
+                <view class="flex flex-row flex-aic bgf7f8fa" style="max-width:320rpx;height:38rpx;border-radius:5rpx;">
+                  <text class="fs-22 col9d9da6 ml-12 mr-12 tof">备注：{{item.categoryText||''}}</text>
+                </view>
+                <view wx:if="{{item.distime<=distime&&item.returnState==10}}" class="flex flex-row flex-aic flex-jcc" bindtap="appeal" data-id="{{item.id}}" data-idx="1" data-give="{{item.give}}"
+                  style="height:32rpx; width:110rpx;border:1rpx #00cf9a solid;border-radius:5rpx;background:#f3fcfa;">
+                  <text class="col00cf9a fs-20">无效申诉</text>
+                </view>
+                <view wx:elif="{{item.returnState==0}}" class="flex flex-row flex-aic flex-jcc" bindtap="appeal" data-id="{{item.id}}" data-idx="2"
+                  style="height:32rpx; width:128rpx;border:1rpx #0155fe solid;border-radius:5rpx;background:#f2f4fc;">
+                  <text class="col0155fe fs-20 ">无效审核中</text>
+                </view> 
+                <view wx:else class="flex flex-row flex-aic flex-jcc" bindtap="appeal" data-id="{{item.id}}" data-idx="3"
+                  style="height:32rpx; width:110rpx;border:1rpx #edeff5 solid;border-radius:5rpx;background:#edeff5;">
+                  <text class="col9595a5 fs-20">无效申诉</text>
+                </view>
+              </view>
+            </view>
+            <view class="flex flex-aic flex-row flex-jcb">
+              <view class="flex flex-row flex-aic">
+                <image src="/resource/image/head.png" style="height:74rpx;widht:74rpx;min-width:74rpx;"></image>
+                <view class="flex flex-jcc flex-col ml-16">
+                  <text class="fs-28 col222428">{{item.customerName||''}}</text>
+                  <text class="fs-28 col5e5f66">{{utils.toSubstr(item.customerPhone,0,3)}} **** {{utils.toSubstr(item.customerPhone,item.customerPhone.length-4)}}</text>
+                </view>
+              </view>
+
+              <button wx:if="{{item.agentState==10&&item.dealState!=10}}" class="bt bgact" style="margin-right:0;" bindtap="toPage1"  data-url="/pages/agent/detail/index?id={{item.id}}" >
+                <text class="fs-24 colfff">查看</text>
+              </button>
+              
+              <button class="bt bgact" wx:elif="{{item.dealState==10}}" style="margin-right:0;" bindtap="toPage"  data-url="/pages/agent/detail/index?id={{item.id}}">
+                <text class="colfff fs-24">已成交</text>
+              </button>
+              <button class="bt" wx:else style="margin-right:0;background: #edeff5;">
+                <text class="col9595a5 fs-24">查看</text>
+              </button>
+            </view>
+          </view>
+          <view class="sv-item " wx:else>
+            <view>
+              <view class="mt-20">
+                <view class="flex flex-row flex-aic">
+                  <view class="hl"></view>
+                  <text class="fs-32 fwb col212429 ml-18">{{item.categoryType||''}}</text>
+                </view>
+                <view class="flex flex-row flex-jcc flex-aib" wx:if="{{item.followTime}}">
+                  <text class="cold15d57 fs-52">{{item.followTime||''}}</text>
+                </view>
+                <view class="flex flex-row flex-jcc flex-aib" wx:else>
+                  <text class="cold15d57 fwb fs-36" >暂未跟进</text>
+                </view>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcb">
+                <text class="fs-24 col5e5f66" wx:if="{{item.prov||item.city}}">{{item.prov}}-{{item.city}}</text>
+                <text wx:else class="fs-24 col5e5f66">保密</text>
+                <view class="flex flex-row flex-aic bgf7f8fa" style="max-width:320rpx;height:38rpx;border-radius:5rpx;">
+                  <text class="fs-22 col9d9da6 ml-12 mr-12">下次跟进日期</text>
+                </view>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcb mb-30">
+                <text class="col5e5f67 fs-24">{{item.receiveTime||''}}</text>
+                <view class="flex flex-row flex-aic">
+                  <view wx:if="{{item.followCount>0}}" class="flex flex-row flex-aic flex-jcc"
+                    style="height:32rpx; width:128rpx;border:1rpx #00cf9a solid;border-radius:5rpx;background:#f3fcfa;">
+                    <text class="col00cf9a fs-20">今日已跟进</text>
+                  </view>
+                  <view wx:if="{{item.sourceTypeLv}}" class="flex flex-row flex-aic flex-jcc ml-24"
+                    style="height:32rpx; width:128rpx;border:1rpx #d15d57 solid;border-radius:5rpx;background:#d15d57;">
+                    <text class="colfff fs-20">商机级别 {{item.sourceTypeLv}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="flex flex-aic flex-row flex-jcb">
+              <view class="flex flex-row flex-aic">
+                <image src="/resource/image/head.png" style="height:74rpx;widht:74rpx;min-width:74rpx;"></image>
+                <view class="flex flex-jcc flex-col ml-16">
+                  <text class="fs-28 col222428">{{item.customerName||''}}</text>
+                  <text class="fs-28 col5e5f66">{{utils.toSubstr(item.customerPhone,0,3)}} **** {{utils.toSubstr(item.customerPhone,item.customerPhone.length-4)}}</text>
+                </view>
+              </view>
+              <button wx:if="{{item.dealState==0}}" class="bt bgact" style="margin-right:0;" bindtap="toPage" data-url="/pages/agent/detail/index?id={{item.id}}"  >
+                <text class="fs-24 colfff">添加跟进</text>
+              </button>
+              <button class="bt bgact" wx:elif="{{item.dealState==10}}" style="margin-right:0;" bindtap="toPage" data-url="/pages/agent/detail/index?id={{item.id}}">
+                <text class="colfff fs-24">已成交</text>
+              </button>
+              <button class="bt" wx:else style="margin-right:0;background: #edeff5;">
+                <text class="col9595a5 fs-24">添加跟进</text>
+              </button>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="flex flex-aic flex-row last-vi flex-jcc">
+        <view wx:if="{{loading}}" class="weui-loadmore">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+        </view>
+        <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view catchtouchmove="{{true}}" class="alter-vi" wx:if="{{isFollow}}">
+  <c-dialog show="{{isFollow}}" class="noft nohd z1000" bindclose="closeFun" ext-class="z1000">
+    <view class="flex flex-col flex-aic z1000">
+      <text class="col212429 fs-36 fwb mt-60">申述缘由</text>
+      <view class="mt-60 textarea-vi">
+        <textarea placeholder="点击此处录入申述缘由，详尽的申述缘由可以提高您的审批率" placeholder-class="taph" class="ta"
+          bindinput="inputFun"></textarea>
+      </view>
+      <view class="flex flex-row flex-aic mt-50">
+        <button class="bl bt bgf5f7fd" style="width:180rpx !important;" bindtap="closeFun">
+          <text class="fs-24 col0057ff">取消申诉</text>
+        </button>
+        <button class="bgact bt ml-30" style="width:180rpx !important;" bindtap="sureAppeal">
+          <text class="fs-24 colfff">确认申诉</text>
+        </button>
+      </view>
+    </view>
+  </c-dialog>
+</view>
+
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

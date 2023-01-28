@@ -1,0 +1,9 @@
+/* pages/personal/about/about.wxss */
+@import "../setting/setting.wxss";
+.menu-vi{
+  background: #fff;
+  border-top: 1rpx #eee solid;
+}
+.menu-item{
+  width: calc(100% - 80rpx);
+}

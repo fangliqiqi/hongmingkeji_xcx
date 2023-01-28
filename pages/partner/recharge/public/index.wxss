@@ -1,0 +1,25 @@
+/* pages/partner/recharge/public/index.wxss */
+page{
+  background-color: #f7f8fa;
+}
+.footer .bt{
+  width: calc(100% - 140rpx) !important;
+}
+.code-vi{
+  width: calc(100% - 104rpx);
+  background-color: #fff;
+  margin-top: 95rpx;
+  border-radius: 8rpx;
+}
+.msg-vi{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -96rpx;
+
+}
+.colabacb2{
+  color: #abacb2;
+}

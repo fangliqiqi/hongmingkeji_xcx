@@ -1,0 +1,146 @@
+<!--pages/wallet/wallet.wxml-->
+<c-contact></c-contact>
+<wxs src="../../utils/utils.wxs" module="utils" />
+
+<view class="page">
+  <view class="bgtop"></view>
+  <view class="userInfo">
+		<view class="header">
+			<image wx:if="{{userInfo.avatar||recommendInfo.avatar}}" src="{{url+(recommendInfo.avatar||userInfo.avatar)}}"></image>
+      <image wx:elif="{{recommendId}}" src="/resource/image/header.png"></image>
+      <open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+		</view>
+		<view class="info">
+      <view>
+        <text class="fs-42 colfff fwb">{{recommendInfo.nickName||userInfo.nickName||''}}</text>
+        <image wx:if="{{(userInfo.vip&&userInfo.vip>0)||(recommendInfo.vip&&recommendInfo.vip>0)}}" class="ml-20" src="/resource/image/vip-{{recommendInfo.vip||userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+      </view>
+      <view>
+        <block wx:if="{{userInfo.wxBind=='1'||recommendInfo.wxBind=='1'}}">
+          <image class="mr-10" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx"></image>
+          <text class="colfff fs-24">已绑定微信</text>
+        </block>
+        <text class="colfff fs-24" wx:else>未绑定微信</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="sv-vi ">
+		<view class="amount-vi boxsh mw0-30 ml-a mr-a">
+			<view>
+				<text class="col0155fe fs-56">{{utils.toFloat(accountBalance||0)}}</text>
+				<text class="col5e5f66 fs-26">可提现余额(元)</text>
+			</view>
+			<view>
+				<text class="cold15d57 fs-56">{{utils.toFloat(integral||0)}}</text>
+				<!-- <text class="col5e5f66 fs-26">积分</text> -->
+				<text class="col5e5f66 fs-26">冻结余额(元)</text>
+			</view>
+			<view  bindtap="toPage" data-url="/pages/wallet/topup/topup">
+				<text class="col5e5f66 fs-56">+</text>
+				<text class="col5e5f66 fs-26">充值</text>
+			</view>
+			<image src="/resource/image/icon-45.png" mode="widthFix" style="width:44rpx" bindtap="showTip"></image>
+		</view>
+		<view class="title expense_title">
+        <view class="flex flex-row flex-aic">
+          <!-- <view class="hl"></view> -->
+					<text class="fs-28 col5e5f66 {{titleTab==5?'t_active':''}}"  bindtap="tabfun" data-idx="5">消费记录</text>
+					<text  class="fs-28 col5e5f66 ml-30 {{titleTab==1?'t_active':''}}"  bindtap="tabfun" data-idx="1">充值记录</text>
+        </view>
+    </view>
+		<scroll-view scroll-y  class="sv" bindscrolltolower="bindscrolltolower" >
+			<!-- 消费记录 -->
+			<view class="flex flex-col " wx:if="{{titleTab==5}}">
+				<view class="expense_item boxsh mt-20 mw0-30 ml-a mr-a"  bindtap="toDetail" wx:for="{{expenseList}}"  wx:key="id"  
+							data-orderid="{{item.orderIdStr}}" data-id="{{item.id}}">
+					<view class="item">
+						<view class="flex flex-aic flex-jcb fs-28 col1c1f23">
+							<view class="flex">
+								<text class="item_left">订单号</text>
+								<text>{{item.orderIdStr}}</text>
+							</view>
+						<view  class="col00cf9a" wx:if="{{item.payStatus==1}}">支付成功</view>
+						<view  class="cole15352" wx:if="{{item.payStatus==2}}">支付失败</view>
+						<view  class="cole15352" wx:if="{{item.payStatus==3}}">待支付</view>
+						<view   wx:if="{{item.payStatus==4}}">待审核</view>
+						</view>
+						<view class="flex flex-aic flex-jcb fs-26 col1c1f23 mt-10">
+							<view class="flex flex07">
+								<text class="item_left">订单总价</text>
+								<text class="fwb">{{item.expenseMoney}}元</text>
+							</view>
+							<view class="flex flex1 flex-jce fs-24 col9d9da6">
+								<text class="item_left">下单时间</text>
+								<text >{{item.createTime}}</text>
+							</view>
+						</view>
+					</view>	
+				</view>
+			</view>
+			<!-- 充值记录 -->
+			<view class="flex flex-col" wx:if="{{titleTab==1}}">
+				<view class="expense_box  flex flex-row  flex-aic" wx:for="{{expenseList}}" wx:key="id" bindtap="payFun" data-item="{{item}}" >
+					<view class="left_icon" >
+						<image src="/resource/image/wallet01.png" mode="aspectFit"></image>
+					</view>
+					<!-- <view class="left_icon" wx:elif="{{item.expenseType == 2}}">
+						<image src="/resource/image/wallet02.png" mode="aspectFit"></image>
+					</view>
+					<view class="left_icon" wx:elif="{{item.expenseType == 3}}">
+						<image src="/resource/image/wallet03.png" mode="aspectFit"></image>
+					</view>
+					<view class="left_icon" wx:else>
+						<image src="/resource/image/wallet04.png" mode="aspectFit"></image>
+					</view> -->
+					<view class="right_info flex flex-jcb">
+						<view class="flex flex-col ">
+							<text class="fs-28"  wx:if="{{item.expenseType == 1}}">预充值</text>
+							<text class="fs-28"  wx:if="{{item.expenseType == 6}}">升级</text>
+							<!-- <text class="fs-28"  wx:elif="{{item.expenseType == 2}}">软件使用费</text>
+							<text class="fs-28"  wx:elif="{{item.expenseType == 3}}">商品购买</text>
+							<text class="fs-28"  wx:else>积分兑换</text> -->
+							<text class="fs-24 col9d9da6 mt-6">{{item.createTime}}</text>
+						</view>
+						<view class="flex flex-col flex-aie">
+							<view class="flex flex-row  flex-aie">
+								<text  class="fwb fs-32"  wx:if="{{item.expenseType == 1}}" >+</text>
+								<!-- <text  class="fwb fs-32"  wx:else>-</text> -->
+								<text class="fwb fs-28">{{item.expenseMoney}}</text>
+							</view>
+							<text class="fs-24 mt-6" wx:if="{{item.payStatus == 1}}">已支付</text>
+							<text  class="fs-24 mt-6" wx:elif="{{item.payStatus == 2}}">支付失败</text>
+							<text class="fs-24 cole15352 mt-6" wx:elif="{{item.payStatus == 3}}" >待支付</text>
+						</view>
+					</view>
+				</view>
+			</view>			
+			<view class="flex flex-aic flex-row last-vi flex-jcc bgfff">
+				<view wx:if="{{loading}}" class="weui-loadmore">
+					<view class="weui-loading"></view>
+					<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+				</view>
+				<view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+				</view>
+			</view>
+	</scroll-view>
+	</view>
+</view>
+
+<c-dialog show="{{isTip}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">充值小提示</text>
+		<view wx:if="{{notOpened}}" class="mt-40 mb-2  fs-28 col212429">您所在城市尚未开通代理商业务，请耐心等待~</view>
+		<view  wx:if="{{!notOpened}}">
+			<view class="mt-40 mb-2  fs-26 col212429" wx:for="{{tipList}}" wx:key='index'>
+				充值{{item.prepareRecharge}}元，将会升级为{{item.roleName}}
+			</view>
+		</view>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindCodeFun">
+				<text class="fs-24 colfff">好的</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>

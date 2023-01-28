@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon",
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText":"添加意向订单"
+}

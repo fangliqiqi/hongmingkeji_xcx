@@ -1,0 +1,60 @@
+<!--pages/personal/IntAgentorder/IntAgentorder.wxml-->
+<!--pages/personal/intorder/intorder.wxml-->
+<!--pages/personal/disorder/disorder.wxml-->
+<c-contact></c-contact>
+<wxs src="../../../utils/utils.wxs" module="utils" />
+<view class="page">
+	<view class="page__bd" >
+    <mp-searchbar  placeholder="请输入搜索信息"  bindinput="searchFun" bindclear="clearFun" ></mp-searchbar>
+  </view>
+	<view class="sv-vi mw0-30">
+    <view class="tabs-vi">
+      <view class="tab {{tabidx==''?'on':''}}" bindtap="tabfun" data-idx="">
+        <text>全部</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabidx==1?'on':''}}" bindtap="tabfun" data-idx="1">
+        <text>有效</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabidx==2?'on':''}}" bindtap="tabfun" data-idx="2">
+        <text>无效</text>
+        <view></view>
+      </view>
+		</view>
+		<scroll-view scroll-y class="sv" bindscrolltolower="bindscrolltolower">
+			<view class="flex flex-col flex-aic padbt ">
+				<view class="dis_box boxsh"  wx:for="{{intorderList}}" wx:key="id" data-id="{{item.id}}"  data-orderid="{{item.agentOrderId}}"   bindtap="todetails">
+					<view class="dis_boxhead">
+						<view class="flex flex-aic mr-12">
+							<image src="/resource/image/icon-28.png"></image>
+							<text class="fs-32  col212429 ml-18 fwb name">{{item.userName||''}}</text>
+							<text class="fs-28  col5e5f6 ml-24">{{item.userPhone}}</text>     
+						</view>
+						<view  class="status status1"  wx:if="{{item.orderState == 1}}">有效</view>
+						<view  class="status status2" wx:if="{{item.orderState == 2 }}">无效</view>
+					</view>
+					<view class="dis_boxfoot">
+						<view class="businessName">
+							<text  class="fs-28 col5e5f66 label">订单类型：</text>
+							<text class="fs-28 col0155fe">{{item.businessName}}</text>
+						</view>
+						<view class="businessName">
+							<text  class="fs-28 col5e5f66 label">订单创建人:</text>
+							<text class="fs-28 col0155fe">{{item.finishUserName}}</text>
+						</view>
+					</view>
+				</view> 
+			</view>
+		</scroll-view>
+	</view>
+
+	<view class="footer-vi boxsh">
+		<button class="bgf5f7fc bl bt" bindtap="toPage">
+			<c-icon icon="add" color="#0155fe" class="mb-8 mr-12"></c-icon><text class="fs-32 col0155fe">添加意向订单</text>
+		</button>
+	</view>
+</view>
+
+
+

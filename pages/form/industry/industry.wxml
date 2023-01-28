@@ -1,0 +1,24 @@
+<!--pages/form/industry/industry.wxml-->
+<scroll-view class="sv-vi" scroll-y>
+  <view class="alert-vi ">
+    <view class="flex flex-col mw0-30" wx:for="{{comlist}}" wx:for-item="items" wx:key="*this">
+      <text class="fs-32 col212429 fwb mt-32">{{items.name}}</text>
+      <view>
+        <view wx:for="{{items.broadList}}" class="al-item {{item.id==comObj.id?'act':''}}" wx:key="*this" catchtap="comtap" data-item="{{item}}">
+          <text class="col5e5f66 fs-24" >{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer-vi">
+    <view class="footer">
+      <button class="bt flex1 ml-30 " bindtap="resettap">
+        <text class="col5e5f66 fs-32">重置</text>
+      </button>
+      <button class="bt bgact flex2 ml-30 mr-30" bindtap="suretap">
+        <text class="colfff fs-32">确认</text>
+      </button>
+    </view>
+  </view>
+</scroll-view>
+

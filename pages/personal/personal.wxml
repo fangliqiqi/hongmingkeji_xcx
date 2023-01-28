@@ -1,0 +1,193 @@
+<!--pages/personal/personal.wxml-->
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+    <view class="bgtop"></view>
+    <view class="personal-vi">
+        <view class="userInfo" wx:if="{{userInfo}}">
+            <button wx:if="{{!userFlag}}" class="header" >
+                <image wx:if="{{userInfo.avatar}}" src="{{(utils.startWith(userInfo.avatar,'http')?'':url)+userInfo.avatar}}"></image>
+                <image wx:else src="/resource/image/logo.jpg"></image>
+            </button>
+            <view class="header" wx:else>
+                <image wx:if="{{userInfo.avatar}}" src="{{(utils.startWith(userInfo.avatar,'http')?'':url)+userInfo.avatar}}"></image>
+                <open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/logo.jpg"></open-data>
+            </view>
+            <view class="info">
+                <view>
+                    <text class="fs-42 colfff fwb">{{userInfo.nickName||'马上登录'}}</text>
+                    <image wx:if="{{userInfo.vip&&userInfo.vip>0}}" class="ml-20"  bindtap="video"
+                        src="/resource/image/vip-{{userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+                </view>
+                <view  wx:if="{{roleIds.length>0}}" class="agent">
+                    <view wx:for="{{roleIds}}" wx:key='id' class="mr-16 roleName">
+                        <image class="mr-6" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx">
+                        </image>
+                        <text class="colfff fs-28" >{{item.roleName}}</text>  
+                    </view>
+                </view>
+                <view wx:else>
+                    <block wx:if="{{userInfo.wxBind=='1'}}">
+                        <image class="mr-10" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx">
+                        </image>
+                        <text class="colfff fs-24">已绑定微信</text>
+                    </block>
+                    <text class="colfff fs-24" wx:else>未绑定微信</text>
+                </view>
+
+            </view>
+            <view wx:if="{{userInfo.agentFlag==10}}" class="agent-vi" bindtap="toAgent" data-url="/pages/partner/index">
+                <image src="/resource/image/icon-58.png" ></image><text >合作商入口</text>
+            </view>
+        </view>
+        <view class="userInfo" wx:else bindtap="toPage" data-url="/pages/login/login">
+            <view class="header">
+                <image src="/resource/image/header.png"></image>
+            </view>
+            <view class="info">
+                <view>
+                    <text class="fs-42 colfff fwb">{{userInfo.nickName||'马上登录'}}</text>
+                </view>
+                <view>
+                    <text class="colfff fs-24">点击头像登录，享受更多精彩信息</text>
+                </view>
+            </view>
+        </view>
+        <view class="tabs-vi boxsh">
+            <view class="tab" bindtap="toIntorder" data-url="/pages/personal/intorder/intorder">
+                <image src="/resource/image/icon-25.png" mode="aspectFit"></image>
+                <text>意向订单</text>
+            </view>
+            <view class="tab" bindtap="toPage" data-url="/pages/personal/disorder/disorder">
+                <image src="/resource/image/icon-26.png" mode="aspectFit"></image>
+                <text wx:if="{{myroleFlag}}"> 我的订单</text>
+                <text wx:if="{{!myroleFlag}}">分销订单</text>
+            </view>
+            <view class="tab" bindtap="toPage" data-url="/pages/commission/commission">
+                <image src="/resource/image/icon-27.png" mode="aspectFit"></image>
+                <text>我的佣金</text>
+            </view>
+            <view class="tab" bindtap="toPage" data-url="/pages/wallet/wallet">
+                <image src="/resource/image/money.png" mode="aspectFit"></image>
+                <text>我的钱包</text>
+            </view>
+            <view class="tab" bindtap="toPage" data-url="/pages/coupon/coupon">
+                <image src="/resource/image/coupon.png" mode="aspectFit"></image>
+                <text>我的卡券</text>
+            </view>
+        </view>
+        <view class="menu-vi">
+            <view bindtap="toPage" data-url="/pages/cashOut/cashOut">
+                <view>
+                    <image src="/resource/image/icon-32.png" mode="aspectFit" style="height:28rpx"></image>
+                    <text>我要提现</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <view bindtap="toPage" data-url="/pages/bankCard/bankCard">
+                <view>
+                    <image src="/resource/image/icon-33.png" mode="aspectFit" style="height:28rpx"></image>
+                    <text>我的银行卡</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="line-20"></view>
+        <view class="menu-vi">
+            <view bindtap="toPage" data-url="/pages/personal/commission/index" data-login="2"  >
+                <view>
+                    <image src="/resource/image/icon-34.png" mode="aspectFit" style="height:33rpx"></image>
+                    <text>佣金规则</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <!-- <view>
+                <view>
+                    <image src="/resource/image/icon-35.png" mode="aspectFit" style="height:34rpx"></image>
+                    <text>常见问题</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view> -->
+            
+            <!-- <view bindtap="toPage" data-url="/pages/personal/intorder/intorder" data-login="2"  >
+                <view>
+                    <image src="/resource/image/intorder.png" mode="aspectFit" style="width:32rpx"></image>
+                    <text>意向订单</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view> -->
+            <view bindtap="toPage" data-url="/pages/personal/IntAgentorder/IntAgentorder" data-login="2"  
+                    wx:if="{{agentId}}">
+                <view>
+                    <image src="/resource/image/agentintorder.png" mode="aspectFit" style="width:32rpx"></image>
+                    <text>代理人意向订单</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <!-- <view bindtap="toPage" data-url="/pages/personal/disorder/disorder" data-login="2">
+                <view>
+                    <image src="/resource/image/order.png" mode="aspectFit" style="height:32rpx"></image>
+                    <text wx:if="{{userInfo.roleId == 114}}"> 我的订单</text>
+                    <text wx:if="{{userInfo.roleId !=114}}">分销订单</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view> -->
+            <view bindtap="toPage" data-url="/pages/personal/disAgentorder/disAgentorder" data-login="2"
+                    wx:if="{{agentId}}">
+                <view>
+                    <image src="/resource/image/agentdisorder.png" mode="aspectFit" style="height:32rpx"></image>
+                    <text>代理人分销订单</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <view bindtap="toPage" data-url="/pages/personal/companyset/companyset" data-login="2" 
+                 wx:if="{{roleFlag}}">
+                <view>
+                    <image src="/resource/image/companyset.png" mode="aspectFit" style="height:31rpx"></image>
+                    <text>公司设置</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            
+            <view bindtap="toPage" data-url="/pages/personal/cardAgency/cardAgency" data-login="2">
+                <view>
+                    <image src="/resource/image/cardagent.png" mode="aspectFit" style="height:31rpx"></image>
+                    <text>会员卡代理</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <view bindtap="toPage" data-url="/pages/personal/upgrade/upgrade" data-login="2">
+                <view>
+                    <image src="/resource/image/up.png" mode="aspectFit" style="height:31rpx"></image>
+                    <text>代理商升级</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <view bindtap="toPage" data-url="/pages/personal/setting/setting" data-login="2">
+                <view>
+                    <image src="/resource/image/icon-36.png" mode="aspectFit" style="height:31rpx"></image>
+                    <text>个人设置</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view>
+            <!-- <view bindtap="toOther" >
+                <view>
+                    <image src="/resource/image/icon-36.png" mode="aspectFit" style="height:31rpx"></image>
+                    <text>积分商城</text>
+                </view>
+                <image src="/resource/image/icon-09.png" mode="widthFix"></image>
+            </view> -->
+        </view>
+    </view>
+    <swiper wx:if="{{bannerList.length>0}}" class="sw" indicator-dots indicator-color="#fff" indicator-active-color="rgba(255, 255, 255, .3)" autoplay
+        interval="3000" circular >
+        <swiper-item class="flex flex-col flex-aic flex-jcc" wx:for="{{bannerList}}" wx:key="*this"
+            wx:if="{{item.state==1}}">
+            <view class="sw-item br-16 mw0-30" bindtap="toPage" data-url="{{item.path}}" data-idx="99"
+                data-web="{{item.isOut}}">
+                <image src="{{imgUrl+item.imgSrc}}" mode="widthFix"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<c-contact></c-contact>
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

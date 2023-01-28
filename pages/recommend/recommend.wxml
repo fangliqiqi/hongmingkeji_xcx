@@ -1,0 +1,139 @@
+<!--pages/recommend/recommend.wxml-->
+
+<c-contact></c-contact>
+
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+  <view class="bgtop"></view>
+  <view class="userInfo">
+    <view class="header">
+      <image wx:if="{{userInfo.avatar||recommendInfo.avatar}}" src="{{url+(recommendInfo.avatar||userInfo.avatar)}}"></image>
+      <image wx:elif="{{recommendId}}" src="/resource/image/header.png"></image>
+      <open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+    </view>
+    <view class="info">
+      <view>
+        <text class="fs-42 colfff fwb">{{recommendInfo.nickName||userInfo.nickName||''}}</text>
+        <image wx:if="{{(userInfo.vip&&userInfo.vip>0)||(recommendInfo.vip&&recommendInfo.vip>0)}}" class="ml-20" src="/resource/image/vip-{{recommendInfo.vip||userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+      </view>
+      <view>
+        <block wx:if="{{userInfo.wxBind=='1'||recommendInfo.wxBind=='1'}}">
+          <image class="mr-10" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx"></image>
+          <text class="colfff fs-24">已绑定微信</text>
+        </block>
+        <text class="colfff fs-24" wx:else>未绑定微信</text>
+      </view>
+    </view>
+  </view>
+  <view class="sv-vi mw0-30">
+    <view class="tabs-vi">
+      <view class="tab {{tabidx==''?'on':''}}" bindtap="tabfun" data-idx="">
+        <text>已推荐</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabidx==10?'on':''}}" bindtap="tabfun" data-idx="10">
+        <text>已跟进</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabidx==20?'on':''}}" bindtap="tabfun" data-idx="20">
+        <text>已成交</text>
+        <view></view>
+      </view>
+    </view>
+    <scroll-view scroll-y class="sv" bindscrolltolower="bindscrolltolower">
+      <view class="flex flex-col flex-aic" wx:if="{{tabidx==''}}">
+        <view class="sv-item boxsh" wx:for="{{conlist}}" bindtap="tiptap" data-state="{{item.referRelation.state}}">
+          <view>
+            <view>
+              <view class="flex flex-row flex-aic">
+                <image src="/resource/image/icon-28.png"></image>
+                <text class="fs-32 fwb col212429 ml-18">{{item.nickName}}</text>
+              </view>
+              <text class="fs-28 col5e5f66">{{item.phonenumber}}</text>
+            </view>
+            <view class="wsn">
+              <text class="fs-24 col5e5f66" wx:if="{{item.prov||item.city}}">{{item.prov}}-{{item.city}}</text>
+              <text wx:else class="fs-24 col5e5f66">保密</text>
+              <label></label>
+              <text
+                class="fs-24 col0155fe">{{item.referRelation.category==1?'会计上门':item.referRelation.category==2?'财务外包':item.referRelation.category==3?'税务筹划':''}}</text><label></label>
+              <text class="fs-24 col41cc9d">{{utils.toSplit(item.referRelation.createTime)[0]}}</text>
+              <text class="fs-24 col5e5f66 ml-8">(推荐日期）</text>
+            </view>
+          </view>
+          <image wx:if="{{item.referRelation.state==20}}" src="/resource/image/icon-29.png" mode="widthFix"></image>
+          <image wx:if="{{item.referRelation.state==0}}" src="/resource/image/icon-37.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="flex flex-col flex-aic" wx:if="{{tabidx==10}}">
+        <view class="sv-item boxsh" wx:for="{{conlist}}">
+          <view>
+            <view>
+              <view class="flex flex-row flex-aic">
+                <image src="/resource/image/icon-28.png"></image>
+                <text class="fs-32 fwb col212429 ml-18">{{item.nickName}}</text>
+              </view>
+              <text class="fs-28 col5e5f66">{{item.phonenumber}}</text>
+            </view>
+            <view class="wsn">
+              <text class="fs-24 col5e5f66" wx:if="{{item.prov||item.city}}">{{item.prov}}-{{item.city}}</text>
+              <text wx:else class="fs-24 col5e5f66">保密</text>
+              <label></label>
+              <text
+                class="fs-24 col0155fe">{{item.referRelation.category==1?'会计上门':item.referRelation.category==2?'财务外包':item.referRelation.category==3?'税务筹划':''}}</text><label></label>
+              <text class="fs-24 col41cc9d">{{utils.toSplit(item.referRelation.createTime)[0]}}</text>
+              <text class="fs-24 col5e5f66 ml-8">(跟进日期）</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex flex-col flex-aic" wx:if="{{tabidx==20}}">
+        <view class="sv-item boxsh" wx:for="{{conlist}}">
+          <view>
+            <view>
+              <view class="flex flex-row flex-aic">
+                <image src="/resource/image/icon-28.png"></image>
+                <text class="fs-32 fwb col212429 ml-18">{{item.nick_name}}</text>
+              </view>
+              <text class="fs-28 col5e5f66">{{item.phonenumber}}</text>
+            </view>
+            <view class="wsn">
+              <text class="fs-24 col5e5f66" wx:if="{{item.prov||item.city}}">{{item.prov}}-{{item.city}}</text>
+              <text wx:else class="fs-24 col5e5f66">保密</text>
+              <label></label>
+              <text
+                class="fs-24 col0155fe">{{item.category==1?'会计上门':item.category==2?'财务外包':item.category==3?'税务筹划':''}}</text><label></label>
+              <text class="fs-24 col41cc9d">{{utils.toSplit(item.updateTime||item.createTime)[0]}}</text>
+              <text class="fs-24 col5e5f66 ml-8">(成交日期）</text>
+            </view>
+          </view>
+          <view>
+            <view class="flex flex-col">
+              <text
+                class="col2253f4 fs-38 fwb">{{item.category==1?'会计上门':item.category==2?'财务外包':item.category==3?'税务筹划':''}}</text>
+              <text class="col9595a5 fs-22">成交类目</text>
+            </view>
+            <view class="flex flex-col">
+              <text class="col5e5f66 fs-52">{{item.deal_amount}}</text>
+              <text class="col9595a5 fs-22">成交金额</text>
+            </view>
+            <view class="flex flex-col">
+              <text class="col5e5f66 fs-38">{{item.return_ratio}}<text class="fs-26">%</text></text>
+              <text class="col9595a5 fs-22">佣金比例</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="flex flex-aic flex-row last-vi flex-jcc bgfff">
+        <view wx:if="{{loading}}" class="weui-loadmore">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+        </view>
+        <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

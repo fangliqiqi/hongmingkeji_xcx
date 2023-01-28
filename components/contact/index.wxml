@@ -1,0 +1,41 @@
+<!--components/contact/index.wxml-->
+<!-- <view class="contact-vi">
+  <button class="float-vi" open-type="contact">
+    <view class="img-vi">
+      <image src="/resource/image/icon-23.png" mode="aspectFit"></image>
+    </view>
+    <text class="colfff fs-26">联系我们</text>
+  </button>
+</view> -->
+<view class="contact-vi">
+  <button class="float-vi" bindtap="openFun">
+    <view class="img-vi">
+      <image wx:if="{{open}}" src="/resource/image/icon-76.png" mode="aspectFit" style="width:39rpx;height:39rpx;">
+      </image>
+      <image wx:else src="/resource/image/icon-75.png" mode="aspectFit"
+        style="width:55rpx;height: 52rpx;margin-bottom: 4rpx;"></image>
+    </view>
+  </button>
+  <view class="contact" wx:if="{{open}}">
+    <view class="backgd" catchtouchmove="false"></view>
+    <button class="contact-item" open-type="contact" bindcontact="bindcontact" >
+      <view class="img-vi">
+        <image src="/resource/image/icon-77.png" mode="aspectFit" style="width:48rpx;height:46rpx;"></image>
+      </view>
+      <text class="colfff fs-26">在线客服</text>
+    </button>
+    <button class="contact-item" bindtap="callFun" data-idx="1" >
+      <view class="img-vi">
+        <image src="/resource/image/icon-78.png" mode="aspectFit" style="width:45rpx;height:37rpx;"></image>
+      </view>
+      <text class="colfff fs-26">合作商招募</text>
+    </button>
+    <button class="contact-item" bindtap="callFun" data-idx="2">
+      <view class="img-vi">
+        <image src="/resource/image/icon-79.png" mode="aspectFit" style="width:43rpx;height:40rpx;"></image>
+      </view>
+      <text class="colfff fs-26">客服电话</text>
+    </button>
+    <view class="ari"></view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon",
+    "c-dialog": "weui-miniprogram/dialog/dialog",
+    "c-hs-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  },
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText":"我要提现"
+}

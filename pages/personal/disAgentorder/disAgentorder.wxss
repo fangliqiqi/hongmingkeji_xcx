@@ -1,0 +1,89 @@
+/* pages/personal/disorder/disorder.wxss */
+@import "../../commission/commission.wxss";
+.padbt{
+  padding-bottom:160rpx;
+}
+.dis_box{
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#fff,#f7f9ff);
+  justify-content: space-between;
+  margin-top: 32rpx;
+  width: calc(100% - 80rpx);
+  /* height: 204rpx; */
+  padding: 46rpx 36rpx 36rpx 36rpx;
+  box-sizing: border-box;
+}
+.dis_box image{
+  width: 33rpx;
+  height: 34rpx;
+}
+.dis_boxhead{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28rpx;
+  border-bottom: 1rpx dashed #eeeeee;
+}
+.status{
+  width: 88rpx;
+  height: 32rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+}
+.status1{
+  border: 1rpx solid #00cf9a;
+  color:#00cf9a;
+  background-color: #f3fcfa;
+}
+.status2{
+  border: 1rpx solid #e15352;
+  color:#e15352;
+  background-color: #fffafa;
+}
+.status3{
+  border: 1rpx solid #0155fe;
+  color:#0155fe;
+  background-color: #f2f4fc;
+}
+
+.dis_boxfoot{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.dis_boxfoot label{
+  width:1rpx;
+  height: 26rpx;
+  background-color: #eeeeee;
+}
+.businessName{
+  max-width:50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.businessName text:nth-child(2){
+  max-width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.downPayment{
+  max-width:50%;
+  display: flex;
+  align-items: center;
+}
+/* .downPayment text:nth-child(2){
+  max-width: 40%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+} */

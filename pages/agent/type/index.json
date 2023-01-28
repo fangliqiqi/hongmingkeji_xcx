@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+    
+  },
+  "navigationBarTitleText":"商机更改"
+}

@@ -1,0 +1,64 @@
+<!--pages/agent/type/index.wxml-->
+<view class="page blt">
+  <view class="flex flex-aic flex-col bgfff top-vi">
+    <text class="fs-36 col212429 mt-50">已选商机</text>
+    <view class="agent mt-26 mb-50">
+      <view class="agent-item" wx:for="{{sellist}}">
+        <text>{{item.categoryType||''}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+  </view>
+  <view class="bgfff mw100 flex flex-aic flex-col sc-vi">
+    <view class="agent-vi" wx:for="{{conlist}}">
+      <view class="flex flex-row flex-aic flex-jcb" >
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <view class="flex flex-row flex-aib ml-20">
+            <text class="fs-32 col20242a">{{item.categoryType||''}}</text>
+            <text class="fs-24 col20242a">商机</text>
+          </view>
+        </view>
+          <view class="flex flex-row flex-aib ml-20">
+            <text class="fs-52 col212429">{{item.categoryPrice||0}}</text>
+            <text class="fs-28 col212429">元/条</text>
+          </view>
+      </view>
+      <view class="flex flex-row flex-aic">
+        <view class="bgf7f8fa col9d9da6 fs-22" style="width:69%;padding:8rpx 16rpx;box-sizing: border-box;">
+          {{item.content||''}}
+        </view>
+        <view class="flex flex-row flex-aic flex1" style="height:100%;">
+          <view wx:if="{{item.select==1}}"  class="flex-row flex flex-jce flex1 flex-aic" style="height:100%;">
+            <text class="col9d9da6 fs-28 tdt">添加</text>
+          </view>
+          <view  wx:else class="flex-row flex flex-jce flex1 flex-aic" style="height:100%;" bindtap="addtap" data-id="{{item.id}}" data-tid="{{item.cateTypeLv}}">
+            <text class="col0155fe fs-28 tdu">添加</text>
+          </view>
+          
+          <view  class="flex-row flex flex-jce flex1 flex-aic" style="height:100%;" bindtap="deltap" data-id="{{item.id}}" data-tid="{{item.cateTypeLv}}">
+            <text class="cold15d57 fs-28 tdu">删除</text>
+          </view>
+        </view>
+      </view>
+    </view>    
+  </view>
+</view>
+<view class="footer-vi">
+  <view class="footer ">
+    <button class="bt bgact flex1 mw0-64" bindtap="submintFun">
+      <text class="fs-32 colfff">提交</text>
+    </button>
+  </view>
+</view>
+
+<c-dialog show="{{isSuccess}}" class="noft nohd" bindclose="closeFun">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-28 col212429 mt-80">您已提交新的商机分配</text>
+      <text class="fs-28 col212429 mt-8">客服稍后将电话与您确认后</text>
+      <text class="fs-28 col212429 mt-8">次日生效</text>
+		<button class="bgact bt mt-36" style="width:180rpx !important;" bindtap="closeFun" data-back="1">
+			<text class="fs-24 colfff">确认</text>
+		</button>
+	</view>
+</c-dialog>

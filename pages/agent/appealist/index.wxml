@@ -1,0 +1,63 @@
+<!--pages/agent/appealist/index.wxml-->
+<wxs src="../../../utils/utils.wxs" module="utils" />
+<view class="page-vi">
+  <view class="sv-vi mw100">
+    <view class="tabs-vi">
+      <view class="tab {{tabsidx=='20'?'on':''}}" bindtap="tabsfun" data-idx="20">
+        <text>待审核</text>
+        <view></view>
+      </view>
+      <view class="tab {{tabsidx==30?'on':''}}" bindtap="tabsfun" data-idx="30">
+        <text>已审核</text>
+        <view></view>
+      </view>
+    </view>
+    <scroll-view scroll-y class="sv" bindscrolltolower="bindscrolltolower">
+      <view class="flex flex-col flex-aic "> 
+        <block wx:for="{{conlist}}" wx:key="id">
+          <view class="appeal-item" bindtap="toPage" data-id='{{item.id}}'>
+            <view class="flex flex-row flex-aic flex-jcb">
+              <view class="flex flex-aic">
+                <image src="/resource/image/head.png" ></image>
+                <text class="fs-28 col222428 ml-20">{{item.customerName||''}}</text>
+              </view> 
+              <text class="fs-28 col5e5f66" wx:if="{{item.customerPhone}}">{{utils.toSubstr(item.customerPhone,0,3)}} **** {{utils.toSubstr(item.customerPhone,item.customerPhone.length-4)}}</text>
+              <text class="fs-28 col5e5f66"  wx:elif="{{item.customerQQ}}">{{utils.toSubstr(item.customerQQ,0,3)}} **** {{utils.toSubstr(item.customerQQ,item.customerQQ.length-4)}}</text>
+              <text class="fs-28 col5e5f66" wx:elif="{{item.customerWeixin}}">{{utils.toSubstr(item.customerWeixin,0,3)}} **** {{utils.toSubstr(item.customerWeixin,item.customerWeixin.length-4)}}</text>
+            </view>
+            <view class="appeal-ft flex flex-jcb flex-aic">
+              <view class="fs-28 col5e5f66">申诉时间:<text class="fs-26 col5e5f66">{{item.followTime}}</text>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcc"   wx:if="{{item.appealState==20}}"
+                    style="height:32rpx; width:128rpx;border:1rpx #0155fe solid;border-radius:5rpx;background:#f2f4fc;">
+                <text class="col0155fe fs-22 ">无效审核中</text>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcc" 
+                     wx:if="{{item.appealState==30 && (item.agentState==20 || item.returnState==20)}}"
+                    style="height:32rpx; width:128rpx;border:1rpx #9d9da6 solid;border-radius:5rpx;background:#f2f4fc;">
+                <text class="col9d9da6 fs-22 ">商机无效</text>
+              </view>
+              <view class="flex flex-row flex-aic flex-jcc"  
+                   wx:if="{{item.appealState==30 && (item.agentState==10 || item.returnState==10)}}"
+                    style="height:32rpx; width:128rpx;border:1rpx #00cf9a solid;border-radius:5rpx;background:#f2f4fc;">
+                <text class="col00cf9a fs-22 ">商机有效</text>
+              </view>
+            </view>
+           </view>
+        </block>
+      </view>
+      <view class="flex flex-aic flex-row last-vi flex-jcc">
+        <view wx:if="{{loading}}" class="weui-loadmore">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+        </view>
+        <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+</view>
+
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "backgroundColor":"#242c45",
+  "navigationBarTitleText":"购买服务"
+}

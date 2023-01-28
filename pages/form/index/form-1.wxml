@@ -1,0 +1,107 @@
+<view class="bgfff mw-100 flex flex-col flex-aic">
+    <view class="bgtop"></view>
+    <view class="info-vi mw0-30 boxsh">
+      <view class="flex flex-row flex-aic" style="height:160rpx;">
+        <view class="hl ml-40" style="height:45rpx;"></view>
+        <text class="fs-48 fwb ml-24" >{{obj.title}}</text>
+        <view class="rl">
+          <view></view>
+          <view></view>
+        </view>
+        <view class="rr">
+          <view></view>
+          <view></view>
+        </view>
+        <image class="img-cl" src="/resource/image/icon-84.png" mode="widthFix"></image>
+      </view>
+      <view class="flex flex-row flex-aic flex-jcb mw0-40 blb">
+        <text class="col5e5f66 fs-28">活动时间</text>
+        <text class="fs-28 col212429">{{obj.actStartTime}}-{{obj.actEndTime}}</text> 
+      </view>
+      <view class="flex flex-row flex-aic flex-jcb mw0-40 blb">
+        <text class="col5e5f66 fs-28">活动范围</text>
+        <text class="fs-28 col212429">{{obj.activityScope}}</text>
+      </view>
+      <view class="flex flex-row flex-aic flex-jcb mw0-40">
+        <text class="col5e5f66 fs-28">活动内容</text>
+      </view>
+      <view class="flex flex-row flex-aic flex-jcb mw0-40 mb-40">
+        <text class="fs-28 col212429">{{obj.content}}</text>
+      </view>
+    </view>
+  </view>
+<view class="bgfff flex-col flex flex-aic">
+  <view class="mw0-30 flex flex-col flex-aic">
+    <view class="mw0-10 flex flex-col mb-50">
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">姓名<text class="cold15d57 ml-8">*</text></text>
+        <input name="username" value="{{username}}"  class="fs-28 col212429"
+          placeholder="请输入您的姓名" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">手机号码<text class="cold15d57 ml-8">*</text></text>
+        <input name="userPhone" value="{{userPhone}}"  maxlength="11" type="number"
+          class="fs-28 col212429" placeholder="请输入您的手机号码" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">准备的公司名(建议5个)<text class="cold15d57 ml-8">*</text></text>
+        <input name="companyName" value="{{companyName}}"   class="fs-28 col212429" placeholder="请输入准备的公司名" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">公司行业<text class="cold15d57 ml-8">*</text></text>
+        <view>
+            <view class="picker" catchtap="toIndustry">
+              <text class="fs-28 col212429" wx:if="{{comObj&&comObj.id!=''}}">{{comObj.name}}</text>
+              <text wx:else class="colc8c8cc fs-28">请选择公司所在行业</text>
+              <image src="/resource/image/icon-09.png"></image>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bgfff flex-col flex flex-aic mt-20">
+  <view class="mw0-30 flex flex-col flex-aic">
+    <view class="mw0-10 flex flex-col mb-50">
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">法人姓名<text class="cold15d57 ml-8">*</text></text>
+        <input name="legalPersonName" value="{{legalPersonName}}"  class="fs-28 col212429"
+          placeholder="请输入法人姓名" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">法人手机号码<text class="cold15d57 ml-8">*</text></text>
+        <input name="legalPersonPhone" value="{{legalPersonPhone}}"  class="fs-28 col212429" maxlength="11" type="number"
+          placeholder="请输入法人手机号码" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bgfff flex flex-col mt-20 flex-aic">
+  <view class="flex-col flex mw0-40 mb-40">
+    <text class="fs-32 col212429 mt-60 ">上传本人有效身份证<text class="cold15d57 ml-8">*</text></text>
+    <text class="fs-22 col5e5f66 mt-12">· 图片上所有信息清晰可见，内容真实有效，不得做任何修改；</text>
+    <text class="fs-22 col5e5f66 mt-8 mb-20">· 图片支持：jpg/jpeg/bmp/png格式；大小不超过8M.</text>
+    <view class="flex flex-row flex-jcb mt-30">
+      <view class="upload_vi" data-type="cardFront" bindtap="uploadtap">
+        <image  src="{{auth_a?auth_a:'/resource/image/photo.png'}}" mode="aspectFit"></image>
+        <view class="mt-30">
+          <text class="fs-22 col5e5f66">点击上传</text>
+          <text class="fs-22 col0155fe ml-8">人面像</text>
+        </view>
+      </view>
+      <view class="upload_vi" data-type="cardReverse" bindtap="uploadtap">
+        <image  src="{{auth_b?auth_b:'/resource/image/photo.png'}}" mode="aspectFit"></image>
+        <view class="mt-30">
+          <text class="fs-22 col5e5f66">点击上传</text>
+          <text class="fs-22 col0155fe ml-8">国徽像</text>
+        </view>
+        <!-- <c-uploader bindfail="uploadError" bindsuccess="uploadSuccess" class="nohd" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" ></c-uploader> -->
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{true}}">
+  <input name="companyIndustry" value="{{companyIndustry}}"/>
+  <input name="idcardPositive" value="{{idcardPositive}}"/>
+  <input name="idcardReverse" value="{{idcardReverse}}"/>
+</view>

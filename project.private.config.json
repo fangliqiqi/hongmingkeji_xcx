@@ -1,0 +1,657 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/recommend/recommend",
+          "pathName": "pages/recommend/recommend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/commission/commission",
+          "pathName": "pages/commission/commission",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/share/share",
+          "pathName": "pages/share/share",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/bankCard/bankCard",
+          "pathName": "pages/bankCard/bankCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/bankCard/add/add",
+          "pathName": "pages/bankCard/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cashOut/cashOut",
+          "pathName": "pages/cashOut/cashOut",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cashOut/cashSuccess/cashSuccess",
+          "pathName": "pages/cashOut/cashSuccess/cashSuccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/setting/setting",
+          "pathName": "pages/personal/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "pages/personal/agreement/agreement",
+          "pathName": "pages/personal/agreement/agreement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/help/help",
+          "pathName": "pages/personal/help/help",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cashOut/cashList/cashList",
+          "pathName": "pages/cashOut/cashList/cashList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/upload/upload",
+          "pathName": "pages/upload/upload",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/service/service",
+          "pathName": "pages/service/service",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/agent/detail/index",
+          "pathName": "pages/agent/detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partner/cost/index",
+          "pathName": "pages/partner/cost/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partner/detail/index",
+          "pathName": "pages/partner/detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/agent/type/index",
+          "pathName": "pages/agent/type/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/help/feedback/index",
+          "pathName": "pages/personal/help/feedback/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/wxCode/index",
+          "pathName": "pages/wxCode/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partner/recharge/index",
+          "pathName": "pages/partner/recharge/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/partner/recharge/public/index",
+          "pathName": "pages/partner/recharge/public/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/about/cooperation/index",
+          "pathName": "pages/personal/about/cooperation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/form/index",
+          "pathName": "pages/form/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/recharge/success/index",
+          "pathName": "pages/partner/recharge/success/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/index/index",
+          "query": "scene=p%3D36100001%26r%3D99%26t%3D30",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/addorder/addorder",
+          "pathName": "pages/personal/disorder/addorder/addorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disorder",
+          "pathName": "pages/personal/disorder/disorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disdetails/disdetails",
+          "pathName": "pages/personal/disorder/disdetails/disdetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/recharge/recharge",
+          "pathName": "pages/wallet/recharge/recharge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cashOut/cashOut",
+          "pathName": "pages/cashOut/cashOut",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "/pages/cashOut/cashSuccess/cashSuccess?drawOrder",
+          "pathName": "/pages/cashOut/cashSuccess/cashSuccess?drawOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cashOut/cashSuccess/cashSuccess",
+          "pathName": "pages/cashOut/cashSuccess/cashSuccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/companyset/companyset",
+          "pathName": "pages/personal/companyset/companyset",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disorder",
+          "pathName": "pages/personal/disorder/disorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/commission/index",
+          "pathName": "pages/personal/commission/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/commission/index",
+          "pathName": "pages/personal/commission/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cashOut/cashOut",
+          "pathName": "pages/cashOut/cashOut",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disdetails/disdetails",
+          "pathName": "pages/personal/disorder/disdetails/disdetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disdetails/disdetails",
+          "pathName": "pages/personal/disorder/disdetails/disdetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disdetails/disdetails",
+          "pathName": "pages/personal/disorder/disdetails/disdetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/disorder",
+          "pathName": "pages/personal/disorder/disorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/commission/index",
+          "pathName": "pages/personal/commission/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "pathName": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "pathName": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "pathName": "pages/personal/intorder/intorderdetail/intorderdetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/addorder/addorder",
+          "pathName": "pages/personal/disorder/addorder/addorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/addorder/addorder",
+          "pathName": "pages/personal/disorder/addorder/addorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/disorder/addorder/addorder",
+          "pathName": "pages/personal/disorder/addorder/addorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/addintorder/addintorder",
+          "pathName": "pages/personal/intorder/addintorder/addintorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorder",
+          "pathName": "pages/personal/intorder/intorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorder",
+          "pathName": "pages/personal/intorder/intorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appeal/index",
+          "pathName": "pages/agent/appeal/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appeallist",
+          "pathName": "pages/agent/appeallist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appealist/index",
+          "pathName": "pages/agent/appealist/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appealist/index",
+          "pathName": "pages/agent/appealist/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/commission/index",
+          "pathName": "pages/personal/commission/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appealist/index",
+          "pathName": "pages/agent/appealist/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/intorder/intorder",
+          "pathName": "pages/personal/intorder/intorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/expenseDetail/expenseDetail",
+          "pathName": "pages/wallet/expenseDetail/expenseDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/coupon",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/clubCard/clubCard",
+          "pathName": "pages/coupon/clubCard/clubCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/coupon",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/discountDetail/discountDetail",
+          "pathName": "pages/coupon/discountDetail/discountDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/cancelCard/cancelCard",
+          "pathName": "pages/coupon/cancelCard/cancelCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/cardAgency",
+          "pathName": "pages/personal/cardAgency/cardAgency",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "pathName": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/coupon",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/cardAgency",
+          "pathName": "pages/personal/cardAgency/cardAgency",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "pathName": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/cardAgency",
+          "pathName": "pages/personal/cardAgency/cardAgency",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "pathName": "pages/personal/cardAgency/agencyInfo/agencyInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/cancelCard/cancelCard",
+          "pathName": "pages/coupon/cancelCard/cancelCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/coupon",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/loseCard/loseCard",
+          "pathName": "pages/coupon/loseCard/loseCard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/discountDetail/discountDetail",
+          "pathName": "pages/coupon/discountDetail/discountDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/coupon/discountDetail/discountDetail",
+          "pathName": "pages/coupon/discountDetail/discountDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/agent",
+          "pathName": "pages/agent/agent",
+          "query": "tabidx=20&cid=2",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/agent/appeal/index",
+          "pathName": "pages/agent/appeal/index",
+          "query": "id=9861",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/partner/index",
+          "pathName": "pages/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

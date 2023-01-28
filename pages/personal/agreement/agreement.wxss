@@ -1,0 +1,77 @@
+/* pages/personal/agreement/agreement.wxss */
+.tabs-vi{
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fa;
+  height: 102rpx;
+  align-items: center;
+  min-height: 102rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.tabs{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+.tabs .tab{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tabs .tab>view{
+  position: absolute;
+  bottom: 0;
+  width: 60rpx;
+  height: 4rpx;
+  background: transparent;
+ 
+}
+.tabs .tab>text{
+  color: #9d9da7;
+} 
+.tabs .tab.on>text{
+  color: #0057ff;
+  font-weight: bold;
+} 
+.tabs .tab.on>view{
+  background:linear-gradient(90deg,#005dc9,#002c99) !important;
+}
+.title-vi{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 182rpx;
+}
+.title-vi>image{
+  width: 76rpx;
+  height: 16rpx;
+}
+.info-vi{
+  width: calc(100% - 80rpx);
+  max-width: calc(100% - 80rpx);
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.info-vi text{
+  color: #212429;
+  line-height: 2em;
+}
+.info-vi .title{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+}
+.info-vi .text{
+  font-size: 26rpx;
+  font-weight: normal;
+}

@@ -1,0 +1,87 @@
+<!--pages/order/order.wxml-->
+<view class="page">
+	<view class="mw0-30 flex flex-col">
+		<view class="flex flex-row flex-aic search-vi bgf2f3f5 br-5">
+			<c-icon icon="search" size="{{20}}" color="#9d9da6" class="ml-12 mb-8 mr-12 icon"></c-icon>
+			<input placeholder="搜索业务名称/种类" placeholder-class="fs-24 col9d9da6 tac" class="flex1 col212429 fs-24 mr-60"></input>
+		</view>
+		<view class="order-vi mt-32 bgfff flex flex-col">
+
+			<view class="flex flex-col flex-aic">
+				<view class="order-item mw100 boxsh">
+					<view class="flex flex-row flex-aic flex-jcb">
+						<view class="ml-28 flex flex-row flex-aic">
+							<view class="hl"></view>
+							<text class="fwb fs-32 ml-20 col212429">代账服务</text>
+						</view>
+						<view class="mr-28 flex flex-row flex-aic">
+							<image src="/resource/image/icon-13.png" mode="heightFix"></image>
+							<text class="fs-22 col9595a5 ml-8">小规模纳税人企业</text>
+						</view>
+					</view>
+					<view class="order-info">
+						<view class="flex flex-row flex-aic">
+							<view class="w032 flex flex-col">
+								<view class="cold15d57">
+									<text class="fs-56 fwb">14</text>
+									<text class="fs-24 ml-6">周</text>
+								</view>
+								<text class="fs-24 col5e5f66">服务周期</text>
+							</view>
+							<view class="flex1 flex flex-col">
+								<text class="fs-30 fwb col212429 mt-32">安徽-合肥-包河</text>
+								<text class="fs-24 col5e5f66 mt-8">服务地点</text>
+							</view>
+							<view class="flex flex-row flex-jce">
+								<button class="bgd15d57 bt" bindtap="todetail">
+									<text class="colfff fs-24">服务中</text>
+								</button>
+								<!-- <button class="bgact bt">
+									<text class="colfff fs-24">接单</text>
+								</button> -->
+								<!-- 
+							<button class="bgedeff5 bt">
+                <text class="col9595a5 fs-24">已对接</text>
+              </button>
+							<button class="bgf5f7fc bl bt">
+                <text class="col0155fe fs-24">已对接</text>
+              </button> -->
+							</view>
+						</view>
+						<view>
+							<view class="bgf7f8fa flex flex-row flex-aic" style="width:410rpx;height:56rpx;">
+								<image src="/resource/image/icon-07.png" mode="heightFix" class="ml-28"></image>
+								<text class="fs-22 col9595a5 ml-18">订单发布时间</text>
+								<text class="fs-22 col9595a5 ml-36">2020-08-20</text>
+							</view>
+						</view>
+					</view>
+				</view>
+
+				<view class="flex flex-aic flex-row last-vi flex-jcc">
+					<!-- <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+          </view> -->
+					<view class="weui-loadmore">
+						<view class="weui-loading"></view>
+						<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+					</view>
+				</view>
+        
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<c-dialog  show="{{isAuth}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+    <view class="icon-box mt-60">
+      <icon type="warn" size="54"></icon>
+    </view>
+    <text class="fs-28 col212429 mt-20">您还未实名认证为会计</text>
+    <button class="bgact bt mt-36" style="width:180rpx !important;">
+      <text class="fs-24 colfff">去实名认证</text>
+    </button>
+  </view>
+</c-dialog>

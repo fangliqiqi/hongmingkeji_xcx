@@ -1,0 +1,67 @@
+/* pages/partner/index.wxss */
+page{
+  background: #f7f8fa;
+}
+.page{
+  background: #f7f8fa;
+  position: relative;
+}
+.page .info-vi{
+  background: #fff;
+  min-height: 200rpx;
+  z-index: 10;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.partnerInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 230rpx;
+}
+.partnerInfo .header{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 35rpx;
+}
+.partnerInfo .info{
+  margin-left: 32rpx;
+  
+}
+.head{
+  color: #212429;
+
+}
+.info-item{
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx #eee solid;
+  width: calc(100% - 70rpx);
+  margin-left: 35rpx;
+}
+.info-item .title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.agent-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  min-width: 152rpx;
+  min-height:56rpx ;
+  background: #fcf8f2;
+  color: #c49259;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.bt{
+  width: calc(100% - 140rpx) !important;
+}

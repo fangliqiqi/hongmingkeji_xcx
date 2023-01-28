@@ -1,0 +1,77 @@
+/* pages/coupon/clubCard/clubCard.wxss */
+.page{
+  background:#f7f8fa;
+}
+.title{
+  width:100%;
+  height:110rpx;
+}
+.imgright{
+  width:15rpx;
+}
+.card_list{
+  background: #ffffff;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.card_bg{
+  width:100%;
+  height:198rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  padding:0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+.card_left{
+  z-index: 999;
+}
+.card_right{
+  z-index: 999;
+}
+.colorGray{
+  color:#49576f;
+}
+.colorCyan{
+  color:#43737e;
+}
+.colorYellow{
+  color:#855e3b;
+}
+.colorBlue{
+  color:#425b82;
+}
+.btn{
+  width:160rpx;
+  height:60rpx;
+  background:rgba(255, 255, 255, 0.8);
+  border-radius:40rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.radio{
+  flex:0 0 80rpx;
+}
+.radio_left{
+  flex:0 0 280rpx;
+  text-align: left;
+  margin-left: 6rpx;
+}
+.no{
+  background: #ffffff;
+  width:100%;
+  height: 100vh;
+  text-align: center;
+  line-height: 60vh;
+}

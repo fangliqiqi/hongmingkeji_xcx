@@ -1,0 +1,113 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/share/share",
+    "pages/login/login",
+    "pages/detail/detail",
+    "pages/recommend/recommend",
+    "pages/commission/commission",
+    "pages/service/service",
+    "pages/bankCard/bankCard",
+    "pages/bankCard/add/add",
+    "pages/cashOut/cashOut",
+    "pages/cashOut/cashSuccess/cashSuccess",
+    "pages/personal/setting/setting",
+    "pages/personal/disorder/disorder",
+    "pages/personal/disorder/addorder/addorder",
+    "pages/personal/help/help",
+    "pages/personal/about/about",
+    "pages/personal/agreement/agreement",
+    "pages/cashOut/cashList/cashList",
+    "pages/web/web",
+    "pages/bankCard/add/error/error",
+    "pages/upload/upload",
+    "pages/agent/agent",
+    "pages/agent/detail/index",
+    "pages/partner/index",
+    "pages/partner/cost/index",
+    "pages/agent/type/index",
+    "pages/partner/detail/index",
+    "pages/personal/help/detail/index",
+    "pages/personal/help/feedback/index",
+    "pages/wxCode/index",
+    "pages/partner/recharge/index",
+    "pages/partner/recharge/public/index",
+    "pages/partner/recharge/success/index",
+    "pages/personal/about/cooperation/index",
+    "pages/form/index",
+    "pages/form/industry/industry",
+    "pages/personal/commission/index",
+    "pages/personal/disorder/disdetails/disdetails",
+    "pages/wallet/wallet",
+    "pages/wallet/topup/topup",
+    "pages/personal/companyset/companyset",
+    "pages/personal/intorder/intorder",
+    "pages/personal/intorder/addintorder/addintorder",
+    "pages/personal/intorder/intorderdetail/intorderdetail",
+    "pages/personal/IntAgentorder/IntAgentorder",
+    "pages/personal/IntAgentorder/intAgentdetail/intAgentdetail",
+    "pages/personal/IntAgentorder/addintAgent/addintAgent",
+    "pages/personal/disAgentorder/disAgentorder",
+    "pages/personal/disAgentorder/adddisAgent/adddisAgent",
+    "pages/personal/disAgentorder/disAgentdetail/disAgentdetail",
+    "pages/agent/appeal/index",
+    "pages/agent/appealist/index",
+    "pages/wallet/expenseDetail/expenseDetail",
+    "pages/coupon/coupon",
+    "pages/coupon/clubCard/clubCard",
+    "pages/coupon/loseCard/loseCard",
+    "pages/coupon/discount/discount",
+    "pages/coupon/losediscount/losediscount",
+    "pages/coupon/discountDetail/discountDetail",
+    "pages/coupon/cancelCard/cancelCard",
+    "pages/personal/cardAgency/cardAgency",
+    "pages/personal/cardAgency/agencyInfo/agencyInfo",
+    "pages/personal/upgrade/upgrade"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "共享会计 · 莫的问题",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "custom": true,
+    "selectedColor": "#0155fe",
+    "color": "#9d9da6",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/resource/image/tabBar-01.png",
+        "selectedIconPath": "/resource/image/tabBar-02.png"
+      },
+      {
+        "pagePath": "pages/share/share",
+        "text": "分享",
+        "iconPath": "/resource/image/tabBar-01.png",
+        "selectedIconPath": "/resource/image/tabBar-02.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "/resource/image/tabBar-41.png",
+        "selectedIconPath": "/resource/image/tabBar-42.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "c-contact": "/components/contact",
+    "c-tips": "/components/tips",
+    "c-login": "/components/login",
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar"
+  }
+}

@@ -1,0 +1,100 @@
+/* pages/personal/cardAgency/cardAgency.wxss */
+.page{
+  background: #ffffff;
+}
+.card_bg{
+  width:100%;
+  height:198rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  padding:0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+.colorGray{
+  color:#49576f;
+}
+.colorCyan{
+  color:#43737e;
+}
+.colorYellow{
+  color:#855e3b;
+}
+.colorBlue{
+  color:#425b82;
+}
+.card_left{
+  z-index: 999;
+}
+.card_right{
+  z-index: 999;
+}
+.btn{
+  width:160rpx;
+  height:60rpx;
+  background:rgba(255, 255, 255, 0.3);
+  border-radius:40rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+
+
+.flex_left{
+  flex:0 0 180rpx;
+}
+.input1{
+  flex:0 0 160rpx;
+  height: 54rpx;
+  border:1rpx solid #dddddd;
+}
+.sv-vi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0rpx;
+  left: 0;
+  z-index: 5;
+  height: 100%;
+  box-sizing: border-box;
+}
+.title{
+  /* background: linear-gradient(#fff,#f7f9ff); */
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  z-index: 5;
+  height: 80rpx;
+}
+.t_active{
+  color:#2253f4 !important;
+  font-size:34rpx;
+  font-weight: bold;
+}
+.sv{
+  height: calc(100% - 100rpx);
+}
+.expense_item{
+  width:100%;
+  background: linear-gradient(#fff,#f7f9ff);
+}
+.item{
+  width:100%;
+  height: 100%;
+  padding:24rpx;
+  box-sizing: border-box;
+}
+.item_left{
+  flex:0 0 120rpx;
+}

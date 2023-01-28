@@ -1,0 +1,112 @@
+<!--pages/bankCard/add.wxml-->
+<c-contact></c-contact>
+
+<view class="page">
+	<view class="msg-vi">
+		<view class="msg">
+			<image src="/resource/image/icon-16.png" style="width:22rpx" mode="widthFix"></image>
+			<text class="fs-24 col5e5f66 ml-12">请确定您所提交资料的真实性！</text>
+		</view>
+	</view>
+	<view class="bgfff flex-col flex flex-aic">
+		<view class="mw0-30 flex flex-col flex-aic">
+			<view class="mw0-10 flex flex-col mb-50">
+				<view class="mt-60">
+					<text class="fs-52 col212429 fwb" wx:if="{{id}}">修改银行卡</text>
+					<text class="fs-52 col212429 fwb" wx:else>添加银行卡</text>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">持卡人<text class="cold15d57 ml-8">*</text></text>
+					<input bindinput="inputFun" data-idx="1" value="{{cardInfo.cname}}"  class="fs-28 col212429" placeholder="请输入持卡人姓名" placeholder-class="colc8c8cc fs-28"></input>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">银行<text class="cold15d57 ml-8">*</text></text>
+					<view>
+						<picker bindchange="bindPickerChange" value="{{index}}" range="{{bankList}}" range-key="bankName">
+							<view class="picker">
+								<text class="fs-28 col212429" wx:if="{{cardInfo.bankCode}}">{{bankList[index].bankName}}</text>
+								<text wx:else class="colc8c8cc fs-28">请选择银行卡所在银行</text>
+								<image src="/resource/image/icon-09.png"></image>
+							</view>
+						</picker>
+					</view>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">银行卡卡号<text class="cold15d57 ml-8">*</text></text>
+					<input bindblur="inputFun" bindinput="inputFun" data-idx="2"  value="{{cardInfo.bankNumber}}" maxlength="32" class="fs-28 col212429" placeholder="请输入银行卡卡号" placeholder-class="colc8c8cc fs-28"></input>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">银行卡预留手机号<text class="cold15d57 ml-8">*</text></text>
+					<input class="fs-28 col212429" value="{{cardInfo.phoneNumber}}" maxlength="11" bindinput="inputFun" data-idx="3" placeholder="请输入该银行卡预留的手机号码" placeholder-class="colc8c8cc fs-28"></input>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="tip-vi">
+		<view class="flex flex-col">
+			<view class="flex flex-row flex-aic">
+				<icon type="warn" size="18"></icon>
+				<text class="fs-24 col212429 ml-10">温馨提示</text>
+			</view>
+			<view class="flex flex-row">
+				<text class="fs-22 col5e5f66">1.</text>
+				<text class="fs-22 col5e5f66 ml-8">请确认您的银行卡信息正确，如有错误请即时修改，否则会造成无法提现。</text>
+			</view>
+		</view>
+		<block wx:if="{{cardInfo.id}}">
+			<button class="bt bgact" bindtap="submintFun">
+				<text class="colfff fs-32">确认修改</text>
+			</button>
+			<button class="bt bgf7f8fa bld15d57" bindtap="submintFun" data-del="10">
+				<text class="cold15d57 fs-32">解绑该卡</text>
+			</button>
+		</block>
+		<button wx:else class="bt bgact" bindtap="submintFun">
+			<text class="colfff fs-32">确认添加</text>
+		</button>
+	</view>
+</view>
+
+<include src="/resource/model/success.wxml" />
+
+
+<c-dialog show="{{isSuccess&&cardInfo.id}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<view class="icon-box mt-60 bgact br050  flex flex-col flex-aic flex-jcc" style="width:98rpx;height:98rpx;">
+			<c-icon icon="done" color="#fff" size="{{36}}" type="field"></c-icon>
+		</view>
+		<text class="fs-32 col212429 mt-36 fwb">修改银行卡成功</text>
+		<button class="bgact bt mt-36" style="width:180rpx !important;" bindtap="callBackTap">
+			<text class="fs-24 colfff">完成</text>
+		</button>
+	</view>
+</c-dialog>
+
+<c-dialog show="{{isEdit}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="col212429 fs-36 fwb mt-60">解绑银行卡</text>
+		<view class="flex flex-col mw0-10 flex-ais">
+      <text class="fs-28 col212429 mt-50">手机号</text>
+      <view class="flex flex-row flex-aic mw100">
+          <input class="fs-24 col212429 flex1 tas" bindinput="inputFun" data-idx="4" type="number" placeholder="请输入手机号" placeholder-class="colc8c8cc fs-24"></input>
+      </view>
+      <text class="fs-28 col212429 mt-50">验证码</text>
+      <view class="flex flex-row flex-aic mw100">
+        <input class="fs-24 col212429 flex1 tas" bindinput="inputFun" data-idx="5" type="number" placeholder="请输入验证码" placeholder-class="colc8c8cc fs-24"></input>
+        <view class="code-vi" bindtap="codeTap">
+          <text class="col0155fe fs-22" wx:if="{{codeCount>60}}">获取验证码</text>
+          <text class="colc8c8cc fs-22 wsn" wx:else >重新发送({{codeCount}}s）</text>
+        </view>
+      </view>
+		</view>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="unbindFun">
+				<text class="fs-24 colfff">确认解绑</text>
+			</button>
+		</view>
+
+	</view>
+</c-dialog>

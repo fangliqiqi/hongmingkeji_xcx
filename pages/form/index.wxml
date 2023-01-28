@@ -1,0 +1,19 @@
+<!--pages/form/index.wxml-->
+<view class="page">
+  <form class="mw100" bindsubmit="formSubmit" bindreset="formReset">
+    <include wx:if="{{idx==30}}" src="./index/form-1.wxml" />
+    <include wx:if="{{idx==40}}" src="./index/form-2.wxml" />
+    <include wx:if="{{idx==50}}" src="./index/form-3.wxml" />
+    <include wx:if="{{idx==60}}" src="./index/form-4.wxml" />
+    <view class="footer-vi mt-64">
+      <view class="footer ">
+        <view class="mw0-70 flex flex-row">
+          <button class="bt bgact flex1" formType="submit">
+            <text class="fs-32 colfff">购买</text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
+<c-contact></c-contact>

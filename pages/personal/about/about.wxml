@@ -1,0 +1,23 @@
+<!--pages/personal/about/about.wxml-->
+<c-contact></c-contact>
+
+<view>
+  <view class="menu-vi">
+				<view class="menu-item" bindtap="toPage" data-url="/pages/personal/agreement/agreement">
+					<text class="col212429 fs-32">平台协议</text>
+					<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+				</view>
+				<view class="menu-item blt">
+					<text class="col212429 fs-32">VIP规则</text>
+					<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+				</view>
+				<view class="menu-item blt" bindtap="toPage" data-url="/pages/personal/about/cooperation/index">
+					<text class="col212429 fs-32">商务合作</text>
+					<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+        </view>
+        <view class="menu-item blt" >
+					<text class="col212429 fs-32">版本号</text>
+					<text class="col5e5f66 fs-28">版本V1.202</text>
+				</view>
+			</view>
+</view>

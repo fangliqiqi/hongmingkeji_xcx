@@ -1,0 +1,45 @@
+/* pages/coupon/discountDetail/discountDetail.wxss */
+.page{
+  background: #ffffff;
+}
+.card{
+  margin-top:20rpx;
+  width:100%;
+  padding:20rpx;
+  box-sizing: border-box;
+  border:1rpx solid #ededed;
+}
+.icon{
+  width:35rpx;
+  height: 35rpx;
+}
+.card_bot{
+  border-top:1rpx dashed #ededed;
+  padding-top: 30rpx;
+}
+.code{
+  width:340rpx;
+  height: 340rpx;
+  /* background:#ededed; */
+  margin:0 auto;
+}
+.flex_left{
+  flex:0 0 160rpx;
+}
+.rules{
+  padding-left: 40rpx;
+}
+.rules_num{
+  flex:0 0 20rpx;
+}
+.btn{
+  width:140rpx;
+  height: 60rpx;
+  color:#ffffff;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 8rpx;
+}
+.btno{
+  width:200rpx !important;
+}

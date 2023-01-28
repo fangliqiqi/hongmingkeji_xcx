@@ -1,0 +1,38 @@
+<!--pages/personal/disorder/disorder.wxml-->
+<c-contact></c-contact>
+<wxs src="../../../utils/utils.wxs" module="utils" />
+
+<view class="page">
+	<view class="flex flex-col flex-aic padbt ">
+		<view class="dis_box boxsh"  wx:for="{{disorderList}}" wx:key="id" data-id="{{item.id}}" bindtap="todetails">
+			<view class="dis_boxhead">
+				<view class="flex flex-aic mr-12">
+					<image src="/resource/image/icon-28.png"></image>
+					<text class="fs-32  col212429 ml-18 fwb">{{item.userName||''}}</text>
+					<text class="fs-28  col5e5f6 ml-24">{{item.userPhone}}</text>     
+				</view>
+				<view  class="status status1"  wx:if="{{item.salesmanDisposeStatus == 1 || item.userDisposeStatus == 1}}">{{item.disposeStatusName}}</view>
+				<view  class="status status2" wx:if="{{item.salesmanDisposeStatus == 2 && item.userDisposeStatus == 2}}">{{item.disposeStatusName}}</view>
+				<view  class="status status3" wx:if="{{item.salesmanDisposeStatus == 3 || item.userDisposeStatus == 3}}" >{{item.disposeStatusName}}</view>
+			</view>
+			<view class="dis_boxfoot">
+				<view class="businessName">
+					<text  class="fs-28 col5e5f66">类型：</text>
+					<text class="fs-28 col0155fe">{{item.businessName}}</text>
+				</view>
+				<label class="ml-20 mr-20"></label>
+				<view class="downPayment">
+					<text class="fs-28 col5e5f66">金额[元]：</text>
+					<text class="fs-28 col00cf9a">{{item.totalAmount}}</text>
+				</view>		
+			</view>
+		</view> 
+	</view>
+
+	<view class="footer-vi boxsh">
+		<button class="bgf5f7fc bl bt" bindtap="toPage">
+			<c-icon icon="add" color="#0155fe" class="mb-8 mr-12"></c-icon><text class="fs-32 col0155fe">添加分销订单</text>
+		</button>
+	</view>
+</view>
+

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText":"我的银行卡",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#242c45"
+}

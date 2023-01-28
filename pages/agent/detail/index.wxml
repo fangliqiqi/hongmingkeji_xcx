@@ -1,0 +1,212 @@
+<!--pages/agent/detail/index.wxml-->
+<wxs src="../../../utils/utils.wxs" module="utils" />
+<view class="page">
+  <view>
+    <view class="agent-top boxsh">
+      <view class="flex1 flex flex-row flex-aic flex-jcc">
+        <view class="flex-col flex">
+          <text class="fs-48 fwb ">{{source.categoryType||''}}</text>
+          <view class="flex flex-row flex-jcc flex-aic" wx:if="{{distime >= source.distime&&source.returnState==10&&source.agentState==10}}"
+            bindtap="appeal" data-id="{{id}}" data-idx="1" data-give="{{source.give}}"
+            style="border:1rpx #00cf9a solid;width:110rpx;border-radius: 5rpx;height:32rpx;">
+            <text class="col00cf9a fs-20">无效申诉</text>
+          </view>
+          <view wx:elif="{{source.returnState==0}}" class="flex flex-row flex-aic flex-jcc" bindtap="appeal"
+            data-id="{{id}}" data-idx="2"
+            style="height:32rpx; width:128rpx;border:1rpx #0155fe solid;border-radius:5rpx;background:#f2f4fc;">
+            <text class="col0155fe fs-20 ">无效审核中</text>
+          </view>
+          <view class="flex flex-row flex-jcc flex-aic" wx:else
+            style="border:1rpx #edeff5 solid;width:110rpx;border-radius: 5rpx;height:32rpx;background:#edeff5;">
+            <text class="col9595a5 fs-20">无效申诉</text>
+          </view>
+        </view>
+      </view>
+      <view style="width:1rpx;background:#eee;height:92rpx;"></view>
+      <view class="flex1 flex flex-row flex-aic flex-jcc">
+        <view class="flex-col flex">
+          <text class="fs-64 cole15352" style="line-height:1.2;"
+            wx:if="{{distime > source.distime&&source.dealState!=10&&(source.agentState!=20||source.returnState!=20)}}">{{utils.toTimeFormat(distime - source.distime)}}</text>
+          <text class="fs-64 col5e5f67" style="line-height:1.2;" wx:else>00:00</text>
+          <text class="col5e5f67 fs-26">反馈计时</text>
+        </view>
+      </view>
+    </view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">基本信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">地区</text><text
+          class="col212429 fs-28">{{source.prov}}-{{source.city}}-{{source.county}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">时间</text><text class="col212429 fs-28">{{source.receiveTime||''}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">商机分类</text><text class="colc49259 fs-28">{{source.categoryType||''}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">用户信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">姓名</text><text class="col212429 fs-28">{{source.customerName||''}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">手机号码</text><text class="col212429 fs-28">{{source.customerPhone}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">微信号</text><text class="col212429 fs-28">{{source.customerWeixin||'暂无'}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">QQ号</text><text class="col212429 fs-28">{{source.customerQQ||'暂无'}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">商机备注</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col212429 mt-30 mb-30" style="line-height:1.5;">{{source.categoryText||''}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">跟进情况</text>
+        </view>
+        <view class="flex flex-row flex-aic" style="height:96rpx;" wx:if="{{source.dealState!=10&&source.agentState==10}}" bindtap="showFollowTap" data-state="{{source.agentState}}" data-deal="{{source.dealState}}">
+          <image src="/resource/image/icon-63.png" mode="widthFix" style="width:24rpx;"></image>
+          <text class="fs-26 col0057ff ml-8">添加跟进记录</text>
+        </view>
+      </view>
+      <view class="ta-vi mb-50 flex flex-aic flex-col-r">
+        <view class="follow-item mw0-28" wx:for="{{conlist}}" wx:key="{{item.id}}">
+          <text class="fs-24 col9d9da6 mt-30">{{item.createTime}} 跟进时间</text>
+          <text class="col212429 fs-28 mt-20"><text wx:if="{{item.reason}}">{{item.reason}}-</text>{{item.content}}</text>
+          <view class="appeal col212429 fs-28 mt-20" wx:if="{{item.img}}">
+            <text class="appeal_text">申诉图片：</text>
+            <view  class="appeal_list">
+              <image src="{{imgUrl+item}}" wx:for="{{item.img}}" wx:key='index' ></image>
+            </view>
+          </view>
+          <view class="audio_list col212429 fs-28 mt-20" wx:if="{{item.audio}}">
+            <text class="appeal_audio">申诉音频：</text>
+            <view  class="audio">
+              <audio src="{{imgUrl + item}}"  wx:for="{{item.audio}}" wx:key='index' id="{{item}}" controls name='申诉音频' author='' 
+              poster="../../../resource/image/share.jpg"
+              ></audio>
+            </view>
+          </view>
+          <text class="fs-24 col9d9da6 mt-20 mb-30 ml-a" wx:if="{{item.bcfollowTime!=null}}">{{item.bcfollowTime}} 再次跟进</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx;margin-bottom:env(safe-area-inset-bottom);"></view>
+// <view class="footer-vi boxsh">
+  // <button class="bt bgact" bindtap="cashOutFun">
+    // <text class="fs-32 colfff">提交</text>
+    // </button>
+  // </view>
+
+<view class="footer-vi boxsh" wx:if="{{source.dealState==10}}">
+  <button class="bt bgedeff5">
+    <text class="fs-32 col9595a5">已成交</text>
+  </button>
+</view>
+<view class="footer-vi boxsh" wx:else>
+  <button class="bgf5f7fc bl bt ml-70" bindtap="callPhone">
+    <text class="col0155fe fs-32">联络</text>
+  </button>
+
+  <button class="bt bgact ml-50 mr-70" bindtap="submintTap">
+    <text class="fs-32 colfff">成交</text>
+  </button>
+
+</view>
+
+
+<view catchtouchmove="{{true}}" class="alter-vi" wx:if="{{isFollow}}">
+  <c-dialog show="{{isFollow}}" class="noft nohd z1000" bindclose="closeFun" ext-class="z1000">
+    <view class="flex flex-col flex-aic z1000">
+      <text class="col212429 fs-36 fwb mt-60">添加跟进记录</text>
+      <view class="mt-60 textarea-vi">
+        <textarea placeholder="点击此处录入跟进情况，详尽的跟进记录可以提高您的成交率" placeholder-class="taph" class="ta"
+        model:value='{{content}}'></textarea>
+      </view>
+      <view class="flex flex-row mw0-10 flex-jcb flex-aic mt-10" style="height:100rpx;border-bottom:1rpx #eee solid;">
+        <text class="fs-28 col5e5f66">设置下次跟进时间</text>
+        <picker mode="date" value="{{followTime}}" start="{{nowDate}}" bindchange="bindDateChange">
+          <view class="picker">
+            <text wx:if="{{followTime}}" class="fs-28 col212429">{{followTime}}</text>
+            <view wx:else class="flex flex-row flex-aic flex-jce">
+              <text class="mr-16 fs-28 col212429">请选择</text>
+              <image src="/resource/image/icon-59.png" style="width:13rpx;height:26rpx;"></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+      <view class="flex flex-row flex-aic mt-50">
+        <button class="bl bt bgf5f7fd" style="width:180rpx !important;" bindtap="closeFun">
+          <text class="fs-24 col0057ff">取消</text>
+        </button>
+        <button class="bgact bt ml-30" style="width:180rpx !important;" bindtap="sureFun"   >
+          <text class="fs-24 colfff">确认</text>
+        </button>
+      </view>
+    </view>
+  </c-dialog>
+</view>
+
+<c-dialog show="{{showFlag}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">成交金额</text>
+		<input class="fs-28 col212429 mt-32 in-cl" model:value="{{turnover}}"  type="digit"   placeholder="请输入成交金额"  />
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="submintFun">
+				<text class="fs-24 colfff">确定</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+<!-- 申述提交 -->
+<view catchtouchmove="{{true}}" class="alter-vi" wx:if="{{isAppeal}}">
+  <c-dialog show="{{isAppeal}}" class="noft nohd z1000" bindclose="closeFun" ext-class="z1000">
+    <view class="flex flex-col flex-aic z1000">
+      <text class="col212429 fs-36 fwb mt-60">申述缘由</text>
+      <view class="mt-60 textarea-vi">
+        <textarea placeholder="点击此处录入申述缘由，详尽的申述缘由可以提高您的审批率" placeholder-class="taph" class="ta"
+        model:value='{{content}}'></textarea>
+      </view>
+      <view class="flex flex-row flex-aic mt-50">
+        <button class="bl bt bgf5f7fd" style="width:180rpx !important;" bindtap="closeFun">
+          <text class="fs-24 col0057ff">取消申诉</text>
+        </button>
+        <button class="bgact bt ml-30" style="width:180rpx !important;" bindtap="sureAppeal">
+          <text class="fs-24 colfff">确认申诉</text>
+        </button>
+      </view>
+    </view>
+  </c-dialog>
+</view>

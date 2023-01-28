@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText":"合作商",
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#242c45"
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-dialog": "weui-miniprogram/dialog/dialog"
+  },
+  "navigationBarTitleText":"会员卡代理"
+}

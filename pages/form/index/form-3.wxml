@@ -1,0 +1,91 @@
+<view class="bgfff mw-100 flex flex-col flex-aic">
+  <view class="bgtop"></view>
+  <view class="info-vi mw0-30 boxsh">
+    <view class="flex flex-row flex-aic" style="height:160rpx;">
+      <view class="hl ml-40" style="height:45rpx;"></view>
+      <text class="fs-48 fwb ml-24">{{obj.title}}</text>
+      <view class="rl">
+        <view></view>
+        <view></view>
+      </view>
+      <view class="rr">
+        <view></view>
+        <view></view>
+      </view>
+      <image class="img-cl" src="/resource/image/icon-84.png" mode="widthFix"></image>
+    </view>
+    <view class="flex flex-row flex-aic flex-jcb mw0-40 blb">
+      <text class="col5e5f66 fs-28">活动时间</text>
+      <text class="fs-28 col212429">{{obj.actStartTime}}-{{obj.actEndTime}}</text>
+    </view>
+    <view class="flex flex-row flex-aic flex-jcb mw0-40 blb">
+      <text class="col5e5f66 fs-28">活动范围</text>
+      <text class="fs-28 col212429">{{obj.activityScope}}</text>
+    </view>
+    <view class="flex flex-row flex-aic flex-jcb mw0-40">
+      <text class="col5e5f66 fs-28">活动内容</text>
+    </view>
+    <view class="flex flex-row flex-aic flex-jcb mw0-40 mb-40">
+      <text class="fs-28 col212429">{{obj.content}}</text>
+    </view>
+  </view>
+</view>
+<view class="bgfff flex-col flex flex-aic">
+  <view class="mw0-30 flex flex-col flex-aic">
+    <view class="mw0-10 flex flex-col mb-50">
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">姓名<text class="cold15d57 ml-8">*</text></text>
+        <input name="username" class="fs-28 col212429"
+          placeholder="请输入您的姓名" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">手机号码<text class="cold15d57 ml-8">*</text></text>
+        <input name="userPhone" maxlength="11" type="number"
+          class="fs-28 col212429" placeholder="请输入您的手机号码" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">公司名称<text class="cold15d57 ml-8">*</text></text>
+        <input name="companyName" 
+          class="fs-28 col212429" placeholder="请输入公司名称" placeholder-class="colc8c8cc fs-28"></input>
+      </view>
+      <view class="flex-col flex">
+        <text class="fs-32 col212429 mt-60  mb-20">请选择企业性质<text class="cold15d57 ml-8">*</text></text>
+        <view>
+          <radio-group bindchange="radioChange" class="flex flex-row flex-aic" data-idx="20">
+            <label class="flex flex-row flex-aic" wx:for="{{[{id:10,name:'一般纳税人'},{id:20,name:'小规模'}]}}" wx:key="{{item.id}}">
+              <radio class="radio" value="{{item.id}}" checked="{{companyType==item.id}}" />
+              <view class="flex flex-row flex-aic mr-60 ml-8">
+                  <text  class="fs-28 col5e5f66 mt-8">{{item.name}}</text>
+              </view>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="tip-vi">
+    <view class="flex flex-col">
+      <view class="flex flex-row flex-aic">
+        <icon type="warn" size="18"></icon>
+        <text class="fs-24 col212429 ml-10">温馨提示</text>
+      </view>
+      <view class="flex flex-row">
+        <text class="fs-22 col5e5f66">1.</text>
+        <text class="fs-22 col5e5f66 ml-8">您填写的推荐人会生成与您相关的推荐信息，只有被推荐人是首次登录该平台，您和被推荐人才能享受佣金和优惠；</text>
+      </view>
+      <view class="flex flex-row">
+        <text class="fs-22 col5e5f66">2.</text>
+        <text class="fs-22 col5e5f66 ml-8">请准确填写被推荐人的信息，填写错误可能会导致佣金或奖励无法发放。</text>
+      </view>
+    </view>
+    <button class="bt bgact" bindtap="submintap">
+      <text class="colfff fs-32">提交</text>
+    </button>
+  </view> -->
+<view hidden="{{true}}">
+  <input name="dataTransfer" value="{{dataTransfer}}"/>
+  <input name="companyType" value="{{companyType}}"/>
+  <input name="businessLicensePositive" value="{{businessLicensePositive}}"/>
+</view>

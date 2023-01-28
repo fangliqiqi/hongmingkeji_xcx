@@ -1,0 +1,29 @@
+<!--pages/partner/detail/index.wxml-->
+<view class="page blt">
+  <view class="flex flex-col flex-aic mw0-64 blb">
+    <text class="fs-36 col212429 mt-60">精准商机</text>
+    <text class="fs-82 col212429 mb-70">-200.00</text>
+  </view>
+  <view class="flex flex-col mw0-64 info">
+    <view class="flex flex-row">
+      <text class="col9d9da6 fs-28 flex1">类型</text>
+      <text class="col20242a fs-28 flex2">商机扣费</text>
+    </view>
+    <view class="flex flex-row">
+      <text class="col9d9da6 fs-28 flex1">时间</text>
+      <text class="col20242a fs-28 flex2">2020-09-03 20:47:32</text>
+    </view>
+    <view class="flex flex-row">
+      <text class="col9d9da6 fs-28 flex1">交易单号</text>
+      <text class="col20242a fs-28 flex2">10000499012020092000099484</text>
+    </view>
+    <view class="flex flex-row">
+      <text class="col9d9da6 fs-28 flex1">余额</text>
+      <text class="col20242a fs-28 flex2">￥1522.25</text>
+    </view>
+    <view class="flex flex-row">
+      <text class="col9d9da6 fs-28 flex1">备注</text>
+      <text class="col20242a fs-28 flex2">市区精准商机</text>
+    </view>
+  </view>
+</view>

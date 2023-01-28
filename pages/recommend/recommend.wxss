@@ -1,0 +1,120 @@
+/* pages/recommend/recommend.wxss */
+.page .bgtop{
+  z-index: -1;
+} 
+.sv-vi{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 185rpx;
+  left: 30rpx;
+  height: calc(100% - 185rpx);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;
+}
+.sv-vi .tabs-vi{
+  width: calc(100% - 52rpx);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 112rpx;
+  border-bottom: 1rpx #eee solid;
+}
+.tabs-vi .tab{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  flex: 1;
+}
+.tabs-vi .tab text{
+  color: #9d9da6;
+  font-size: 28rpx;
+}
+.tabs-vi .tab.on text{
+  color: #0155fe;
+  font-weight: bold;
+}
+.tabs-vi .tab>view{
+  position: absolute;
+  bottom: 0;
+}
+.tabs-vi .tab.on>view{
+  background: linear-gradient(90deg,#002b93,#095bc2);
+  height: 4rpx;
+  width: 60rpx;
+}
+.sv-vi .sv{
+  height: calc(100% - 136rpx);
+  margin-top: 16rpx;
+}
+.sv-item{
+  min-height: 174rpx;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#fff,#f7f9ff);
+  justify-content: center;
+  margin-top: 32rpx;
+  width: calc(100% - 52rpx);
+  position: relative;
+}
+.sv-item>view{
+  min-height: 174rpx;
+}
+.sv-item>view:first-child{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.sv-item>view:first-child>view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12rpx 36rpx;
+}
+.sv-item>view:first-child>view:first-child{
+  justify-content: space-between;
+}
+.sv-item>view image{
+  width: 33rpx;
+  height: 34rpx;
+  min-width: 33rpx;
+}
+.sv-item>view label{
+  display: inline-block;
+  width: 1px;
+  background: #eeeeee;
+  height: 14rpx;
+  margin-left: 14rpx;
+  margin-right: 14rpx;
+  min-width: 1px;
+}
+.sv-item>view:nth-child(2){
+  border-top: 0.5px #eee solid;
+  margin: 0 36rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.sv-item>view:nth-child(2) text{
+  margin: 4rpx 0;
+}
+.sv-item>view:nth-child(2)>view>text:first-child{
+  line-height: 30px;
+}
+.last-vi{
+  margin-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+}
+.sv-item>image{
+  width:109rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

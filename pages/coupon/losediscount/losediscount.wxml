@@ -1,0 +1,42 @@
+<!--pages/coupon/losediscount/losediscount.wxml-->
+<view class="page">
+  <!-- <view class="mw0-20">
+    <view class="card_bg  mt-20"  wx:for="{{loseDiscount}}" wx:key="id" wx:if="{{loseDiscount.length>0}}">
+      <view >失效券</view>
+      <view >将于{{item.endTime}}到期</view>
+      <view class="usebtn fs-26" wx:if="{{item.userCardBusinessType==3}}">已过期</view>
+      <view class="usebtn fs-26" wx:if="{{item.userCardBusinessType==2}}" bindtap="cancelCard" data-id="{{item.idStr}}">已核销</view>
+    </view>
+  </view> -->
+  <view class="loseCard" wx:if="{{loseDiscount.length>0}}">
+    <view class="coupon_bg  mb-24 mw0-30 ml-a mr-a flex colfff" wx:for="{{loseDiscount}}" wx:key="id" >
+      <image src="/resource/image/coupon_bgno.png" class="card_img"></image>
+      <view class="coupon_info flex1">
+        <view class="coupon_title">
+          <text class="fs-36">￥</text>
+          <text class="fs-56">{{item.oldPrice}}</text>
+        </view>
+        <view class="coupon_tet flex flex-col flex-jcs flex1">
+          <text class="fs-36">{{item.businessName}}</text>
+          <text class="fs-26 colfff">将于{{item.endTime}}过期</text>
+        </view>
+      </view>
+      <view class="coupon_btn fs-32 flex flex-col flex-aic fwb" bindtap="toDetail" data-id="{{item.idStr}}">
+        <text class="fs-26" wx:if="{{item.userCardBusinessType==3}}">已过期</text>
+        <text class="fs-26" wx:if="{{item.userCardBusinessType==2}}" bindtap="cancelCard" data-id="{{item.idStr}}">已核销</text>
+      </view>
+  </view>
+  </view>
+ 
+  <view class="no mt-60 col5e5f66 fs-26"  wx:if="{{loseDiscount.length==0}}">
+    暂时没有已失效的券~
+  </view>
+  <view class="footer-vi" wx:if="{{loseDiscount.length>0}}">
+    <view class="footer">
+      <button class="clear_btn" bindtap="clear">
+        <text class="fs-32 col5e5f66" bindtap="cancelOrder">清空</text>
+      </button> 
+    </view>
+  </view>
+  
+</view>

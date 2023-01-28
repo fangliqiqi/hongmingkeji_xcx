@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarTitleText":"申诉列表"
+}

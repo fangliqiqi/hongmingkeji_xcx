@@ -1,0 +1,268 @@
+<view class="mw0-20 mt-80">
+	<image src="/resource/image/detail/{{idx}}/icon-1.png" mode="widthFix"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">商标注册</text>
+	<text class="fwb fs-36 col8c0224 mr-12">常见问题</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">注册过程中遇到这些问题怎么解决？</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="mw0-40 flex flex-row flex-aic mt-50 vi-4">
+	<view>
+		<text class="fs-22 colfff mr-4">1</text>
+	</view>
+	<text class="fs-26 col5e5f66">注册商标竟然不是唯一拿到商标的方法？</text>
+</view>
+<view class="mw0-40 flex flex-row flex-aic mt-32 vi-4">
+	<view>
+		<text class="fs-22 colfff mr-4">2</text>
+	</view>
+	<text class="fs-26 col5e5f66">提交了材料又不予手里，怎么办？</text>
+</view>
+<view class="mw0-40 flex flex-row flex-aic mt-32 vi-4">
+	<view>
+		<text class="fs-22 colfff mr-4">3</text>
+	</view>
+	<text class="fs-26 col5e5f66">要怎么注册才能保护全面？</text>
+</view>
+<view class="mw0-40 flex flex-row flex-aic mt-32 vi-4">
+	<view>
+		<text class="fs-22 colfff mr-4">4</text>
+	</view>
+	<text class="fs-26 col5e5f66">要多少钱，有什么流程？</text>
+</view>
+<view class="mw0-40 flex flex-row flex-aic mt-32 vi-4">
+	<view>
+		<text class="fs-22 colfff mr-4">5</text>
+	</view>
+	<text class="fs-26 col5e5f66">注册证都下来了，竟然保护不了自己的产品？</text>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">商标注册</text>
+	<text class="fwb fs-36 col8c0224 mr-12">流程</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-aic flex-col mw0-30 mt-50 psr">
+	<image class="psa" src="/resource/image/detail/{{idx}}/bg-7.png" mode="widthFix" style="top:10rpx;left:0;"></image>
+	<view class="flex flex-row mw100 mt-60">
+		<view class="flex flex-col">
+			<text class="fs-48 col212429 fwb">01</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">商标名称<text class="fs-24 col212429 lh120">检索</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:104rpx;">
+			<text class="fs-48 col212429 fwb">02</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">材料<text class="fs-24 col212429 lh120">准备</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:104rpx;">
+			<text class="fs-48 col212429 fwb">03</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">提交<text class="fs-24 col212429 lh120">申请</text></view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex flex-row mw100" style="margin-top:90rpx;">
+		<view class="flex flex-col">
+			<text class="fs-48 col212429 fwb">06</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">下发商标</view>
+					<view class="fs-24 col212429 lh120">注册证</view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:152rpx;">
+			<text class="fs-48 col212429 fwb">05</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">商标实质</view>
+					<view class="fs-24 col212429 lh120">审查</view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:105rpx">
+			<text class="fs-48 col212429 fwb">04</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">商标形式</view>
+					<view class="fs-24 col212429 lh120">审查</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">商标注册</text>
+	<text class="fwb fs-36 col8c0224 mr-12">坑太多</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">注册商标需要专业</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="mw0-40 mt-40">
+	<image src="/resource/image/detail/4/icon-2.png" mode="widthFix"></image>
+</view>
+<view class="flex flex-row flex-aic mw0-10 mt-60">
+	<view class="flex1 flex flex-col ">
+		<view class="flex flex-col ml-45" style="max-width:290rpx">
+			<view class="flex flex-row flex-aic"><label class="d mr-8"></label><text
+					class="col5e5f66 fs-24">注册成功率：</text><text class="fs-24 col212429">30%~50%</text></view>
+			<view class="flex flex-row flex-aic mt-16"><label class="d mr-8"></label><text
+					class="col5e5f66 fs-24">材料规范，能及时提交</text></view>
+			<view class="flex flex-row flex-ais mt-54"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">小机构因为资金问题，运营时间短</text></view>
+			<view class="flex flex-row flex-ais mt-54"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">可进行一般性查询和避免常见的雷区，但注册后基本就服务结束</text></view>
+
+		</view>
+	</view>
+	<view style="width:0rpx;height:325rpx;border:1rpx #eee dashed;"></view>
+	<view class="flex1 flex flex-col ">
+		<view class="flex flex-col ml-36" style="max-width:313rpx">
+			<view class="flex flex-row flex-ais"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">注册成功率：</text><text class="fs-24 col4545ad">40%~70%</text></view>
+			<view class="flex flex-row flex-ais mt-16"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">各组人员严格把握，确保及时、规范提交，加急注册</text></view>
+			<view class="flex flex-row flex-ais  mt-16"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">优秀商标代理机构，专人及时处理，注册后长期监控避免侵权</text></view>
+			<view class="flex flex-row flex-ais mt-16"><label class="d mr-8 mt-16"></label><text
+					class="col5e5f66 fs-24">资深商标审查员，为您进行精准查询，全面规划提高注册成功率</text></view>
+		</view>
+	</view>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">商标注销</text>
+	<text class="fwb fs-36 col8c0224 mr-12">服务流程</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-aic flex-col mw0-30 mt-50 psr">
+	<image class="psa" src="/resource/image/detail/{{idx}}/bg-6.png" mode="widthFix"
+		style="top:10rpx;left:30rpx;width:630rpx;"></image>
+	<view class="flex flex-row mw100 mt-60">
+		<view class="flex flex-col" style="margin-left:30rpx;">
+			<text class="fs-48 col212429 fwb">01</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">清算组</view>
+					<view class="fs-24 col212429 lh120">备案</view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:80rpx;">
+			<text class="fs-48 col212429 fwb">02</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">登报</view>
+					<view class="fs-24 col212429 lh120" style="min-height:38rpx;"></view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:86rpx;">
+			<text class="fs-48 col212429 fwb">03</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">
+						国地税
+					</view>
+					<view class="fs-24 col5e5f66 lh120">
+						<text class="fs-24 col212429 lh120">注销</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="flex flex-col" style="margin-left:90rpx">
+			<text class="fs-48 col212429 fwb">04</text>
+			<view class="flex-col flex flex-aic flex-jcc bglh">
+				<view class="flex-col flex ml-20 mr-20 mt-17 mb-17 ">
+					<view class="fs-24 col5e5f66 lh120">工商</view>
+					<view class="fs-24 col212429 lh120">注销</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">商标注销</text>
+	<text class="fwb fs-36 col8c0224 mr-12">所需材料</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">注册商标需要专业</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="flex flex-row flex-jcb flex-aic mw0-40 mt-50">
+	<image src="/resource/image/detail/4/bg-1.png" style="height:290rpx;" mode="heightFix"></image>
+	<image src="/resource/image/detail/4/bg-2.png" style="height:290rpx;" mode="heightFix"></image>
+	<image src="/resource/image/detail/4/bg-3.png" style="height:290rpx;" mode="heightFix"></image>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12">服务优势</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">一键式服务 保障又省心</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="mw0-30 flex flex-row flex-aic mb-30 mt-50">
+	<view class="ml-10 mr-10 flex flex-col flex-aic flex1 bgl" style="height:250rpx;">
+		<image src="/resource/image/detail/{{idx}}/icon-3.png" style="height:58rpx;" class="mt-32" mode="heightFix"></image>
+		<text class="col212429 fs-28 fwb mt-20">专业</text>
+		<view class="flex flex-col">
+			<text class="fs-24 col5e5f66">资质过硬</text>
+			<text class="fs-24 col5e5f66">信誉保证</text>
+		</view>
+	</view>
+	<view class="ml-10 mr-10 flex flex-col flex-aic flex1 bgl" style="height:250rpx;">
+		<image src="/resource/image/detail/{{idx}}/icon-4.png" style="height:58rpx;" class="mt-32" mode="heightFix"></image>
+		<text class="col212429 fs-28 fwb mt-20">贴心</text>
+		<view class="flex flex-col">
+			<text class="fs-24 col5e5f66">一键下单</text>
+			<text class="fs-24 col5e5f66">贴心办理</text>
+		</view>
+	</view>
+	<view class="ml-10 mr-10 flex flex-col flex-aic flex1 bgl" style="height:250rpx;">
+		<image src="/resource/image/detail/{{idx}}/icon-5.png" style="height:58rpx;" class="mt-32" mode="heightFix"></image>
+		<text class="col212429 fs-28 fwb mt-20">保障</text>
+		<view class="flex flex-col">
+			<text class="fs-24 col5e5f66">专项服务</text>
+			<text class="fs-24 col5e5f66">售后无忧</text>
+		</view>
+	</view>
+	<view class="ml-10 mr-10 flex flex-col flex-aic flex1 bgl " style="height:250rpx;">
+		<image src="/resource/image/detail/{{idx}}/icon-6.png" style="height:58rpx;" class="mt-32" mode="heightFix"></image>
+		<text class="col212429 fs-28 fwb mt-20">省钱</text>
+		<view class="flex flex-col">
+			<text class="fs-24 col5e5f66">价格实惠</text>
+			<text class="fs-24 col5e5f66">明码标价</text>
+		</view>
+	</view>
+</view>

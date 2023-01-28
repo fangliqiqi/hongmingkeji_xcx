@@ -1,0 +1,23 @@
+/* pages/personal/about/cooperation/index.wxss */
+.page{
+  margin-bottom: 160rpx;
+}
+.bt-vi{
+  position: fixed;
+  right: 40rpx;
+  bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+  width: 320rpx;
+  border-radius: 45rpx;
+  overflow: hidden;
+}
+.bt-vi>view{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

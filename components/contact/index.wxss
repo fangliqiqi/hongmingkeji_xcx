@@ -1,0 +1,92 @@
+/* components/contact/index.wxss */
+.colfff{
+  color: #ffffff;
+}
+.fs-26{
+  font-size: 26rpx;
+}
+.contact-vi{
+  position: fixed;
+  right: 30rpx;
+  z-index: 2000;
+  bottom: 160rpx;
+}
+.float-vi{
+  width: 120rpx !important;
+  height: 120rpx;
+  background: linear-gradient(-45deg,#ed947b,#dd6059);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 26rpx;
+  padding: 0 0;
+  box-shadow: 0 0 15rpx rgba(226, 112, 99, 0.5);
+}
+.float-vi .img-vi{
+  width: 100rpx;
+  border-radius: 50%;
+  height:100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0,rgba(237,148,123,0.42),rgba(221,96,89,0.42));
+  box-shadow: 0 0 12rpx rgba(194, 53, 37, 0.4);
+}
+.float-vi text{
+  font-weight: normal;
+}
+.contact{
+  position: absolute;
+  bottom: 160rpx;
+  right: 14rpx;
+  background: #ffffff; 
+  width: 280rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 360rpx;
+}
+.contact-item{
+  background: transparent !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 110rpx;
+}
+.img-vi{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70rpx;
+}
+.contact text{
+  color: #5e5f66;
+  font-size: 28rpx;
+  font-weight: normal;
+}
+.backgd{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: rgba(0,0,0,.6);
+}
+
+.ari {
+  position:absolute;
+  bottom: 0rpx;
+  width:40rpx;
+  height:40rpx;
+  right:23rpx;
+  background:#fff;
+  /* -webkit-transform:rotate(45deg) skew(60deg,60deg); */
+  transform:rotateZ(60deg) skewX(30deg);
+  border-radius:10rpx;
+  z-index: -1;
+  }

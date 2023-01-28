@@ -1,0 +1,30 @@
+<!--pages/personal/upgrade/upgrade.wxml-->
+<view class="page">
+  <view class="flex flex-col flex-aic">
+    <text class="fwb fs-32 col20242a mt-60">升级充值</text>
+    <view class="mt-36 mb-36 mw0-30">
+      <view class="cost-item flex flex-col flex-jcc flex-aic {{item.roleId==typeid?'on':''}}"  wx:for="{{typelist}}" wx:key="id"   data-id="{{item.roleId}}" data-amt="{{item.money}}"  data-op="{{item.isOption}}"  data-name="{{item.roleName}}" bindtap="amtap">
+        <view class="flex flex-aic flex-row flex-jcc">
+          <view class="flex flex-row flex-aib">
+            <text class="fs-32 col5e5f66 fwb">￥</text>
+            <text class="fs-48 col5e5f66">{{item.money}}</text>
+          </view>
+        </view>
+        <view class=" flex-row flex flex-aic flex-jcc">
+          <text class="col5e5f66 fs-30">{{item.roleName}}</text>
+        </view>
+        <image src="/resource/image/icon-68.png" mode="widthFix" class="psa" style="width:43rpx;right:0;bottom:0;">
+        </image>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer-vi">
+    <view class="footer">
+      <button class="bgact bt" bindtap="payFun">
+        <text class="colfff fs-32">确认</text>
+      </button>
+    </view>
+  </view>
+</view>
+

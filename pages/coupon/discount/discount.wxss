@@ -1,0 +1,56 @@
+/* pages/coupon/discount/discount.wxss */
+.page{
+  background:#f7f8fa;
+}
+.title{
+  width:100%;
+  height:110rpx;
+}
+.imgright{
+  width:15rpx;
+}
+.card_list{
+  background: #ffffff;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.coupon_bg{
+  width:100%;
+  height:198rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+.coupon_info{
+  z-index: 999;
+  padding-left: 26rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.coupon_title{
+  flex:0 0 200rpx;
+  color:#fb4940;
+  font-weight: bold;
+}
+.coupon_btn{
+  flex:0 0 146rpx;
+  z-index: 999;
+  color:#fb4940;
+}
+.no{
+  width:100%;
+  height: 100vh;
+  text-align: center;
+  line-height: 60vh;
+}

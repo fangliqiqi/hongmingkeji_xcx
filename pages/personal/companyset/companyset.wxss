@@ -1,0 +1,31 @@
+/* pages/personal/companyset/companyset.wxss */
+@import "/pages/share/share.wxss";
+.tip-vi{
+  margin-bottom: 36rpx;
+}
+.code-vi{
+  border-bottom: 1rpx #eee solid;
+  color: #212429;
+  min-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.addbox{
+  width:100%;
+  min-height: 280rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.upload_vi{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.upload_vi image{
+  width: 300rpx;
+  height: 150rpx;
+}

@@ -1,0 +1,90 @@
+<!--pages/personal/cardAgency/cardAgency.wxml-->
+<view class="page sv-vi">
+  <view class="mw0-30  flex flex-aic flex-jcb title">
+    <view class="fs-30 flex1 tac col5e5f66 {{titleTab==1?'t_active':''}}"   bindtap="tabfun" data-idx="1">会员卡</view>
+    <view class="fs-30 flex1 tac col5e5f66 {{titleTab==2?'t_active':''}}"  bindtap="tabfun" data-idx="2" >销售记录</view>
+  </view>
+  <scroll-view scroll-y  class="sv" bindscrolltolower="bindscrolltolower" >
+    <!-- 会员卡列表 -->
+    <view class="flex flex-col mw0-30 ml-a mr-a" wx:if="{{titleTab==1}}">
+      <view class="card_bg mb-24" wx:for="{{cardList}}" wx:key='id'>
+        <image src="{{imgUrl+item.url}}" class="card_img"></image>
+        <view class="card_left {{item.cardColor}}">
+          <view class="fs-48 fwb">{{item.cardName}}</view>
+          <view class="fs-26">数量：{{item.buyNumber}}</view>
+        </view>
+        <view class="card_right {{item.cardColor}}" bindtap="toSell" data-item="{{item}}">
+          <view class="fs-26 btn" >转售</view>
+        </view>
+      </view>
+      <view></view>
+    </view>
+		<!-- 销售列表 -->
+    <view class="flex flex-col " wx:if="{{titleTab==2}}">
+      <view class="expense_item boxsh mt-20 mw0-30 ml-a mr-a"  bindtap="toDetail" wx:for="{{sellList}}"  wx:key="id" 
+            data-id="{{item.idStr}}">
+        <view class="item">
+          <view class="flex flex-aic flex-jcb fs-28 col1c1f23">
+            <view class="flex">
+              <text class="item_left">订单号</text>
+              <text>{{item.idStr}}</text>
+            </view>
+            <view  class="cole15352" wx:if="{{item.orderStatus==1||item.orderStatus==2}}">待完成</view>
+            <view  class="col00cf9a" wx:if="{{item.orderStatus==3}}">已完成</view>
+            <view  class="colc8c8cc" wx:if="{{item.orderStatus==4}}">已关闭</view>
+          </view>
+          <view class="flex flex-aic flex-jcb fs-26 col1c1f23 mt-10">
+            <view class="flex flex07">
+              <text class="item_left">订单总价</text>
+              <text class="fwb">{{item.payMoney}}元</text>
+            </view>
+            <view class="flex flex1 flex-jce fs-24 col9d9da6">
+              <text class="item_left">下单时间</text>
+              <text >{{item.orderTime}}</text>
+            </view>
+          </view>
+        </view>	
+      </view>
+    </view>
+			
+			<view class="flex flex-aic flex-row last-vi flex-jcc bgfff">
+				<view wx:if="{{loading}}" class="weui-loadmore">
+					<view class="weui-loading"></view>
+					<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+				</view>
+				<view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+				</view>
+			</view>
+	</scroll-view>
+</view>
+
+<!-- 转售弹窗 -->
+<view catchtouchmove="{{true}}" class="alter-vi" wx:if="{{isShow}}">
+  <c-dialog show="{{isShow}}" class="noft nohd z1000" bindclose="closeFun" ext-class="z1000">
+    <view class="flex flex-col flex-aic z1000">
+      <text class="col212429 fs-36 fwb mt-60">转售</text>
+      <view class="mt-60 col212429 fs-30">
+        <view class="flex flex-aic">
+          <view class="flex_left">转售数量</view>
+          <input type="number" bindinput='input1Eve'  class="input1" value="{{cardNumber}}"/>
+          <view class="ml-20">张</view>
+        </view>
+        <view class="flex flex-aic mt-20" >
+          <view class="flex_left">单价</view>
+          <input type="digit" class="input1" bindinput='input2Eve' />
+          <view class="ml-20">元/张</view>
+        </view>
+        <view class="fs-26 mt-20">注：线下购买，购买人点击确定，则卡券到账</view>
+      </view>
+      <view class="flex flex-row flex-aic mt-50">
+        <button class="bl bt bgf5f7fd" style="width:180rpx !important;" bindtap="offlinepayFun">
+          <text class="fs-24 col0057ff">线下付款</text>
+        </button>
+        <button class="bgact bt ml-30" style="width:180rpx !important;" bindtap="onlinepayFun">
+          <text class="fs-24 colfff">线上付款</text>
+        </button>
+      </view>
+    </view>
+  </c-dialog>
+</view>

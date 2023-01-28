@@ -1,0 +1,92 @@
+/* pages/coupon/coupon.wxss */
+.page{
+  background:#f7f8fa;
+}
+.title{
+  width:100%;
+  height:110rpx;
+}
+.imgright{
+  width:15rpx;
+}
+.card_bg{
+  width:100%;
+  height:198rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  padding:0 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card_img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+.colorGray{
+  color:#49576f;
+}
+.colorCyan{
+  color:#43737e;
+}
+.colorYellow{
+  color:#855e3b;
+}
+.colorBlue{
+  color:#425b82;
+}
+.card_left{
+  z-index: 999;
+}
+.card_right{
+  z-index: 999;
+}
+.btn{
+  width:160rpx;
+  height:60rpx;
+  background:rgba(255, 255, 255, 0.8);
+  border-radius:40rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.coupon_bg{
+  width:100%;
+  height:198rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.coupon_info{
+  z-index: 999;
+  padding-left: 26rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.coupon_title{
+  flex:0 0 200rpx;
+  color:#fb4940;
+  font-weight: bold;
+}
+.coupon_btn{
+  flex:0 0 146rpx;
+  z-index: 999;
+  color:#fb4940;
+
+}
+.radio{
+  flex:0 0 80rpx;
+}
+.radio_left{
+  flex:0 0 280rpx;
+  text-align: left;
+  margin-left: 6rpx;
+}

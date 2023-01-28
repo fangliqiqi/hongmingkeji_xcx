@@ -1,0 +1,61 @@
+
+page{
+  background: #fff;
+}
+.page{
+  background: #fff;
+}
+.bt{
+  width: calc(100% - 140rpx) !important;
+}
+
+.footer-vi{
+  background: #fff;
+}
+.cost-item{
+  width: calc(50% - 15rpx);
+  border: 1rpx #ededed solid;
+  height: 170rpx ;
+  margin:15rpx;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+}
+.cost-item>image{
+  display: none;
+}
+.cost-item.on{
+  border-color: #dbaa60;
+}
+.cost-item.on>image{
+  display: block;
+}
+.cost-item:nth-child(2n-1){
+  margin-left: 0;
+}
+.cost-item:nth-child(2n){
+  margin-right: 0;
+}
+.cost-item>view{
+  height: 50%;
+  width: calc(100% - 60rpx);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cost-item .lab{
+  display: block;
+  text-align: center;
+  height: 36rpx;
+  width: 94rpx;
+  border-radius: 18rpx;
+}
+.cost-item>view:nth-child(2){
+  border-top:1rpx #eee dashed ;
+  max-height: 76rpx !important;
+}
+
+
+
+
+

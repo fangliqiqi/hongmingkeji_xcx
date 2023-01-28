@@ -1,0 +1,35 @@
+<!--pages/personal/help/help.wxml-->
+<c-contact></c-contact>
+
+<view class="page">
+  <view class="menu-vi blt">
+    <view class="menu-item " bindtap="toPage" data-url="/pages/personal/help/detail/index" data-idx="1">
+      <text>莫的问题共享会计是做什么的？</text>
+      <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx;height:20rpx;"></image>
+    </view>
+    <view class="menu-item blt"  bindtap="toPage" data-url="/pages/personal/help/detail/index" data-idx="2">
+      <text>修改登录密码</text>
+      <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx;height:20rpx;"></image>
+    </view>
+    <view class="menu-item blt"  bindtap="toPage" data-url="/pages/personal/help/detail/index" data-idx="3">
+      <text>怎么联系客服？</text>
+      <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx;height:20rpx;"></image>
+    </view>
+    <view class="menu-item blt"  bindtap="toPage" data-url="/pages/personal/help/detail/index" data-idx="4">
+      <text>找不到服务的订单？</text>
+      <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx;height:20rpx;"></image>
+    </view>
+    <view class="menu-item blt"  bindtap="toPage" data-url="/pages/personal/help/detail/index" data-idx="5">
+      <text>忘记登录密码怎么办？ </text>
+      <image src="/resource/image/icon-09.png" mode="widthFix" style="width:12rpx;height:20rpx;"></image>
+    </view>
+  </view>
+</view>
+
+<view class="footer-vi">
+  <view class="footer">
+    <button class="bt bgact mw0-70" style="width:calc(100% - 144rpx) !important;" bindtap="toPage" data-url="/pages/personal/help/feedback/index">
+      <text class="colfff fs-32">意见反馈</text>
+    </button>
+  </view>
+</view>

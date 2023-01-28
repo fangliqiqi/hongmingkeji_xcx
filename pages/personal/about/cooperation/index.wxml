@@ -1,0 +1,9 @@
+<!--pages/personal/about/cooperation/index.wxml-->
+<view class="page">
+  
+</view>
+<view class="bt-vi">
+	<view bindtap="toPage" data-idx="1" class="bgact">
+		<text class="fs-32 colfff">合作商申请</text>
+	</view>
+</view>

@@ -1,0 +1,97 @@
+<!--pages/detail/detail.wxml-->
+<view class="page">
+	<view class="flex flex-aic flex-col">
+		<image wx:if="{{idx}}" src="/resource/image/detail/{{idx}}/banner-1.png" mode="widthFix"></image>
+		<include  wx:if="{{idx==1}}" src="./index/detail-1.wxml"/>
+		<include  wx:elif="{{idx==2}}" src="./index/detail-2.wxml"/>
+		<include  wx:elif="{{idx==3}}" src="./index/detail-3.wxml"/>
+		<include  wx:elif="{{idx==4}}" src="./index/detail-4.wxml"/>
+		<include  wx:elif="{{idx==5}}" src="./index/detail-5.wxml"/>
+		<include  wx:elif="{{idx==6}}" src="./index/detail-6.wxml"/>
+	</view>
+</view>
+<view class="tohome-vi" wx:if="{{toHome}}">
+	<view class="tohome" bindtap="toHome">
+		<image src="/resource/image/tabBar-01.png" mode="widthFix" style="width:48rpx;">
+		</image>
+	</view>
+</view>
+<view class="bt-vi">
+	<image src="/resource/image/icon-46.png" mode="widthFix"></image>
+	<view bindtap="toPage" data-show="2">
+		<text class="fs-32 col0155fe">我要推荐</text>
+	</view>
+	<view bindtap="toPage" data-show="1">
+		<text class="fs-32 colfff">我要服务</text>
+	</view>
+</view>
+<c-hs-dialog show="{{isShow}}" class="noft nohd" bindclose="closeFun">
+	<view slot="desc" class="hsd-bd">
+		<view class="hd-vi">
+			<text class="fs-36 col212429 fwb">选择服务方式</text>
+			<view class="close" bindtap="closeFun">
+				<c-icon icon="close2" color="#a7a8ac" size="{{24}}"></c-icon>
+			</view>
+		</view>
+		<view class="bank-vi">
+			<button class="item-vi" open-type="contact" bindcontact="handleContact">
+				<view class="flex flex-row flex-aic">
+					<image src="/resource/image/icon-53.png" mode="widthFix"></image>
+					<view class="flex flex-col flex-jcc flex-ais">
+						<text class="fs-28 fwn">在线客服</text>
+						<text class="col9d9da6 fs-28 fwn">手机在线聊天窗口</text>
+					</view>
+				</view>
+				<image src="/resource/image/icon-09.png" mode="widthFix"></image>
+			</button>
+			<view class="item-vi" bindtap="callPhone">
+				<view class="flex flex-row flex-aic">
+					<image src="/resource/image/icon-54.png" mode="widthFix"></image>
+					<view class="flex flex-col flex-jcc">
+						<text class="fs-28">联系客服</text>
+						<text class="col9d9da6 fs-28">呼叫 {{callPhone}}</text>
+					</view>
+				</view>
+				<image src="/resource/image/icon-09.png" mode="widthFix"></image>
+			</view>
+			<view class="item-vi">
+				<view class="flex flex-row flex-aic">
+					<text class="col9d9da6 fs-24 " style="margin-left:124rpx;">工作日08:00-21:00</text>
+					<text class="col9d9da6 fs-24 ml-32">非工作日08:00-18:00</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</c-hs-dialog>
+
+<view class="share-vi" hidden="{{!isShare}}">
+	<view class="poster-vi">
+		<image wx:if="{{posterindex}}" src="{{url}}/profile/static/images/poster-bg-{{posterindex}}.jpg" mode="aspectFit"></image>
+	</view>
+	<c-hs-dialog show="{{isShare}}" class="noft nohd bg1e nopad" bindclose="closeFun">
+		<view slot="desc" class="hsd-bd">
+			<view class="flex flex-row flex-jca pad">
+				<button class="vi-bt flex1 flex-jcc flex flex-aic flex-col" open-type="share">
+					<image src="/resource/image/icon-55.png" mode="widthFix"></image>
+					<text class="fs-22 cola6">发送给朋友</text>
+				</button>
+				<button class="vi-bt flex1 flex-jcc flex flex-aic flex-col" bindtap="authSettingFun">
+					<image src="/resource/image/icon-56.png" mode="widthFix"></image>
+					<text class="fs-22 cola6">分享到朋友圈</text>
+				</button>
+				<view class="vi-bt flex1 flex-jcc flex flex-aic flex-col" bindtap="toPage" data-url="/pages/wxCode/index?idx={{idx}}">
+					<image src="/resource/image/icon-62.png" mode="widthFix"></image>
+					<text class="fs-22 cola6">面对面邀请</text>
+				</view>
+			</view>
+			<view class="ft-bt-vi" bindtap="closeFun">
+				<text class="colfff fs-28">取消</text>
+			</view>
+		</view>
+	</c-hs-dialog>
+</view>
+
+<canvas class="canvas" canvas-id="evinCanvas"
+	style="width: {{canvas.ww * canvas.pix}}px;height: {{canvas.hh * canvas.pix}}px;"></canvas>
+	<c-contact></c-contact>
+	<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>

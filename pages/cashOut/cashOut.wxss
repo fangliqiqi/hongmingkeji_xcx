@@ -1,0 +1,68 @@
+/* pages/cashOut/cashOut.wxss */
+@import "../commission/commission.wxss";
+.hsd-bd{
+  margin-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+.hsd-bd .bank-vi{
+  display: flex;
+  flex-direction: column;
+}
+.hsd-bd .iconfont{
+  width: 50rpx;
+  height: 50rpx;
+}
+.hsd-bd .hd-vi{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 146rpx;
+}
+.hsd-bd .close{
+  position: absolute;
+  right: 0;
+}
+.item-vi{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 152rpx;
+  border-bottom: 1rpx #eee solid;
+}
+.item-vi image{
+  width: 72rpx;
+  margin-right: 46rpx;
+}
+
+.input-vi input{
+  border-bottom: 1rpx #eee solid;
+  min-height: 80rpx;
+  width: 100%;
+  color: #212429;
+}
+.code-vi{
+  border-bottom: 1rpx #eee solid;
+  color: #212429;
+  min-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.am-input{
+  height: 100%;
+  margin-bottom: -20rpx;
+  font-size: 82rpx !important;
+}
+.item-ra{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 152rpx;
+  border-bottom: 1rpx #eee solid;
+}

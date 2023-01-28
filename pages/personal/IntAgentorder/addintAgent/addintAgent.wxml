@@ -1,0 +1,91 @@
+<!--pages/personal/IntAgentorder/addintAgent/addintAgent.wxml-->
+<c-contact></c-contact>
+<view class="page">
+  <view class="bgfff flex-col flex flex-aic">
+		<view class="mw0-30 flex flex-col flex-aic">
+			<view class="mw0-10 flex flex-col mb-50">
+				<view class="mt-60">
+					<text class="fs-52 col212429 fwb">添加意向订单</text>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">客户姓名<text class="cold15d57 ml-8">*</text></text>
+					<input bindinput="inputFun" data-idx="1" value="{{orderInfo.userName}}"  class="fs-28 col212429" placeholder="请输入客户姓名" placeholder-class="colc8c8cc fs-28"></input>
+        </view>
+        <view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">联系方式<text class="cold15d57 ml-8">*</text></text>
+					<input  type="number"   bindinput="inputFun" data-idx="2" value="{{orderInfo.userPhone}}" maxlength="11" class="fs-28 col212429" placeholder="请输入联系方式" placeholder-class="colc8c8cc fs-28"></input>
+				</view>
+				<view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">订单类型<text class="cold15d57 ml-8">*</text></text>
+					<view>
+						<picker bindchange="bindPickerChange" value="{{index}}" range="{{orderTypeList}}" range-key="name">
+							<view class="picker">
+								<text class="fs-28 col212429" wx:if="{{orderInfo.orderType}}">{{orderTypeList[index].name}}</text>
+								<text wx:else class="colc8c8cc fs-28">请选择订单类型</text>
+								<image src="/resource/image/icon-09.png"></image>
+							</view>
+						</picker>
+					</view>
+				</view>
+				<!-- 订单状态 -->
+				<!-- <view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">订单状态<text class="cold15d57 ml-8">*</text></text>
+					<view>
+						<picker bindchange="bindPickerChange2" value="{{index1}}" range="{{orderStateList}}" range-key="name">
+							<view class="picker">
+								<text class="fs-28 col212429" wx:if="{{orderInfo.orderState}}">{{orderStateList[index1].name}}</text>
+								<text wx:else class="colc8c8cc fs-28">请选择订单类型</text>
+								<image src="/resource/image/icon-09.png"></image>
+							</view>
+						</picker>
+					</view>
+        </view> -->
+        <view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">省市区<text class="cold15d57 ml-8">*</text></text>
+					<view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+						<view class="picker col212429 fs-28">
+							<text wx:if="{{region[0]}}">{{region[0]}}-{{region[1]}}-{{region[2]}}</text>
+							<text wx:else class="colc8c8cc">请选择常驻地址</text>
+							<image src="/resource/image/icon-09.png" mode="widthFix" class="ml-20" style="width:12rpx"></image>
+						</view>
+          </picker>
+					</view>
+				</view>
+        <view class="flex-col flex">
+					<text class="fs-32 col212429 mt-60  mb-20">订单详情</text>
+					<textarea class="fs-28 col212429" maxlength= -1  value="{{orderInfo.orderContent}}"  bindinput="inputFun" data-idx="5" placeholder="请输入订单详情" placeholder-class="colc8c8cc fs-28">
+          </textarea>
+				</view>
+			</view>
+    </view>  
+  </view>
+
+  <view class="tip-vi">
+    <view class="flex flex-col">
+			<view class="flex flex-row flex-aic">
+				<icon type="warn" size="18"></icon>
+				<text class="fs-24 col212429 ml-10">温馨提示</text>
+			</view>
+			<view class="flex flex-row">
+				<text class="fs-22 col5e5f66">1.</text>
+				<text class="fs-22 col5e5f66 ml-8">请核对意向订单填写无误~</text>
+			</view>
+		</view>
+    <button class="bt bgact" bindtap="submintFun">
+      <text class="colfff fs-32">确认添加</text>
+    </button>
+  </view>
+</view>
+
+	
+    
+  
+
+
+
+
+
+
+
+

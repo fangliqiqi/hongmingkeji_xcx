@@ -1,0 +1,40 @@
+/* pages/form/industry/industry.wxss */
+.sv-vi{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #fff;
+}
+.alert-vi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: env(safe-area-inset-bottom);
+  margin-bottom: 50rpx;
+}
+.alert-vi>text{
+  min-height: 40rpx;
+}
+.alert-vi>view>view{
+  margin-top: 16rpx;
+}
+.al-item{
+  float: left;
+  border-radius: 8rpx;
+  border: 1rpx #eee solid;
+  background: #f5f5f5;
+  padding: 4rpx 12rpx;
+  margin: 8rpx;
+  font-size: 28rpx;
+
+}
+.al-item.act{
+  background: #f5f7fc !important;
+  border-color: #0155fe !important;
+}
+.al-item.act>text{
+  color: #0155fe !important;
+}

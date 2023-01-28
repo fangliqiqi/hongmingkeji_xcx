@@ -1,0 +1,245 @@
+<!--pages/personal/disorder/disdetails/disdetails.wxml-->
+<wxs src="../../../../utils/utils.wxs" module="utils" />
+<view class="page" wx:if="{{userInfo && userInfo.userId}}" >
+  <view>
+    <view class="info-vi"> 
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">订单进度</text>
+        </view>
+      </view>
+      <view bindtap="handFlow">
+        <text class="fs-28 col5e5f66">目前进度</text>
+        <view>
+          <text class="col212429 fs-28 mr-16">{{flowText}}</text>
+          <image  wx:if='{{flowShow}}'  src="../../../../resource/image/icon-09.png" mode="widthFix" style="width:15rpx;transform:rotate(90deg);"></image>
+          <image  wx:else  src="../../../../resource/image/icon-09.png" mode="widthFix" style="width:15rpx"></image>
+        </view>    
+      </view>
+      <view class="flex" wx:if='{{flowShow}}'>
+        <view class="wecentBor fs-28 ">
+          <block>
+            <view class='weui-cell-list'>
+              <view class="weui-cell-line  active-line ">
+                <view class='weui-cell-circle active-circle' >
+                  <view class="active"></view>
+                </view>
+                <view class='weui-cell-event floarLeft'>创建订单</view>
+              </view>  
+            </view>
+          </block>
+          <block>
+            <view class='weui-cell-list'>
+              <view class="weui-cell-line {{flowState >=2 ? 'active-line':''}}" >
+                <view class="weui-cell-circle {{flowState >=2 ? 'active-circle':''}}">
+                  <view class="{{flowState >=2 ? 'active':''}}"></view>
+                </view>
+                <view class='weui-cell-event floarLeft'>订单审核</view>
+              </view>
+            </view>
+          </block>
+          <block>
+            <view class='weui-cell-list'>
+              <view class="weui-cell-line {{flowState >=3 ? 'active-line':''}}">
+                <view class="weui-cell-circle {{flowState >=3 ? 'active-circle':''}}">
+                  <view class="{{flowState >=3 ? 'active':''}}"></view>
+                </view>
+                <view class='weui-cell-event floarLeft'>订单分派</view>
+              </view>
+            </view>
+          </block>
+          <block>
+            <view class='weui-cell-list'>
+              <view class="weui-cell-line {{flowState >=4 ? 'active-line':''}}">
+                <view class="weui-cell-circle {{flowState >=4 ? 'active-circle':''}}">
+                  <view class="{{flowState >=4 ? 'active':''}}"></view>
+                </view>
+                <view class='weui-cell-event floarLeft'>订单处理</view>
+              </view>
+            </view>
+          </block>
+          <block>
+            <view class='weui-cell-list'>
+              <view class="weui-cell-line {{flowState ==5 ? 'active-line':''}}">
+                <view class="weui-cell-circle {{flowState ==5 ? 'active-circle':''}}">
+                  <view class="{{flowState ==5 ? 'active':''}}"></view>
+                </view>
+                <view class='weui-cell-event floarLeft'>完结</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+  
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi"> 
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">基本信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">姓名</text>
+        <text class="col212429 fs-28">{{orderdetail.userName}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">联系方式</text><text class="col212429 fs-28">{{orderdetail.userPhone}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">所在地址</text>
+        <text class="colc49259 fs-28">{{orderdetail.province}}-{{orderdetail.city}}-{{orderdetail.county}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">订单信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">订单类型</text>
+        <text class="col212429 fs-28">{{orderdetail.businessName}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">定金[元]</text><text class="col212429 fs-28">{{orderdetail.downPayment}}</text>
+      </view>
+     
+      <!-- 点击追加尾款 -->
+      <view wx:if="{{(userInfo.userId == orderdetail.salesmanId ||  userInfo.userId == orderdetail.finishUserId) && (orderdetail.payStatus == 4 ||  orderdetail.payStatus == 5)}}"  bindtap="ptotap"  data-type='1' >
+        <text class="fs-28 col5e5f66">点击输入追加尾款[元]</text>
+        <text class="col212429 fs-28"  wx:if="{{orderdetail.balancePayment && orderdetail.balancePayment > 0}}">　
+            {{orderdetail.balancePayment}}
+        </text>
+        <text class="col212429 fs-28"  wx:else>请输入尾款金额</text>
+      </view>
+      <!-- 点击输入尾款 -->
+      <view wx:elif="{{ roleFlag && orderdetail.payStatus == 1}}" bindtap="ptotap"  data-type='2' >
+        <text class="fs-28 col5e5f66">点击输入尾款[元]</text>
+        <text class="col212429 fs-28"    wx:if="{{orderdetail.balancePayment && orderdetail.balancePayment > 0}}">　
+            {{orderdetail.balancePayment}}
+        </text>
+        <text class="col212429 fs-28"  wx:else>请输入尾款金额</text>
+      </view>
+
+      <!-- 尾款显示 -->
+      <view wx:elif="{{(orderdetail.payStatus == 1 || orderdetail.payStatus == 4 || orderdetail.payStatus == 5) && orderdetail.balancePayment && orderdetail.balancePayment > 0}}">
+        <text class="fs-28 col5e5f66">尾款[元]</text><text class="col212429 fs-28">{{orderdetail.balancePayment}}</text>
+      </view> 
+      <!-- 订单状态 -->
+      <view>
+        <text class="fs-28 col5e5f66">订单状态</text>
+        <text class="col00cf9a fs-28" wx:if="{{orderdetail.userDisposeStatus == 1 || orderdetail.salesmanDisposeStatus == 1}}">{{flowText}}
+        </text>
+        <text class="col0155fe fs-28" wx:if="{{orderdetail.userDisposeStatus == 2 && orderdetail.salesmanDisposeStatus == 2}}">{{flowText}}
+        </text>
+        <text class="cole15352 fs-28" wx:if="{{orderdetail.userDisposeStatus == 3 || orderdetail.salesmanDisposeStatus == 3}}">{{flowText}}
+        </text>
+      </view>
+
+      <view>
+        <text class="fs-28 col5e5f66">定金状态</text>
+        <text class="col5e5f66 fs-28" wx:if="{{orderdetail.payStatus == 1 || orderdetail.payStatus == 4  || orderdetail.payStatus == 5}}">已付款</text>
+        <text class="col5e5f66 fs-28" wx:if="{{orderdetail.payStatus == 2}}">已取消</text>
+        <text class="col5e5f66 fs-28" wx:if="{{orderdetail.payStatus == 3}}">未付款</text>
+      </view>
+
+      <view wx:if="{{orderdetail.balancePayment && orderdetail.balancePayment > 0}}">
+        <text class="fs-28 col5e5f66">尾款状态</text>
+        <text class="col5e5f66 fs-28" 
+          wx:if="{{orderdetail.balancePayment && orderdetail.balancePayment > 0 && (orderdetail.payStatus == 4 || orderdetail.payStatus == 5)}}">已付款</text>
+        <text class="col5e5f66 fs-28" wx:else>未付款</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">订单备注</text><text class="col212429 fs-28">{{orderdetail.orderContent}}</text>
+      </view> 
+    </view>
+    <view class="line-20"></view>
+  </view>
+</view>
+
+<view class="page"  wx:if="{{!userInfo || !userInfo.userId}}">
+	<view class="login-vi mw0-30">
+		<view class="mw0-40 flex flex-col">
+			<text class="col212429 fs-52 fwb mt-100">欢迎来到莫的问题</text>
+			<text class="col9d9da6 fs-32 ">您身边的财税专家</text>
+			<block>
+				<button  class="bt bgact mt-100 " >
+					<text class="colfff fs-32">授权快捷登录</text>
+				</button>
+			</block>			
+		</view>
+	</view>
+</view>
+
+<view class="footer-vi" wx:if="{{userInfo && userInfo.userId}}">
+  <view class="footer" wx:if="{{userInfo.userId == orderdetail.salesmanId && orderdetail.payStatus == 4 }}">
+    <button class="bt bgact flex1 mw0-64">
+      <text class="fs-32 colfff">确认订单</text>
+    </button>
+  </view>
+
+  <view class="footer" wx:elif="{{roleFlag && userInfo.phonenumber !== orderdetail.userPhone }}">
+    <button class="bt bgact flex1 mw0-64" open-type="share">
+      <text class="fs-32 colfff">分享订单</text>
+    </button>
+  </view>
+
+  <block wx:elif="{{userInfo.phonenumber == orderdetail.userPhone}}">
+    <view class="footer" wx:if="{{orderdetail.payStatus == 3}}">
+      <button class="bt bgact flex1 mw0-64"  bindtap="payFun" >
+        <text class="fs-32 colfff">付定金</text>
+      </button>
+    </view>
+
+    <!-- 追加尾款 审核状态是2 且同时 追加尾款金额已经输入 -->
+    <view class="footer" wx:if="{{orderdetail.checkStatus == 4 && orderdetail.balancePayment && orderdetail.balancePayment > 0}}">
+      <button class="bt bgact flex1 mw0-64"  bindtap="payFun3" >
+        <text class="fs-32 colfff">追加尾款</text>
+      </button>
+    </view>
+
+    <view class="footer"  wx:elif="{{orderdetail.payStatus == 1  && orderdetail.balancePayment && orderdetail.balancePayment > 0}}" >
+      <button class="bt bgact flex1 mw0-64" bindtap="payFun2" >
+        <text class="fs-32 colfff">付尾款</text>
+      </button>
+    </view>
+    <view class="footer"  wx:elif="{{orderdetail.payStatus == 1}}" >
+      <button class="bt bgbabac1 flex1 mw0-64"  >
+        <text class="fs-32 colfff">定金已完成</text>
+      </button>
+    </view>
+    <view class="footer"  wx:elif="{{ orderdetail.payStatus == 4 || orderdetail.payStatus == 5}}" >
+      <button class="bt bgbabac1 flex1 mw0-64"   wx:if="{{orderdetail.userDisposeStatus == 2}}">
+        <text class="fs-32 colfff">订单已完成</text>
+      </button>
+      <button class="bt bgact flex1 mw0-64"  bindtap="confirmFun" wx:else >
+        <text class="fs-32 colfff">确认订单</text>
+      </button>  
+    </view>
+  </block>
+</view>
+
+<c-dialog show="{{showFlag&&userInfo&&userInfo.userId}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">尾款金额</text>
+		<input class="fs-28 col212429 mt-32 in-cl" model:value="{{pid}}"  type="digit"   placeholder="请输入尾款金额"  />
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindCodeFun">
+				<text class="fs-24 colfff">确定</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+
+
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>
+

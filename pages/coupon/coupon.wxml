@@ -1,0 +1,90 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="page">
+  <view class="card_list  bgfff">
+    <view class="mw0-30 mr-a ml-a flex flex-jcb flex-aic fs-28 title">
+      <text class="fs-32 ">会员卡</text>
+      <view class="flex flex-aic fs-26 col9595a6" bindtap="toPage" data-url="/pages/coupon/clubCard/clubCard" wx:if="{{cardList.length>0}}">
+        <view>查看全部({{cardNum}})</view> 
+        <image src="/resource/image/icon-09.png" mode="widthFix" class="imgright ml-6"></image>
+      </view>
+    </view>
+    <view class="mw0-30 mr-a ml-a">
+      <view class="card_bg  mb-24" wx:for="{{cardList}}" wx:key='id'>
+        <image src="{{imgUrl+item.url}}" class="card_img"></image>
+        <view class="card_left {{item.cardColor}}">
+          <view >
+            <text class="fs-48 fwb">{{item.title}}</text>
+            <text class="fs-24 ml-4">({{item.cardNumber}})</text>
+        </view>
+          <view class="fs-24" wx:if="{{item.canActivation==1||item.canActivation==3}}">注：同类卡仅可激活一次</view>
+          <view class="fs-24" wx:if="{{item.canActivation==2}}">到期时间：{{item.actEndTime}}</view>
+        </view>
+        <view class="card_right fwb {{item.cardColor}}">
+          <view class=" fs-26 btn" wx:if="{{item.canActivation==1}}" bindtap="toActivate" data-id="{{item.id}}" 
+              data-num="{{item.cardNumber}}"  data-url="/pages/form/index?idx=60"   data-item="{{item}}"  >激活</view>
+          <view class="fs-26 btn opa6 " wx:if="{{item.canActivation==2}}">已激活</view>
+          <view class="fs-26 btn opa6" wx:if="{{item.canActivation==3}}">不可使用</view> 
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card_list  bgfff mt-20">
+    <view class="mw0-30 ml-a mr-a flex flex-jcb flex-aic fs-28 title">
+      <text class="fs-32">优惠券</text>
+      <view class="flex flex-aic fs-26 col9595a6" bindtap="toPage" data-url="/pages/coupon/discount/discount" >
+        <view>查看全部({{couponList.length}})</view> 
+        <image src="/resource/image/icon-09.png" mode="widthFix" class="imgright ml-6"></image>
+      </view>
+    </view>
+    <view class="coupon_bg  mb-24 mw0-30 ml-a mr-a flex" wx:for="{{couponList}}" wx:key="id" wx:if="{{couponList.length>0&&index<3}}">
+      <image src="/resource/image/coupon_bg.png" class="card_img"></image>
+      <view class="coupon_info flex1">
+        <view class="coupon_title">
+          <text class="fs-36">￥</text>
+          <text class="fs-56">{{item.oldPrice}}</text>
+        </view>
+        <view class="coupon_tet flex flex-col flex-jcs flex1">
+          <text class="fs-36">{{item.businessName}}</text>
+          <text class="fs-26 col9595a6">将于{{item.endTime}}过期</text>
+        </view>
+      </view>
+      <view class="coupon_btn fs-32 flex flex-col flex-aic fwb" bindtap="toDetail" data-id="{{item.idStr}}">
+        <text>立即</text>
+        <text>使用</text>
+      </view>
+    </view>
+    <view class="card_bg  flex flex-jcc flex-aic"  wx:if="{{couponList.length==0}}">
+      <view class="fs-26 cola6"> 暂无优惠券哦~</view>
+    </view>
+  </view>
+</view>
+
+<!-- 激活弹窗 -->
+<view catchtouchmove="{{true}}" class="alter-vi" wx:if="{{isFollow}}">
+  <c-dialog show="{{isFollow}}" class="noft nohd z1000" bindclose="closeFun" ext-class="z1000">
+    <view class="flex flex-col z1000">
+      <text class="col212429 fs-36 fwb mt-60">激活</text>
+      <view class="mt-40">
+        <view class="fs-28 mb-10" style="text-align:left">请从以下权益中选择一种：</view>
+        <radio-group bindchange="radioChange"  class="flex flex-col">
+          <label class="flex flex-aic flex-jcc" style="height:60rpx"  wx:for="{{equityList}}" wx:key="id">
+            <radio class="radio"  value="{{item.id}}" checked="{{equityCheck==item.id}}"/>
+            <view class="col212429 fs-28 radio_left">{{item.businessName}}</view>
+            <view class="col212429 fs-28 flex1 tas">{{item.oldPrice}}元</view>
+          </label>
+      </radio-group>
+        <view class="fs-24 " style="text-align:left">温馨提示：点击确认激活按钮后将会下发已选择的对应权益券</view>
+      </view>
+      <view class="flex flex-row flex-aic mt-50">
+        <button class="bl bt bgf5f7fd" style="width:180rpx !important;" bindtap="closeFun">
+          <text class="fs-24 col0057ff">取消</text>
+        </button>
+        <button class="bgact bt ml-30" style="width:180rpx !important;" bindtap="sureFun">
+          <text class="fs-24 colfff">确认激活</text>
+        </button>
+      </view>
+    </view>
+  </c-dialog>
+</view>
+
+

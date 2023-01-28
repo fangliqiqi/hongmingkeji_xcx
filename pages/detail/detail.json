@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon",
+    "c-hs-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
+  }
+}

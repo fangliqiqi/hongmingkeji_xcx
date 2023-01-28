@@ -1,0 +1,90 @@
+/* pages/partner/cost/index.wxss */
+page,.weui-loadmore__tips{
+  background: #f7f8fa !important;
+}
+.page{
+  background: #fff;
+}
+.tab-vi{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 72rpx;
+  background-color: #fff;
+  z-index: 10;
+}
+.tab-vi .tabs{
+  display: flex;
+  flex-direction: row;
+  min-height: 72rpx;
+  box-sizing: border-box;
+  border-top: 1rpx #eee solid;
+  border-bottom: 1rpx #eee solid;
+}
+.tab-vi .tab-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.tab-vi .tab-item image{
+  width: 12rpx;
+  height: 8rpx;
+  margin-left: 10rpx;
+}
+
+.cost-vi{
+  display:flex;
+  flex-direction: column;
+  width: calc(100% - 60rpx) !important;
+  align-items: center;
+  margin-top: 72rpx;
+}
+.cost-item{
+  width: calc(100% - 20rpx);
+  min-height: 152rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1rpx #eee solid;
+
+}
+.cost-item:first-child{
+  border: 0;
+}
+.cost-item>view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mask{
+  transition: all .3s;
+  background: rgba(0,0,0,.6);
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.tab-vi .tab .bt{
+  width: 100% !important;
+  height: 90rpx;
+  border-radius: 0;
+}
+.sel-vi{
+  width: calc(100% - 60rpx);
+  min-height: 520rpx;
+}
+.sel-vi>view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  float: left;
+  width: calc(25% - 20rpx) !important;
+  margin: 10rpx;
+  box-sizing: border-box;
+}

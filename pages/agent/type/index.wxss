@@ -1,0 +1,43 @@
+/* pages/agent/type/index.wxss */
+page{
+  background: #f7f8fa;
+}
+.agent{
+  width:calc(100%  - 60rpx) ;
+  min-height: 64rpx;
+}
+.agent-item{
+  display: flex;
+  flex-direction: column;
+  background: #fcf8f2;
+  color: #c49259;
+  margin: 10rpx;
+  width: calc(25% - 20rpx);
+  float: left;
+  align-items: center;
+}
+.agent-item text{
+  font-size: 28rpx;
+}
+.agent-vi{
+  width: calc(100% - 80rpx);
+  height: 220rpx;
+  border-top: 1rpx #eee solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.agent-vi:first-child{
+  border: 0;
+}
+.top-vi{
+  height: 266rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.sc-vi{
+  margin-top: 266rpx;
+  margin-bottom: 60rpx;
+}

@@ -1,0 +1,95 @@
+<!--pages/detail/detail.wxml-->
+
+<view class="mw0-30 mt-60 psr flex flex-row flex-aic flex-jcc">
+	<image src="/resource/image/detail/icon-15.png" mode="widthFix"></image>
+	<view class="psa flex flex-row flex-aic flex-jcc">
+		<text class="fs-32 col5e5f66 mr-36 ml-12">传统记账报税</text>
+		<image src="/resource/image/detail/icon-14.png" mode="widthFix" style="width:70rpx;height:70rpx;"></image>
+		<text class="fs-32 colfff ml-30">莫的问题·财务外包</text>
+	</view>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">传统记账报税</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row mw0-30 mt-60">
+	<image src="/resource/image/detail/icon-1.png" mode="widthFix" style="width:72rpx;min-width:72rpx;margin-top:-20rpx;"
+		class="ml-10"></image>
+	<text class="fs-24 col5e5f66 ml-12">企业日常<text class="col212429">交易频繁</text>，票据凭证<text
+			class="col212429">数量庞大</text>。由于企业会计人员配备不齐全，进行会计和税务报销时，面对<text class="col212429">复杂</text>的财务<text
+			class="col212429">信息和数据</text>，处理<text class="col212429">效率低</text>。</text>
+</view>
+<view class="flex flex-row mw0-30 mt-60">
+	<image src="/resource/image/detail/icon-2.png" mode="widthFix" style="width:72rpx;min-width:72rpx;margin-top:-20rpx;"
+		class="ml-10"></image>
+	<text class="fs-24 col5e5f66 ml-12">全职会计<text class="col212429">工作效率低</text>，很难对会计账目上的各种数据一一核对和检查，<text
+			class="col212429">容易</text>导致企业财务和税务数据的<text class="col212429">错误</text>。</text>
+</view>
+<view class="flex flex-row mw0-30 mt-60">
+	<image src="/resource/image/detail/icon-3.png" mode="widthFix" style="width:72rpx;min-width:72rpx;margin-top:-20rpx;"
+		class="ml-10"></image>
+	<text class="fs-24 col5e5f66 ml-12">全职会计人员<text class="col212429">能力有限</text>，<text
+			class="col212429">很难</text>准确把握<text class="col212429">最新财税政策</text>，难以做到<text
+			class="col212429">合理避税</text>。</text>
+</view>
+<view class="blt mw0-30 mt-50"></view>
+<view class="flex flex-row flex-aic flex-jcc mt-70">
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+	<text class="fwb fs-36 col212429 ml-12 mr-12">莫的问题·财务外包</text>
+	<image src="/resource/image/detail/icon-16.png" mode="widthFix" style="width:60rpx"></image>
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">业务范围</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="mt-50 mb-80">
+	<image src="/resource/image/detail/icon-13.png" mode="widthFix" style="width:588rpx"></image>
+
+</view>
+<view class="flex flex-row flex-aic flex-jcc mw0-30 mt-40">
+	<view class="flex1 linebg"></view>
+	<text class="fs-30 col212429 ml-20 mr-20">三大优势</text>
+	<view class="flex1 linebgr"></view>
+</view>
+<view class="mw0-40 mt-40 psr flex flex-aic flex-jcc flex-col">
+	<image src="/resource/image/detail/bg-1.png" mode="widthFix"></image>
+	<view class="flex flex-col psa mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic">
+			<view class="flex flex-row flex-aic">
+				<view class="hl"></view>
+				<text class="fs-30 fwb col212429 ml-16">资深团队，高效办公</text>
+			</view>
+			<image src="/resource/image/detail/icon-11.png" mode="widthFix" style="width:82rpx"></image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16">作为依法办理的专业财务公司，资深会计团队经验丰富，设备齐全，使用专业财务软件进行会计核算和纳税申报，帮企业高效完成会计和纳税申报工作。</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col">
+	<image src="/resource/image/detail/bg-2.png" mode="widthFix"></image>
+	<view class="flex flex-col psa mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic">
+			<view class="flex flex-row flex-aic">
+				<view class="hl"></view>
+				<text class="fs-30 fwb col212429 ml-16">熟知业务流程，准确财税处理</text>
+			</view>
+			<image src="/resource/image/detail/icon-10.png" mode="widthFix" style="width:78rpx"></image>
+		</view>
+		<text
+			class="fs-24 col5e5f66 mt-16">具备丰富的运行管理经验和市场渠道，可出据审查机关的财务报表，确保会计处理的正确性和合法性的税收计算。正确评估隐藏的会计问题，准确整理会计和纳税申报资料。</text>
+	</view>
+</view>
+<view class="mw0-40 mt-30 psr flex flex-aic flex-jcc flex-col">
+	<image src="/resource/image/detail/bg-3.png" mode="widthFix"></image>
+	<view class="flex flex-col psa mw0-40">
+		<view class="flex flex-row flex-jcb flex-aic">
+			<view class="flex flex-row flex-aic">
+				<view class="hl"></view>
+				<text class="fs-30 fwb col212429 ml-16">专业技能人才，合理税务筹划</text>
+			</view>
+			<image src="/resource/image/detail/icon-12.png" mode="widthFix" style="width:73rpx"></image>
+		</view>
+		<text class="fs-24 col5e5f66 mt-16">从业多年的专业会计，随时跟踪工商财税政策，避免企业多报税。同时，根据企业实际经营情况进行合理的财务筹划，有效规避财税风险，合理避税。</text>
+	</view>
+</view>

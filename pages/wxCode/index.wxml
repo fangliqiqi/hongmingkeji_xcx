@@ -1,0 +1,17 @@
+<!--pages/wxCode/index.wxml-->
+<view class="page">
+  <view class="flex flex-col flex-aic">
+    <view class="bgfff flex flex-aic flex-col code-vi">
+      <view class="flex flex-aic flex-col flex-jcc flex1">
+        <image src="{{scanCode}}" mode="aspectFit" class="code"></image>
+      </view>
+      <view class="flex flex-col flex-aic flex-jcc" style="height:160rpx;min-height:160rpx;">
+        <text class="col5e5f66 fs-24">欢迎您分享该项服务信息，任何人</text>
+        <text class="col5e5f66 fs-24">通过该分享获得服务，您都将获得<text class="fwb col212429">奖励</text></text>
+      </view>
+      <view class="lined"></view>
+      <view class="dl"></view>
+      <view class="dr"></view>
+    </view>
+  </view>
+</view>

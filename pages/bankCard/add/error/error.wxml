@@ -1,0 +1,2 @@
+<!--pages/bankCard/add/error/error.wxml-->
+<include src="/resource/model/error.wxml" />

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarBackgroundColor":"#242c45",
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText":"登录"
+}

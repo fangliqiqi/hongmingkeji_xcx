@@ -1,0 +1,41 @@
+/* pages/share/share.wxss */
+page{
+  background: #f7f8fa;
+}
+input,textarea{
+  border-bottom: 1rpx #eee solid;
+  min-height: 80rpx;
+  width: 100%;
+  color: #212429;
+}
+.picker{
+  min-height: 80rpx;
+  border-bottom: 1rpx #eee solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.picker>image{
+  width: 12rpx;
+  height: 20rpx;
+  min-width: 12rpx;
+  margin-right: 16rpx;
+}
+.tip-vi{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tip-vi>view{
+  width: calc(100% - 140rpx);
+  margin-top: 60rpx;
+}
+.tip-vi>view>view{
+  margin:12rpx 0;
+}
+.tip-vi .bt{
+  margin-top: 30rpx;
+  width: calc(100% - 140rpx) !important;
+  height: 90rpx;
+}

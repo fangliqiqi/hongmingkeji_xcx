@@ -1,0 +1,158 @@
+<!--pages/personal/commission/index.wxml-->
+<view class="page" >
+  <view class="title-vi">
+    <image src="/resource/image/icon-43.png" mode="widthFix" class="mrl"></image>
+    <text class="fs-32 col212429 fwb ml-18 mr-18">佣金规则</text>
+    <image src="/resource/image/icon-43.png" mode="widthFix"></image>
+  </view>
+  
+  <!-- 代理商 -->
+  <view class="comset mw0-30 mb-20"  wx:if="{{roleFlag}}" >
+    <!-- level 0-->
+    <view class="comlevel" >
+      <view class="mr-20 cost">
+        <view class="fs-28 fwb mb-8"> 成本</view>
+        <text class="fs-28">{{level0.costProportion || 0}}</text>
+      </view>
+      <view class="level">
+        <view class="fs-28 fwb mb-8">我的</view>
+        <input type="digit" class="fs-28" value="{{level0.agentProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun"  data-vl="level0" />
+      </view>  
+    </view>
+    <!-- level 1-->
+    <view class="comlevel" >
+      <view class="mr-20 cost">
+        <view class="fs-28 fwb mb-8"> 成本</view>
+        <text class="fs-28">{{level1.costProportion || 0}}</text>
+      </view>
+      <view class="level mr-20">
+        <view class="fs-28 fwb mb-8">我的</view>
+        <input type="digit" class="fs-28" value="{{level1.agentProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun"  data-vl="level1" />
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">顾问</view>
+        <input type="digit"  value="{{level1.salesmanProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun" data-vl="level1sales"/>
+      </view>  
+    </view>
+    <!-- level 2 -->
+    <view class="comlevel">
+      <view class="mr-20 cost">
+        <view class="fs-28 fwb mb-8">成本</view>
+        <text>{{level2.costProportion || 0}} </text>
+      </view>
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">我的</view>
+        <input type="digit" value="{{level2.agentProportion}}"  bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level2" />
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">顾问</view>
+        <input type="digit"  value="{{level2.salesmanProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun" data-vl="level2sales"/>
+      </view>  
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">一级</view>
+        <input type="digit" value="{{level2.fx1}}" bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level2fx1"/>
+      </view> 
+    </view>
+    <!-- level 3 -->
+    <view class="comlevel ">
+      <view class="mr-20 cost">
+        <view class="fs-28 fwb mb-8">成本</view>
+        <text>{{level3.costProportion || 0}}</text>
+      </view>
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">我的</view>
+        <input type="digit" value="{{level3.agentProportion}}"  bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level3"/>
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">顾问</view>
+        <input type="digit"  value="{{level3.salesmanProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun" data-vl="level3sales"/>
+      </view>  
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">一级</view>
+        <input type="digit" value="{{level3.fx1}}"  bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level3fx1" />
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">二级</view>
+        <input type="digit" value="{{level3.fx2}}" bindinput="inputFun" bindfocus="focusFun"  bindblur="blurFun" data-vl="level3fx2" />
+      </view>
+
+    </view>
+    <!-- level 4 -->
+    <view class="comlevel ">
+      <view class="mr-20 cost">
+        <view class="fs-28 fwb mb-8">成本</view>
+        <text>{{level4.costProportion || 0}}</text>
+      </view>
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">我的</view>
+        <input type="digit" value="{{level4.agentProportion}}"  bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level4"/>
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">顾问</view>
+        <input type="digit"  value="{{level4.salesmanProportion}}" bindinput="inputFun"  bindfocus="focusFun" bindblur="blurFun" data-vl="level4sales"/>
+      </view>  
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">一级</view>
+        <input type="digit" value="{{level4.fx1}}"  bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level4fx1" />
+      </view> 
+      <view class="mr-20 level">
+        <view class="fs-28 fwb mb-8">二级</view>
+        <input type="digit" value="{{level4.fx2}}" bindinput="inputFun" bindfocus="focusFun"  bindblur="blurFun" data-vl="level4fx2" />
+      </view>
+      <view class="level">
+        <view class="fs-28 fwb mb-8">三级</view>
+        <input type="digit" value="{{level4.fx3 }}" bindinput="inputFun" bindfocus="focusFun" bindblur="blurFun" data-vl="level4fx3"  />
+      </view>
+    </view>
+
+    <view class="mt-30">
+      <view class="flex flex-col">
+        <view class="flex flex-row flex-aic mb-16">
+          <icon type="warn" size="18"></icon>
+          <text class="fs-24 col212429 ml-10">温馨提示</text>
+        </view>
+        <view class="flex flex-col">
+          <text class="fs-24 col5e5f66">分成比例设置需遵循以下原则：</text>
+          <text class="fs-22 col5e5f66 ">① 成本和分成比例总和需达到100%;</text>
+          <!-- <text class="fs-22 col5e5f66 ">② 分成比例设置为依次递增，不允许出现上级比例大于下级比例情况;</text> -->
+          <text class="fs-22 col5e5f66">②  三级代理人完成订单时，代理商奖励的分成比例不得低于3%。</text>
+        </view>
+        <view class="flex flex-col mt-30">
+          <text class="fs-24 col5e5f66">名词解释：</text>
+          <text class="fs-22 col5e5f66 ml-8">我的分成：代理商本人完成订单时的分成比例</text>
+          <text class="fs-22 col5e5f66 ml-8">顾问分成：顾问完成订单时的分成比例</text>
+          <text class="fs-22 col5e5f66 ml-8">一级分成：代理商下级完成订单时的分成比例</text>
+          <text class="fs-22 col5e5f66 ml-8">二级分成：代理商下二级完成订单时的分成比例</text>
+          <text class="fs-22 col5e5f66 ml-8">三级分成：代理商下三级完成订单时的分成比例</text>
+        </view>
+     </view>
+    </view>
+  </view>
+
+  <!-- 不是代理商 -->
+  <view class="info-vi"  wx:if="{{!roleFlag}}" >
+    <text class="title">1、通过推荐功能赚取佣金</text>
+    <text class="text">点击推荐功能-当您的亲朋好友。</text>
+    <text class="title">2、通过服务详情分享赚取佣金</text>
+    <text class="title">3、通过广告合作赚取佣金</text>
+    <text class="mt-60"></text>
+  </view>
+
+</view>
+
+  <view class="footer-vi" wx:if="{{roleFlag}}" >
+    <view class="footer">
+      <button class="bt bgact flex1 mw0-64" bindtap="comFun" wx:if="level0&&level1&&level2&&level3">
+        <text class="fs-32 colfff">确认修改</text>
+      </button>
+      <button class="bt bgact flex1 mw0-64" bindtap="comFun" wx:else>
+        <text class="fs-32 colfff">确认添加</text>
+      </button>
+    </view>
+  </view>
+
+
+
+
+  
+

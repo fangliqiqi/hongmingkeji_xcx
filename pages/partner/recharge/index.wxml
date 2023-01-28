@@ -1,0 +1,117 @@
+<!--pages/partner/recharge/index.wxml-->
+<view class="page">
+  <view class="flex flex-col flex-aic">
+    <view class="item-vi flex flex-aic flex-row flex-jcb">
+      <text class="fwb fs-32 col20242a">选择充值商机</text>
+      <view class="flex flex-row flex-aic" bindtap="bindPicker" data-idx="1">
+        <text class="fs-32 col5e5f66 mr-28">{{(typeindex!=''||typeindex=='0')?typelist[typeindex].categoryType:'请选择充值商机'}}</text>
+        <image src="/resource/image/icon-69.png" mode="widthFix" style="width:16rpx;"></image>
+      </view>
+    </view>
+    <view class="item-vi blt  flex flex-aic flex-row flex-jcb">
+      <text class="fwb fs-32 col20242a">选择充值方式</text>
+      <view class="picker flex flex-row flex-aic" bindtap="bindPicker" data-idx="2">
+        <image src="{{castobj.icon}}" mode="widthFix" style="width:40rpx;"></image>
+        <text class="fs-32 col5e5f66 mr-28 ml-20">{{castobj.text}}</text>
+        <image src="/resource/image/icon-69.png" mode="widthFix" style="width:16rpx;"></image>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="item-vi flex flex-col">
+      <text class="fwb fs-32 col20242a mt-60">充值金额 (元)</text>
+      <view class="flex flex-row flex-aib" style="height:100rpx;" bindtap="msgfun" data-idx="1" data-msg="首次充值请选择需要充值的套餐">
+        <text class="fs-42 fwb col212429">￥</text>
+        <input class="fs-82 col212429 flex1 ml-16"  style="height:100rpx;" value="{{amount}}" bindinput="inputfun" maxlength="10" type="number" bindblur="msgfun" data-idx="3"></input>
+        <view class="flex flex-row flex-aic flex-jce" style="height:100rpx;width:60rpx;" bindtap="amtap" data-amt="" data-idx="-1">
+          <image src="/resource/image/icon-38.png" mode="widthFix" style="width:24rpx;height:24rpx;"></image>
+        </view>
+      </view>
+      <view class="blt flex flex-row flex-aic flex-jcb mb-50" style="padding-top:24rpx;">
+        <text class="fs-24 col5e5f67">余额<text class="fs-24 cole15352">{{payWallet.amount}}</text>元</text>
+        <text class="col9d9da6 fs-24 tdu" bindtap="msgfun" data-idx="2" data-msg="{{(typeindex!=''||typeindex=='0')?typelist[typeindex].setMeal:'请选择充值商机'}}">充值说明</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="item-vi flex flex-col">
+      <text class="fwb fs-32 col20242a mt-60">便捷充值</text>
+      <view class="mt-36 mb-36">
+        <view class="cost-item flex flex-col flex-jcc flex-aic {{item.id==typeid?'on':''}}" wx:for="{{typelist}}" wx:key="id"  bindtap="amtap" data-id="{{item.id}}" data-idx="{{index}}" data-amt="{{item.categoryPrice*item.startCondition}}">
+          <view class="flex flex-aic flex-row flex1">
+            <view class="flex flex-row flex-aib">
+              <text class="fs-32 col5e5f66 fwb">￥</text>
+              <text class="fs-48 col5e5f66">{{item.categoryPrice*item.startCondition}}</text>
+            </view>
+            <text class="fs-24 col9d9da6 bgf7f8fa lab">{{item.startCondition}}条</text>
+          </view>
+          <view class="flex1 flex-row flex flex-aic">
+            <text class="col5e5f66 fs-30">{{item.categoryType}}</text>
+          </view>
+          <image src="/resource/image/icon-68.png" mode="widthFix" class="psa" style="width:43rpx;right:0;bottom:0;">
+          </image>
+        </view>
+      </view>
+    </view>
+    <view class="mw100 bgf7f8fa flex flex-col flex-aic" wx:if="{{bannerList.length>0}}">
+      <swiper circular autoplay class="mw0-30 mt-50 mb-50" style="height:160rpx;">
+        <swiper-item wx:for="{{bannerList}}" wx:key='index'>
+          <view class="sw-item" bindtap="toPage" data-url="{{item.path}}" data-idx="99" data-web="{{item.isOut}}">
+            <image src="{{imgUrl+item.imgSrc}}" mode="widthFix"></image>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="footer-vi">
+    <view class="footer">
+      <button class="bgact bt" bindtap="payFun">
+        <text class="colfff fs-32">确认</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+
+<c-hs-dialog show="{{isShow==1}}" class="noft nohd" bindclose="closeFun">
+	<view slot="desc" class="hsd-bd">
+		<view class="hd-vi">
+			<text class="fs-36 col212429 fwb">选择充值商机</text>
+			<view class="close" bindtap="closeFun">
+				<c-icon icon="close2" color="#a7a8ac" size="{{24}}"></c-icon>
+			</view>
+		</view>
+		<view class="bank-vi" style="">
+			<picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{[typeindex]}}"
+        bindchange="bindChange" >
+        <picker-view-column>
+          <view wx:for="{{typelist}}" wx:key="id" style="width: 100%;line-height: 45px; text-align: center;" class="fs-32">{{item.categoryType}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <button class="bt bgact mb-36 mt-36" style="width390rpx;height:90rpx" bindtap="suretap">
+      <text class="colfff fs-32">确认</text>
+    </button>
+	</view>
+</c-hs-dialog>
+<c-hs-dialog show="{{isShow==2}}" class="noft nohd" bindclose="closeFun">
+	<view slot="desc" class="hsd-bd">
+		<view class="hd-vi">
+			<text class="fs-36 col212429 fwb">选择充值方式</text>
+			<view class="close" bindtap="closeFun">
+				<c-icon icon="close2" color="#a7a8ac" size="{{24}}"></c-icon>
+			</view>
+		</view>
+		<view class="bank-vi mb-40">
+			<radio-group bindchange="radioChange" >
+				<label class="item-vi" wx:for="{{castlist}}" wx:key="id">
+					<view class="flex flex-row flex-aic">
+						<image src="{{item.icon}}" mode="widthFix"></image>
+						<view class="flex flex-col flex-jcc">
+							<text class="fs-32 col212429">{{item.text}}</text>
+						</view>
+					</view>
+					<radio class="radio" value="{{item.id}}" checked="{{castobj.id==item.id}}" />
+				</label>
+			</radio-group>
+		</view>
+	</view>
+</c-hs-dialog>

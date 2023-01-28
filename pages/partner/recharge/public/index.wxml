@@ -1,0 +1,35 @@
+<!--pages/partner/recharge/public/index.wxml-->
+<view class="page">
+  <view class="flex flex-col flex-aic">
+    <view class="code-vi flex flex-col flex-aic">
+      <text class="fs-32 col20242a mt-70">对公收款二维码</text>
+      <image class="mt-40" mode="widthFix" style="width:400rpx;height:400rpx;"></image>
+      <view class="blt mw0-30 mt-50"></view>
+      <view class="mw0-40  mt-40 mb-40 flex flex-col">
+        <view class="flex flex-row">
+          <text class="col9595a5 fs-28" style="min-width:224rpx">账户名称</text>
+          <text class="col20242a fs-28">安徽泓铭网络科技有限公司</text>
+        </view>
+        <view class="flex flex-row mt-12">
+          <text class="col9595a5 fs-28" style="min-width:224rpx">账户号码</text>
+          <text class="col20242a fs-28">175258633568</text>
+        </view>
+        <view class="flex flex-row mt-12">
+          <text class="col9595a5 fs-28" style="min-width:224rpx">开户银行</text>
+          <text class="col20242a fs-28">中国银行股份有限公司合肥和平路支行</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="footer-vi">
+  <view class="footer">
+    <view class="msg-vi">
+      <text class="fs-24 colabacb2">* 若转账失败，请及时</text><text class="fs-24 cold15d57 tdu" bindtap="callPhone">联系客服</text>
+    </view>
+    <button class="bt bgact" bindtap="toHome">
+      <text class="fs-32 colfff">返回首页</text>
+    </button>
+  </view>
+</view>

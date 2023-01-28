@@ -1,0 +1,131 @@
+<!--pages/personal/disorder/disdetails/disdetails.wxml-->
+<wxs src="../../../../utils/utils.wxs" module="utils" />
+<view class="page" >
+  <view>
+    <view class="info-vi"> 
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">订单状态</text>
+        </view>
+      </view>
+      <view bindtap="statusChange">
+        <text class="fs-28 col5e5f66">状态</text>
+        <view>
+          <text class=" col00cf9a fs-28 mr-16" wx:if="{{intorderdetail.orderState==1}}">有效</text>
+          <text class=" cole15352 fs-28 mr-16" wx:if="{{intorderdetail.orderState==2}}">无效</text>
+          <image    src="../../../../resource/image/icon-09.png" mode="widthFix" style="width:15rpx"></image>
+        </view>    
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi"> 
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">基本信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">姓名</text>
+        <text class="col212429 fs-28">{{intorderdetail.userName}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">联系方式</text>
+        <view class="flex flex-aic" bindtap="toPhone" data-phone='{{intorderdetail.userPhone}}'>
+          <image src="../../../../resource/image/phone.png" mode="widthFix" style="width:32rpx" ></image>
+          <text class="col212429 fs-28 ml-12">{{intorderdetail.userPhone}}</text>
+        </view>
+        
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">所在地址</text>
+        <text class="colc49259 fs-28">{{intorderdetail.province}}-{{intorderdetail.city}}-{{intorderdetail.county}}</text>
+      </view>
+    </view>
+    <view class="line-20"></view>
+    <view class="info-vi">
+      <view class="title">
+        <view class="flex flex-row flex-aic">
+          <view class="hl"></view>
+          <text class="fs-32 col212429 ml-16 fwb">订单信息</text>
+        </view>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66">订单类型</text>
+        <text class="col212429 fs-28">{{intorderdetail.businessName}}</text>
+      </view>
+      <view>
+        <text class="fs-28 col5e5f66 mr-30">订单备注</text>
+        <text class="col212429 fs-28 flex1" style="text-align:right"> {{intorderdetail.orderContent}}</text>
+      </view> 
+    </view>
+    <view class="line-20"></view>
+  </view>
+</view>
+
+<!-- <view class="page" wx:else>
+	<view class="login-vi mw0-30">
+		<view class="mw0-40 flex flex-col">
+			<text class="col212429 fs-52 fwb mt-100">欢迎来到莫的问题</text>
+			<text class="col9d9da6 fs-32 ">您身边的财税专家</text>
+			<block>
+				<button  class="bt bgact mt-100 " >
+					<text class="colfff fs-32">授权快捷登录</text>
+				</button>
+			</block>			
+		</view>
+	</view>
+</view> -->
+
+<view class="footer-vi" wx:if="{{intorderdetail.orderState == 1 && !intorderdetail.agentOrderId }}" >
+  <view class="footer">
+    <button class="bt bgact flex1 mw0-64"  bindtap="toDisorder">
+      <text class="fs-32 colfff">转订单</text>
+    </button>
+  </view> 
+</view>
+
+<!-- 修改订单状态 -->
+<c-dialog show="{{intState}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">修改状态</text>
+    <radio-group class="flex mt-50" bindchange="bindchangestate">
+				<label class="item-ra">
+          <radio  class="radio"  value="1" checked/>
+					<view class="col212429 fs-28 fwb">有效</view>
+				</label>
+				<label class="item-ra ml-60">
+          <radio class="radio"  value="2" />
+					<view class="col212429 fs-28 fwb">无效</view>
+				</label>			
+			</radio-group>
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindstateFun">
+				<text class="fs-24 colfff">确定</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+
+<c-dialog show="{{showFlag}}" class="noft nohd">
+	<view class="flex flex-col flex-aic">
+		<text class="fs-32 col212429 mt-60 fwb">定金金额</text>
+		<input class="fs-28 col212429 mt-32 in-cl"  model:value="{{pid}}"  type="digit"   placeholder="请输入定金金额"  />
+		<view class="flex flex-row flex-aic mt-50">
+			<button class="bgf5f7fc bl bt " style="width:180rpx !important;" bindtap="closeFun">
+				<text class="fs-24 col0155fe">取消</text>
+			</button>
+			<button class="bgact bt  ml-30" style="width:180rpx !important;" bindtap="bindCodeFun">
+				<text class="fs-24 colfff">确定</text>
+			</button>
+		</view>
+	</view>
+</c-dialog>
+
+<c-login userInfo="{{userInfo}}" bindlogin="getUser"></c-login>
+

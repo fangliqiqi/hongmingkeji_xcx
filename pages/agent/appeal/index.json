@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-hs-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog",
+    "c-icon":"weui-miniprogram/icon/icon"
+  },
+  "navigationBarTitleText":"申诉无效"
+}

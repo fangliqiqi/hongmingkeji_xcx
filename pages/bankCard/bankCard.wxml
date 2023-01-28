@@ -1,0 +1,81 @@
+<!--pages/bankCard/bankCard.wxml-->
+<c-contact></c-contact>
+
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view class="page">
+	<view class="bgtop"></view>
+	<view class="userInfo">
+		<view class="header">
+			<image  wx:if="{{userInfo.avatar}}" src="{{(utils.startWith(userInfo.avatar,'http')?'':url)+userInfo.avatar}}"></image>
+			<open-data wx:else class="head" type="userAvatarUrl" default-avatar="/resource/image/header.png"></open-data>
+		</view>
+		<view class="info">
+			<view>
+				<text class="fs-42 colfff fwb">{{userInfo.nickName||''}}</text>
+				<image wx:if="{{userInfo.vip&&userInfo.vip>0}}" class="ml-20" src="/resource/image/vip-{{userInfo.vip}}.png" mode="widthFix" style="width:60rpx"></image>
+			</view>
+			<view>
+				<block wx:if="{{userInfo.wxBind=='1'}}">
+          <image class="mr-10" src="/resource/image/icon-24.png" mode="widthFix" style="width:20rpx"></image>
+          <text class="colfff fs-24">已绑定微信</text>
+        </block>
+        <text class="colfff fs-24" wx:else>未绑定微信</text>
+			</view>
+		</view>
+	</view>
+	<view class="sv-vi mw100">
+		<scroll-view scroll-y class="sv" bindscrolltolower="bindscrolltolower">
+
+			<view class="flex flex-col flex-aic bgfff mw0-30 ml-30">
+				<view class="sv-item boxsh" wx:for="{{conlist}}" bindtap="toPage" data-item="{{item}}">
+					<view>
+						<view>
+							<view class="flex flex-row flex-aic">
+								<image src="/resource/image/bank-{{item.bankCode}}.png"></image>
+								<view class="flex flex-col ml-20">
+									<text class="fs-32 fwb col212429">{{item.bankName}}</text>
+									<text class="fs-26 col9d9da6">储蓄卡</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view>
+						<text class="fs-40 col212429">{{utils.toSubstr(item.bankNumber,0,4)}}</text>
+						<view>
+							<label></label>
+							<label></label>
+							<label></label>
+							<label></label>
+						</view>
+						<view>
+							<label></label>
+							<label></label>
+							<label></label>
+							<label></label>
+						</view>
+						<text class="fs-40 col212429">{{utils.toSubstr(item.bankNumber,item.bankNumber.length-4)}}</text>
+					</view>
+					<image src="/resource/image/bank-y-{{item.bankCode}}.png" ></image>
+				</view>
+				<view class="flex flex-col flex-aic" wx:if="{{conlist.length==0}}">
+					<text class="fs-24 col9d9da6 mt-60">您还未添加银行卡</text>
+<text class="fs-24 col9d9da6">请点击下方添加，便于您日后提现</text>
+				</view>
+			</view>
+			<view class="flex flex-aic flex-row last-vi flex-jcc bgfff">
+				<view wx:if="{{loading}}" class="weui-loadmore">
+					<view class="weui-loading"></view>
+					<view class="weui-loadmore__tips fs-24 col9595a5">正在加载</view>
+				</view>
+				<view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+					<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>
+<view class="footer-vi boxsh">
+	<button class="bgf5f7fc bl bt" bindtap="toPage">
+		<c-icon icon="add" color="#0155fe" class="mb-8 mr-12"></c-icon><text class="fs-32 col0155fe">添加储蓄卡</text>
+	</button>
+</view>

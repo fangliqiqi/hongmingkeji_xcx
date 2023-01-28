@@ -1,0 +1,58 @@
+	<!-- 登录成功 -->
+<view class="z1000 bgfff page_vi flex flex-aic flex-col" wx:if="{{loginSuccess}}">
+	<view class="mw0-30 flex flex-col flex-aic flex-jcc mt033">
+		<view class="mw0-10 flex flex-col flex-aic mb-60">
+			<view class="bgact br050 flex flex-col flex-aic flex-jcc" style="width:108rpx;height:108rpx;">
+				<c-icon icon="done" color="#fff" size="{{36}}" type="field"></c-icon>
+			</view>
+			<text class="fs-36 mt-45 col1c1f23">登录成功</text>
+			<view class="col5e5f66 flex flex-col flex-aic">
+				<text class="fs-26 mt-24">在莫的问题小程序中，您不仅可以找到</text>
+				<text class="fs-26 mt-12">自己需要的财务服务，还可以通过分享赚取佣金</text>
+			</view>
+			<button class="bt bgact mt-80 " bindtap="toHome">
+				<text class="colfff fs-32">返回首页</text>
+			</button>
+      <view class="mb-80 mt-30 flex flex-row flex-aic">
+        <text class="fs-24 cold15d57">{{count}}s </text>
+        <text class="fs-24 col9d9da6">后将自动跳转到首页</text>
+      </view>
+		</view>
+	</view>
+</view>
+
+	<!-- 添加银行卡成功 -->
+<view class="z1000 bgfff page_vi flex flex-aic flex-col" wx:if="{{isSuccess&&!cardInfo.id}}">
+	<view class="mw0-30 flex flex-col flex-aic flex-jcc mt033">
+		<view class="mw0-10 flex flex-col flex-aic mb-60">
+			<view class="bgact br050 flex flex-col flex-aic flex-jcc" style="width:108rpx;height:108rpx;">
+				<c-icon icon="done" color="#fff" size="{{36}}" type="field"></c-icon>
+			</view>
+			<text class="fs-36 mt-45 col1c1f23">添加成功</text>
+			<view class="col5e5f66 flex flex-col flex-aic">
+				<text class="fs-26 mt-24">您可以通过点击银行卡进行银行卡信息修改</text>
+			</view>
+			<button class="bt bgact mt-80 " bindtap="callBackTap">
+				<text class="colfff fs-32">好的</text>
+			</button>
+		</view>
+	</view>
+</view>
+
+	<!-- 推荐成功 -->
+	<view class="z1000 bgfff page_vi flex flex-aic flex-col" wx:if="{{isRecommend}}">
+	<view class="mw0-30 flex flex-col flex-aic flex-jcc mt033">
+		<view class="mw0-10 flex flex-col flex-aic mb-60">
+			<view class="bgact br050 flex flex-col flex-aic flex-jcc" style="width:108rpx;height:108rpx;">
+				<c-icon icon="done" color="#fff" size="{{36}}" type="field"></c-icon>
+			</view>
+			<text class="fs-36 mt-45 col1c1f23">推荐成功</text>
+			<view class="col5e5f66 flex flex-col flex-aic">
+				<text class="fs-26 mt-24">您可以进入我的-我的推荐查看进度</text>
+			</view>
+			<button class="bt bgact mt-80 " bindtap="toPage">
+				<text class="colfff fs-32">好的</text>
+			</button>
+		</view>
+	</view>
+</view>
